@@ -70,6 +70,7 @@
     <Content Include="Global.asax" />
     <Content Include="GUI\wfTablaUsuario.aspx" />
     <Content Include="MasterPage\index.html" />
+    <Content Include="Recursos\Imagenes\photo.jpg" />
     <Content Include="Recursos\Template\css\sb-admin-2.css" />
     <Content Include="Recursos\Template\css\sb-admin-2.min.css" />
     <Content Include="Recursos\Template\js\demo\chart-area-demo.js" />
@@ -1682,7 +1683,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BO\Usuario.cs" />
     <Compile Include="DAO\BaseDB.cs" />
+    <Compile Include="DAO\Usuario.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1701,6 +1704,7 @@
       <DependentUpon>mpAdmin.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\UsuarioCtrl.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage\mpAdmin.Master" />
@@ -1867,10 +1871,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BO\" />
-    <Folder Include="Recursos\Imagenes\" />
     <Folder Include="Recursos\Template\fonts\" />
-    <Folder Include="Servicios\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

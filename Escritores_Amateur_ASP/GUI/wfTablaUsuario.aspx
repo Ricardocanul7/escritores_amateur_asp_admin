@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="btn-group btn-group-justified">
-        <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-2" runat="server"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
+        <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-2" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
         <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-2" runat="server"><i class="fa fa-plus" aria-hidden="true"></i>Buscar</asp:LinkButton>
     </div>
     <div class="row">

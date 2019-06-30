@@ -84,6 +84,10 @@
     <Content Include="Recursos\Template\js\vendor\bootstrap\css\bootstrap-reboot.min.css" />
     <Content Include="Recursos\Template\js\vendor\bootstrap\css\bootstrap.css" />
     <Content Include="Recursos\Template\js\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Recursos\Template\js\vendor\bootstrap\js4\bootstrap.bundle.js" />
+    <Content Include="Recursos\Template\js\vendor\bootstrap\js4\bootstrap.bundle.min.js" />
+    <Content Include="Recursos\Template\js\vendor\bootstrap\js4\bootstrap.js" />
+    <Content Include="Recursos\Template\js\vendor\bootstrap\js4\bootstrap.min.js" />
     <Content Include="Recursos\Template\js\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Recursos\Template\js\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Recursos\Template\js\vendor\bootstrap\js\bootstrap.js" />
@@ -1851,6 +1855,10 @@
     <Content Include="Recursos\Template\js\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Recursos\Template\js\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Recursos\Template\js\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Recursos\Template\js\vendor\bootstrap\js4\bootstrap.bundle.js.map" />
+    <Content Include="Recursos\Template\js\vendor\bootstrap\js4\bootstrap.bundle.min.js.map" />
+    <Content Include="Recursos\Template\js\vendor\bootstrap\js4\bootstrap.js.map" />
+    <Content Include="Recursos\Template\js\vendor\bootstrap\js4\bootstrap.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

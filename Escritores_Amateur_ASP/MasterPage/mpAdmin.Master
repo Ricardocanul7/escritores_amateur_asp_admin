@@ -132,9 +132,10 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Tables:</h6>
                             <asp:LinkButton ID="lbtTableUsuarios" class="collapse-item" runat="server" OnClick="lbtTableUsuarios_Click">Usuarios</asp:LinkButton>
+                            <asp:LinkButton ID="lbtTablaCategorias" class="collapse-item" runat="server" OnClick="lbtTablaCategorias_Click">Categorias</asp:LinkButton>
+                            <asp:LinkButton ID="lbtnTablaGenero" class="collapse-item" runat="server" OnClick="lbtnTablaGenero_Click">Género</asp:LinkButton>
                             <!--<a class="collapse-item" href="login.html">Usuarios</a> -->
                             <a class="collapse-item" href="register.html">Historias</a>
-                            <a class="collapse-item" href="forgot-password.html">Prologos</a>
                         </div>
                     </div>
                 </li>

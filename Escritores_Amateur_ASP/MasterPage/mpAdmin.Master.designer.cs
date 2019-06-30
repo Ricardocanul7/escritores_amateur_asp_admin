@@ -22,6 +22,15 @@ namespace Escritores_Amateur_ASP.MasterPage {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// lbtTableUsuarios control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtTableUsuarios;
+        
+        /// <summary>
         /// cphTitulo control.
         /// </summary>
         /// <remarks>

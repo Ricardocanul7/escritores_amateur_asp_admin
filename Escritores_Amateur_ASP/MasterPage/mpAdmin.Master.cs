@@ -13,5 +13,10 @@ namespace Escritores_Amateur_ASP.MasterPage
         {
 
         }
+
+        protected void lbtTableUsuarios_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../GUI/wfTablaUsuario.aspx");
+        }
     }
 }

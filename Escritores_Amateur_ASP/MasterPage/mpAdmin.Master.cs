@@ -28,5 +28,10 @@ namespace Escritores_Amateur_ASP.MasterPage
         {
             Response.Redirect("../GUI/wfTablaGenero.aspx");
         }
+
+        protected void lbtnTablaSinopsis_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../GUI/wfTablaSinopsis.aspx");
+        }
     }
 }

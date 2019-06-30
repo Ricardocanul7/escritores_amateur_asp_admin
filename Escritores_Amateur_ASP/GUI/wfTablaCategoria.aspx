@@ -5,14 +5,13 @@
     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>Generar Reporte</a>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContenido" runat="server">
-    <div class="row col-12">
-        <div class="btn-group btn-group-justified" style="margin-right: unset;">
-            <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-2" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
-            <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-2" runat="server"><i class="fa fa-plus" aria-hidden="true"></i>Buscar</asp:LinkButton>
-        </div>
-    </div>
-
     <div class="row">
+        <div class="col-12">
+            <div class="btn-group btn-group-justified" style="margin-bottom: 20px;">
+                <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
+                <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
+            </div>
+        </div>
         <asp:GridView ID="gvCategorias" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_categoria">
             <Columns>
                 <asp:BoundField DataField="id_categoria" HeaderText="Indice" />

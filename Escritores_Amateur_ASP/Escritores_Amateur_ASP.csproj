@@ -1672,6 +1672,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BaseDB.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1847,7 +1848,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BO\" />
-    <Folder Include="DAO\" />
     <Folder Include="Recursos\Imagenes\" />
     <Folder Include="Recursos\Template\fonts\" />
     <Folder Include="Servicios\" />

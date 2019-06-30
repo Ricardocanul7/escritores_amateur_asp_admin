@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +13,21 @@ namespace Escritores_Amateur_ASP.GUI
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void DoOpen()
+        {
+            BO.Genero oGenero = new BO.Genero();
+            Servicios.GeneroCtrl oGeneroCtrl = new Servicios.GeneroCtrl();
+            DataTable dt = oGeneroCtrl.devuelveObj(oGenero);
+
+            gvGenero.DataSource = dt;
+            gvGenero.DataBind();
+        }
+
+        protected void lbtnBuscar_Click(object sender, EventArgs e)
+        {
+            DoOpen();
         }
     }
 }

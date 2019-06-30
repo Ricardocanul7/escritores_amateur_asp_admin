@@ -1686,9 +1686,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BO\Categoria.cs" />
+    <Compile Include="BO\Genero.cs" />
     <Compile Include="BO\Usuario.cs" />
     <Compile Include="DAO\BaseDB.cs" />
     <Compile Include="DAO\Categoria.cs" />
+    <Compile Include="DAO\Genero.cs" />
     <Compile Include="DAO\Usuario.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1723,6 +1725,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\CategoriaCtrl.cs" />
+    <Compile Include="Servicios\GeneroCtrl.cs" />
     <Compile Include="Servicios\UsuarioCtrl.cs" />
   </ItemGroup>
   <ItemGroup>

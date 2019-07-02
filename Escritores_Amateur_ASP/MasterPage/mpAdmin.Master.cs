@@ -48,5 +48,10 @@ namespace Escritores_Amateur_ASP.MasterPage
         {
             Response.Redirect("../GUI/wfTablaCapitulo.aspx");
         }
+
+        protected void lbtnTablaPrologo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../GUI/wfTablaPrologo.aspx");
+        }
     }
 }

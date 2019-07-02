@@ -73,6 +73,7 @@
     <Content Include="GUI\wfTablaGenero.aspx" />
     <Content Include="GUI\wfTablaHistoria.aspx" />
     <Content Include="GUI\wfTablaMensaje.aspx" />
+    <Content Include="GUI\wfTablaPrologo.aspx" />
     <Content Include="GUI\wfTablaSinopsis.aspx" />
     <Content Include="GUI\wfTablaUsuario.aspx" />
     <Content Include="MasterPage\index.html" />
@@ -1694,6 +1695,7 @@
     <Compile Include="BO\Genero.cs" />
     <Compile Include="BO\Historia.cs" />
     <Compile Include="BO\Mensaje.cs" />
+    <Compile Include="BO\Prologo.cs" />
     <Compile Include="BO\Sinopsis.cs" />
     <Compile Include="BO\Usuario.cs" />
     <Compile Include="DAO\BaseDB.cs" />
@@ -1702,6 +1704,7 @@
     <Compile Include="DAO\Genero.cs" />
     <Compile Include="DAO\Historia.cs" />
     <Compile Include="DAO\Mensaje.cs" />
+    <Compile Include="DAO\Prologo.cs" />
     <Compile Include="DAO\Sinopsis.cs" />
     <Compile Include="DAO\Usuario.cs" />
     <Compile Include="Global.asax.cs">
@@ -1742,6 +1745,13 @@
     <Compile Include="GUI\wfTablaMensaje.aspx.designer.cs">
       <DependentUpon>wfTablaMensaje.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\wfTablaPrologo.aspx.cs">
+      <DependentUpon>wfTablaPrologo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfTablaPrologo.aspx.designer.cs">
+      <DependentUpon>wfTablaPrologo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\wfTablaSinopsis.aspx.cs">
       <DependentUpon>wfTablaSinopsis.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1769,6 +1779,7 @@
     <Compile Include="Servicios\GeneroCtrl.cs" />
     <Compile Include="Servicios\HistoriaCtrl.cs" />
     <Compile Include="Servicios\MensajeCtrl.cs" />
+    <Compile Include="Servicios\PrologoCtrl.cs" />
     <Compile Include="Servicios\SinopsisCtrl.cs" />
     <Compile Include="Servicios\UsuarioCtrl.cs" />
   </ItemGroup>

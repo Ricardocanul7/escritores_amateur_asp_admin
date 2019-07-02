@@ -31,6 +31,24 @@ namespace Escritores_Amateur_ASP.GUI {
         protected global::System.Web.UI.WebControls.LinkButton lbtnAgregar;
         
         /// <summary>
+        /// Control lbtnEliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnEliminar;
+        
+        /// <summary>
+        /// Control lbtnActualizar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnActualizar;
+        
+        /// <summary>
         /// Control gvMensaje.
         /// </summary>
         /// <remarks>

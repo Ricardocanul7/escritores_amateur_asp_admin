@@ -70,6 +70,7 @@
     <Content Include="Global.asax" />
     <Content Include="GUI\wfTablaCategoria.aspx" />
     <Content Include="GUI\wfTablaGenero.aspx" />
+    <Content Include="GUI\wfTablaHistoria.aspx" />
     <Content Include="GUI\wfTablaMensaje.aspx" />
     <Content Include="GUI\wfTablaSinopsis.aspx" />
     <Content Include="GUI\wfTablaUsuario.aspx" />
@@ -1689,12 +1690,14 @@
   <ItemGroup>
     <Compile Include="BO\Categoria.cs" />
     <Compile Include="BO\Genero.cs" />
+    <Compile Include="BO\Historia.cs" />
     <Compile Include="BO\Mensaje.cs" />
     <Compile Include="BO\Sinopsis.cs" />
     <Compile Include="BO\Usuario.cs" />
     <Compile Include="DAO\BaseDB.cs" />
     <Compile Include="DAO\Categoria.cs" />
     <Compile Include="DAO\Genero.cs" />
+    <Compile Include="DAO\Historia.cs" />
     <Compile Include="DAO\Mensaje.cs" />
     <Compile Include="DAO\Sinopsis.cs" />
     <Compile Include="DAO\Usuario.cs" />
@@ -1714,6 +1717,13 @@
     </Compile>
     <Compile Include="GUI\wfTablaGenero.aspx.designer.cs">
       <DependentUpon>wfTablaGenero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfTablaHistoria.aspx.cs">
+      <DependentUpon>wfTablaHistoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfTablaHistoria.aspx.designer.cs">
+      <DependentUpon>wfTablaHistoria.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\wfTablaMensaje.aspx.cs">
       <DependentUpon>wfTablaMensaje.aspx</DependentUpon>
@@ -1746,6 +1756,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\CategoriaCtrl.cs" />
     <Compile Include="Servicios\GeneroCtrl.cs" />
+    <Compile Include="Servicios\HistoriaCtrl.cs" />
     <Compile Include="Servicios\MensajeCtrl.cs" />
     <Compile Include="Servicios\SinopsisCtrl.cs" />
     <Compile Include="Servicios\UsuarioCtrl.cs" />

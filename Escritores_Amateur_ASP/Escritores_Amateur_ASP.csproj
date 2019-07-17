@@ -76,8 +76,11 @@
     <Content Include="GUI\wfTablaPrologo.aspx" />
     <Content Include="GUI\wfTablaSinopsis.aspx" />
     <Content Include="GUI\wfTablaUsuario.aspx" />
+    <Content Include="GUI\wpLandingPage.aspx" />
     <Content Include="MasterPage\index.html" />
     <Content Include="Recursos\Imagenes\photo.jpg" />
+    <Content Include="Recursos\Template\css\one-page-wonder.css" />
+    <Content Include="Recursos\Template\css\one-page-wonder.min.css" />
     <Content Include="Recursos\Template\css\sb-admin-2.css" />
     <Content Include="Recursos\Template\css\sb-admin-2.min.css" />
     <Content Include="Recursos\Template\js\demo\chart-area-demo.js" />
@@ -1766,12 +1769,26 @@
     <Compile Include="GUI\wfTablaUsuario.aspx.designer.cs">
       <DependentUpon>wfTablaUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GUI\wpLandingPage.aspx.cs">
+      <DependentUpon>wpLandingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wpLandingPage.aspx.designer.cs">
+      <DependentUpon>wpLandingPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage\mpAdmin.Master.cs">
       <DependentUpon>mpAdmin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage\mpAdmin.Master.designer.cs">
       <DependentUpon>mpAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\mpPrincipal.Master.cs">
+      <DependentUpon>mpPrincipal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\mpPrincipal.Master.designer.cs">
+      <DependentUpon>mpPrincipal.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\CapituloCtrl.cs" />
@@ -1785,6 +1802,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage\mpAdmin.Master" />
+    <Content Include="MasterPage\mpPrincipal.Master" />
     <None Include="packages.config" />
     <Content Include="Recursos\Template\js\vendor\bootstrap\js\bootstrap.bundle.js.map" />
     <Content Include="Recursos\Template\js\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />

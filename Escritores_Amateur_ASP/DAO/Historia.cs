@@ -16,6 +16,18 @@ namespace Escritores_Amateur_ASP.DAO
 
         }
 
+        public DataTable getPreviewLastStories()
+        {
+            BO.Historia data = new BO.Historia();
+            bd = new BaseDB();
+
+            sql = " SELECT * FROM VIEW_PREW_LAST_STORIES ";
+
+            DataTable dt = new DataTable();
+            bd.execQuery(sql).Fill(dt);
+            return dt;
+        }
+
         public DataTable devuelveDatos(object obj)
         {
             string cadenaWhere = "";

@@ -18,7 +18,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="row" style="margin-top:80px; margin-bottom:80px;">
-        <asp:ListView ID="listViewHistoriasRecientes" runat="server" OnItemCommand="listViewHistoriasRecientes_ItemCommand" DataKeyNames="titulo">
+        <asp:DataList ID="dlistHistoriasRecientes" runat="server" DataKeyNames="titulo" RepeatLayout="Table" RepeatDirection="Horizontal">
             <ItemTemplate>
                 <div class="col-sm-4">
                     <div class="card" style="width: 18rem;">
@@ -30,6 +30,6 @@
                     </div>
                 </div>
             </ItemTemplate>
-        </asp:ListView>
+        </asp:DataList>
     </div>
 </asp:Content>

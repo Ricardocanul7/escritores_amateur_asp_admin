@@ -15,8 +15,8 @@ namespace Escritores_Amateur_ASP.GUI
         {
             DataTable data = LastStories();
 
-            listViewHistoriasRecientes.DataSource = data;
-            listViewHistoriasRecientes.DataBind();
+            dlistHistoriasRecientes.DataSource = data;
+            dlistHistoriasRecientes.DataBind();
         }
 
         public DataTable LastStories()

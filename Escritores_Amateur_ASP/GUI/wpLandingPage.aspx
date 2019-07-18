@@ -16,16 +16,26 @@
     </header>
 
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContenido" runat="server">
+<style type="text/css">
+.corta
+        {
+            width: 250px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+</style>
     <div class="row" style="margin-top:80px; margin-bottom:80px;">
-        <asp:DataList ID="dlistHistoriasRecientes" runat="server" DataKeyNames="titulo" RepeatLayout="Table" RepeatDirection="Horizontal">
+        <asp:DataList ID="dlistHistoriasRecientes" runat="server" DataKeyNames="titulo" RepeatDirection="Horizontal"  RepeatColumns="3">
             <ItemTemplate>
                 <div class="col-sm-4">
                     <div class="card" style="width: 18rem;">
                         <img src="<%#Eval("portada_url") %>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><%#Eval("titulo") %></h5>
-                            <p class="card-text"><%#Eval("contenido") %></p>
+                            <p class="card-text corta"><%#Eval("contenido") %></p>
                         </div>
                     </div>
                 </div>

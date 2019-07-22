@@ -10,77 +10,92 @@
 
             <div class="card">
                 <header class="card-header">
-                    <a href="" class="float-right btn btn-outline-primary mt-1">Log in</a>
-                    <h4 class="card-title mt-2">Sign up</h4>
+                    <a href="" class="float-right btn btn-outline-primary mt-1">Iniciar sesión</a>
+                    <h4 class="card-title mt-2">Registrate</h4>
                 </header>
                 <article class="card-body">
                     <form>
                         <div class="form-row">
                             <div class="col form-group">
-                                <label>First name</label>
+                                <label>Nombre(s)</label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                        </div>
+                        <!-- form-row end.// -->
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label>Apellido Paterno</label>
                                 <input type="text" class="form-control" placeholder="">
                             </div>
                             <!-- form-group end.// -->
                             <div class="col form-group">
-                                <label>Last name</label>
+                                <label>Apellido Materno</label>
                                 <input type="text" class="form-control" placeholder="">
                             </div>
                             <!-- form-group end.// -->
                         </div>
                         <!-- form-row end.// -->
                         <div class="form-group">
-                            <label>Email address</label>
+                            <label>Correo electrónico</label>
                             <input type="email" class="form-control" placeholder="">
-                            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <small class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
                         </div>
                         <!-- form-group end.// -->
                         <div class="form-group">
                             <label class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="gender" value="option1">
-                                <span class="form-check-label">Male </span>
+                                <span class="form-check-label">Masculino </span>
                             </label>
                             <label class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="gender" value="option2">
-                                <span class="form-check-label">Female</span>
+                                <span class="form-check-label">Femenino</span>
                             </label>
                         </div>
                         <!-- form-group end.// -->
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>City</label>
+                                <label>País</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Estado</label>
                                 <input type="text" class="form-control">
                             </div>
                             <!-- form-group end.// -->
                             <div class="form-group col-md-6">
-                                <label>Country</label>
+                                <label>Municipio</label>
                                 <select id="inputState" class="form-control">
-                                    <option>Choose...</option>
-                                    <option>Uzbekistan</option>
-                                    <option>Russia</option>
-                                    <option selected="">United States</option>
-                                    <option>India</option>
-                                    <option>Afganistan</option>
+                                    <option selected="">Elegir...</option>
+                                    <option>Motul</option>
+                                    <option>Izamal</option>
+                                    <option>Valladolid</option>
+                                    <option>Tekax</option>
+                                    <option>Tizimin</option>
                                 </select>
                             </div>
                             <!-- form-group end.// -->
                         </div>
                         <!-- form-row.// -->
                         <div class="form-group">
-                            <label>Create password</label>
+                            <label>Nombre de usuario</label>
+                            <input class="form-control" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Introduzca Contraseña</label>
                             <input class="form-control" type="password">
                         </div>
                         <!-- form-group end.// -->
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Register  </button>
+                            <button type="submit" class="btn btn-primary btn-block">Registro  </button>
                         </div>
                         <!-- form-group// -->
-                        <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our
+                        <small class="text-muted">Al hacer clic en el botón "Registrarse", usted confirma que acepta nuestros
                             <br>
-                            Terms of use and Privacy Policy.</small>
+                            Términos de uso y política de privacidad.</small>
                     </form>
                 </article>
                 <!-- card-body end .// -->
-                <div class="border-top card-body text-center">Have an account? <a href="">Log In</a></div>
+                <div class="border-top card-body text-center">¿Ya tienes una cuenta? <a href="">Iniciar sesión</a></div>
             </div>
             <!-- card.// -->
 

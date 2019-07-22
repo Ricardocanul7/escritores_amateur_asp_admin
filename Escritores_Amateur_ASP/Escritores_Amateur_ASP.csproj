@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="GUI\wfHistoria.aspx" />
+    <Content Include="GUI\wfLogin.aspx" />
     <Content Include="GUI\wfRegistro.aspx" />
     <Content Include="GUI\wfTablaCapitulo.aspx" />
     <Content Include="GUI\wfTablaCategoria.aspx" />
@@ -1721,6 +1722,13 @@
     </Compile>
     <Compile Include="GUI\wfHistoria.aspx.designer.cs">
       <DependentUpon>wfHistoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfLogin.aspx.cs">
+      <DependentUpon>wfLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfLogin.aspx.designer.cs">
+      <DependentUpon>wfLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\wfRegistro.aspx.cs">
       <DependentUpon>wfRegistro.aspx</DependentUpon>

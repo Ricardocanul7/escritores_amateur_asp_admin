@@ -13,5 +13,10 @@ namespace Escritores_Amateur_ASP.GUI
         {
 
         }
+
+        protected void lbtnLoginRegitro1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../GUI/wfLogin.aspx");
+        }
     }
 }

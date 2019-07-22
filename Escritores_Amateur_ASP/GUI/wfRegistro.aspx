@@ -10,7 +10,7 @@
 
             <div class="card">
                 <header class="card-header">
-                    <a href="" class="float-right btn btn-outline-primary mt-1">Iniciar sesión</a>
+                    <asp:LinkButton ID="lbtnLoginRegitro1" CssClass="float-right btn btn-outline-primary mt-1" OnClick="lbtnLoginRegitro1_Click" runat="server">Iniciar sesión</asp:LinkButton>
                     <h4 class="card-title mt-2">Registrate</h4>
                 </header>
                 <article class="card-body">
@@ -95,7 +95,7 @@
                     </form>
                 </article>
                 <!-- card-body end .// -->
-                <div class="border-top card-body text-center">¿Ya tienes una cuenta? <a href="">Iniciar sesión</a></div>
+                <div class="border-top card-body text-center">¿Ya tienes una cuenta? <asp:LinkButton ID="lbtnLoginRegistro2" OnClick="lbtnLoginRegitro1_Click" runat="server">Iniciar sesión</asp:LinkButton></div>
             </div>
             <!-- card.// -->
 

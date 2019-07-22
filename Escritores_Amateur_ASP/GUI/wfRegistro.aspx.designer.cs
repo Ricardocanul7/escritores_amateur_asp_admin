@@ -11,5 +11,23 @@ namespace Escritores_Amateur_ASP.GUI {
     
     
     public partial class wfRegistro {
+        
+        /// <summary>
+        /// Control lbtnLoginRegitro1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnLoginRegitro1;
+        
+        /// <summary>
+        /// Control lbtnLoginRegistro2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnLoginRegistro2;
     }
 }

@@ -39,7 +39,7 @@
                             <asp:LinkButton ID="lbtnSignUp" runat="server" CssClass="nav-link" OnClick="lbtnSignUp_Click">Registrarse</asp:LinkButton>
                         </li>
                         <li class="nav-item">
-                            <asp:LinkButton ID="lbtnLogin" runat="server" CssClass="nav-link">Iniciar Sesión</asp:LinkButton>
+                            <asp:LinkButton ID="lbtnLogin" runat="server" CssClass="nav-link" OnClick="lbtnLogin_Click">Iniciar Sesión</asp:LinkButton>
                         </li>
                     </ul>
                 </div>

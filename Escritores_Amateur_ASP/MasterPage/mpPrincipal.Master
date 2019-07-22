@@ -28,14 +28,15 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">EA stories</a>
+                <asp:LinkButton ID="lbtnHome" runat="server" CssClass="navbar-brand" OnClick="lbtnHome_Click">EA stories</asp:LinkButton>
+                <%--<a class="navbar-brand" href="#">EA stories</a>--%>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <asp:LinkButton ID="lbtnSignUp" runat="server" CssClass="nav-link">Registrarse</asp:LinkButton>
+                            <asp:LinkButton ID="lbtnSignUp" runat="server" CssClass="nav-link" OnClick="lbtnSignUp_Click">Registrarse</asp:LinkButton>
                         </li>
                         <li class="nav-item">
                             <asp:LinkButton ID="lbtnLogin" runat="server" CssClass="nav-link">Iniciar Sesión</asp:LinkButton>

@@ -13,5 +13,15 @@ namespace Escritores_Amateur_ASP.MasterPage
         {
 
         }
+
+        protected void lbtnSignUp_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../GUI/wfRegistro.aspx");
+        }
+
+        protected void lbtnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../GUI/wpLandingPage.aspx");
+        }
     }
 }

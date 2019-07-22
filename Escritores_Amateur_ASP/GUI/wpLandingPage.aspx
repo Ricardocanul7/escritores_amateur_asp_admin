@@ -28,7 +28,7 @@
         }
 </style>
     <div class="row" style="margin-top:80px; margin-bottom:80px;">
-        <asp:DataList ID="dlistHistoriasRecientes" runat="server" DataKeyNames="titulo" RepeatDirection="Horizontal"  RepeatColumns="3">
+        <asp:DataList ID="dlistHistoriasRecientes" runat="server" Width="100%" DataKeyNames="titulo" RepeatDirection="Horizontal"  RepeatColumns="3">
             <ItemTemplate>
                 <div class="col-sm-4">
                     <div class="card" style="width: 18rem;">

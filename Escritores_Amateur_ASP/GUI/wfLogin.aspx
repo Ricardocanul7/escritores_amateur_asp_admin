@@ -8,32 +8,37 @@
         <div class="col">
 
             <div class="card">
+                <div id="alerta_error_login" class="alert alert-danger" role="alert" runat="server">
+                    Error al iniciar sesion, usuario o contraseña incorrecta!
+                </div>
                 <article class="card-body">
                     <a href="" class="float-right btn btn-outline-primary">Registrarse</a>
                     <h4 class="card-title mb-4 mt-1">Iniciar Sesión</h4>
                     <form>
                         <div class="form-group">
                             <label>Usuario</label>
-                            <input name="" class="form-control" placeholder="Usuario" type="text">
+                            <input id="input_username" name="" class="form-control" placeholder="Usuario" type="text" runat="server">
                         </div>
                         <!-- form-group// -->
                         <div class="form-group">
                             <a class="float-right" href="#">Olvidaste tu contraseña?</a>
                             <label>Contraseña</label>
-                            <input class="form-control" placeholder="******" type="password">
+                            <input id="input_password" class="form-control" placeholder="******" type="password" runat="server">
                         </div>
                         <!-- form-group// -->
                         <div class="form-group">
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox">
-                                    Guardar contraseña </label>
+                                    Guardar contraseña
+                                </label>
                             </div>
                             <!-- checkbox .// -->
                         </div>
                         <!-- form-group// -->
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-block">Iniciar sesión  </button>
+                            <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-primary btn-block" Text="Iniciar sesión" OnClick="btnLogin_Click" />
+                            <%--<button type="submit" class="btn btn-primary btn-block">Iniciar sesión  </button>--%>
                         </div>
                         <!-- form-group// -->
                     </form>

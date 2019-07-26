@@ -30,6 +30,24 @@ namespace Escritores_Amateur_ASP.DAO
                 bd.Cmd.Parameters["@id_usuario"].Value = data.Id_usuario;
                 edo = true;
             }
+            if(data.Username != null)
+            {
+                cadenaWhere += " username=@username and";
+                bd.Cmd.Parameters.Add("@username", SqlDbType.VarChar);
+                bd.Cmd.Parameters["@username"].Value = data.Username;
+                edo = true;
+            }
+            if (data.Contrasenia != null)
+            {
+                cadenaWhere += " contrasenia=@contrasenia and";
+                bd.Cmd.Parameters.Add("@contrasenia", SqlDbType.VarChar);
+                bd.Cmd.Parameters["@contrasenia"].Value = data.Contrasenia;
+                edo = true;
+            }
+            if (edo == true)
+            {
+                cadenaWhere = "WHERE " + cadenaWhere.Remove(cadenaWhere.Length - 3, 3);
+            }
 
 
 

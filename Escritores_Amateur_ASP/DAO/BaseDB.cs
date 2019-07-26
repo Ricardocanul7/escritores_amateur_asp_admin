@@ -26,7 +26,7 @@ namespace Escritores_Amateur_ASP.DAO
 
         private void establecerConexion()
         {
-            stringConexion = "Data source = Alan\\SQLEXPRESS; initial catalog = db_escritores_amateur; integrated security=true;";
+            stringConexion = "Data source = RICK-LAPTOP\\SQLEXPRESS; initial catalog = db_escritores_amateur; integrated security=true;";
             Cnn = new SqlConnection(stringConexion);
         }
 
@@ -46,12 +46,10 @@ namespace Escritores_Amateur_ASP.DAO
             if(Cnn.State != System.Data.ConnectionState.Open)
             {
                 abrirConexion();
-                Cmd = new SqlCommand(query, Cnn);
-                Dr = Cmd.ExecuteReader();
                 Cmd.Connection = Cnn;
-
                 Cmd.CommandText = query;
-                Da.SelectCommand = cmd;
+                Cmd.ExecuteReader();
+                Da.SelectCommand = Cmd;
                 cerrarConexion();
                 return Da;
             }

@@ -4,11 +4,18 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContenido" runat="server">
     <!-- Se agrega margin-top de 80px para quedar debajo de el navbar -->
-    <div class="row" style="margin-top: 110px; margin-bottom:80px;">
+    <div class="row" style="margin-top: 110px; margin-bottom: 80px;">
         <div class="col-3"></div>
-        <div class="col" style="width:100%">
+        <div class="col" style="width: 100%">
 
-            <div class="card">
+            <div class="alert alert-primary" role="alert" id="alerta_exito" runat="server" visible="false">
+                Registro exitoso!
+            </div>
+
+            <div class="card" id="form_registro" runat="server">
+                <div class="alert alert-danger" role="alert" runat="server" id="alerta_fallo" visible="false">
+                    Error al registrar usuario nuevo!
+                </div>
                 <header class="card-header">
                     <asp:LinkButton ID="lbtnLoginRegitro1" CssClass="float-right btn btn-outline-primary mt-1" OnClick="lbtnLoginRegitro1_Click" runat="server">Iniciar sesión</asp:LinkButton>
                     <h4 class="card-title mt-2">Registrate</h4>
@@ -18,41 +25,41 @@
                         <div class="form-row">
                             <div class="col form-group">
                                 <label>Nombre(s)</label>
-                                <input type="text" class="form-control" placeholder="">
+                                <input id="input_nombre" runat="server" type="text" class="form-control" placeholder="">
                             </div>
                         </div>
                         <!-- form-row end.// -->
                         <div class="form-row">
                             <div class="col form-group">
                                 <label>Apellido Paterno</label>
-                                <input type="text" class="form-control" placeholder="">
+                                <input id="input_apellido_pat" runat="server" type="text" class="form-control" placeholder="">
                             </div>
                             <!-- form-group end.// -->
                             <div class="col form-group">
                                 <label>Apellido Materno</label>
-                                <input type="text" class="form-control" placeholder="">
+                                <input id="input_apellido_mat" runat="server" type="text" class="form-control" placeholder="">
                             </div>
                             <!-- form-group end.// -->
                         </div>
                         <!-- form-row end.// -->
                         <div class="form-group">
                             <label>Correo electrónico</label>
-                            <input type="email" class="form-control" placeholder="">
+                            <input id="input_correo" runat="server" type="email" class="form-control" placeholder="">
                             <small class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
                         </div>
                         <div class="form-group">
                             <label>Teléfono</label>
-                            <input type="tel" class="form-control" placeholder="">
+                            <input id="input_telefono" runat="server" type="tel" class="form-control" placeholder="">
                             <small class="form-text text-muted">Nunca compartiremos su teléfono con nadie más.</small>
                         </div>
                         <!-- form-group end.// -->
                         <div class="form-group">
                             <label class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" value="option1">
+                                <input id="input_radio_masculino" runat="server" class="form-check-input" type="radio" name="gender" value="option1">
                                 <span class="form-check-label">Masculino </span>
                             </label>
                             <label class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" value="option2">
+                                <input id="input_radio_femenino" runat="server" class="form-check-input" type="radio" name="gender" value="option2">
                                 <span class="form-check-label">Femenino</span>
                             </label>
                         </div>
@@ -60,38 +67,57 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>País</label>
-                                <input type="text" class="form-control">
+                                <asp:ListBox ID="input_pais" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="Mexico"></asp:ListItem>
+                                    <asp:ListItem Text="USA"></asp:ListItem>
+                                    <asp:ListItem Text="UK"></asp:ListItem>
+                                    <asp:ListItem Text="Australia"></asp:ListItem>
+                                    <asp:ListItem Text="Polonia"></asp:ListItem>
+                                </asp:ListBox>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Estado</label>
-                                <input type="text" class="form-control">
+                                <asp:ListBox ID="input_estado" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="Yucatan"></asp:ListItem>
+                                    <asp:ListItem Text="Campeche"></asp:ListItem>
+                                    <asp:ListItem Text="Gdynia"></asp:ListItem>
+                                    <asp:ListItem Text="Gdansk"></asp:ListItem>
+                                    <asp:ListItem Text="Quintana Roo"></asp:ListItem>
+                                </asp:ListBox>
                             </div>
                             <!-- form-group end.// -->
                             <div class="form-group col-md-6">
                                 <label>Municipio</label>
-                                <select id="inputState" class="form-control">
+                                <asp:ListBox ID="input_ciudad" runat="server" CssClass="form-control">
+                                    <asp:ListItem Text="Motul"></asp:ListItem>
+                                    <asp:ListItem Text="Izamal"></asp:ListItem>
+                                    <asp:ListItem Text="Valladolid"></asp:ListItem>
+                                    <asp:ListItem Text="Tekax"></asp:ListItem>
+                                    <asp:ListItem Text="Tizimin"></asp:ListItem>
+                                </asp:ListBox>
+                                <%--<select id="inputState" class="form-control">
                                     <option selected="">Elegir...</option>
                                     <option>Motul</option>
                                     <option>Izamal</option>
                                     <option>Valladolid</option>
                                     <option>Tekax</option>
                                     <option>Tizimin</option>
-                                </select>
+                                </select>--%>
                             </div>
                             <!-- form-group end.// -->
                         </div>
                         <!-- form-row.// -->
                         <div class="form-group">
                             <label>Nombre de usuario</label>
-                            <input class="form-control" type="text">
+                            <input id="input_username" runat="server" class="form-control" type="text">
                         </div>
                         <div class="form-group">
                             <label>Contraseña</label>
-                            <input class="form-control" type="password">
+                            <input id="input_password" runat="server" class="form-control" type="password">
                         </div>
                         <!-- form-group end.// -->
                         <div class="form-group">
-                            
+                            <asp:LinkButton ID="lbtnRegistro" runat="server" OnClick="lbtnRegistro_Click"></asp:LinkButton>
                             <button type="submit" class="btn btn-primary btn-block">Registro  </button>
                         </div>
                         <!-- form-group// -->
@@ -101,7 +127,10 @@
                     </form>
                 </article>
                 <!-- card-body end .// -->
-                <div class="border-top card-body text-center">¿Ya tienes una cuenta? <asp:LinkButton ID="lbtnLoginRegistro2" OnClick="lbtnLoginRegitro1_Click" runat="server">Iniciar sesión</asp:LinkButton></div>
+                <div class="border-top card-body text-center">
+                    ¿Ya tienes una cuenta?
+                    <asp:LinkButton ID="lbtnLoginRegistro2" OnClick="lbtnLoginRegitro1_Click" runat="server">Iniciar sesión</asp:LinkButton>
+                </div>
             </div>
             <!-- card.// -->
 

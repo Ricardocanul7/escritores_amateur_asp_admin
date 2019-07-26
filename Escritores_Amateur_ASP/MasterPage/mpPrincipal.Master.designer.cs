@@ -58,6 +58,33 @@ namespace Escritores_Amateur_ASP.MasterPage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl userDropDown;
         
         /// <summary>
+        /// nombre_user control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nombre_user;
+        
+        /// <summary>
+        /// lbtnPerfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnPerfil;
+        
+        /// <summary>
+        /// lbtnLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnLogout;
+        
+        /// <summary>
         /// cphTitulo control.
         /// </summary>
         /// <remarks>

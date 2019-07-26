@@ -10,7 +10,7 @@
 
             <div class="card">
                 <header class="card-header">
-                    <a href="" class="float-right btn btn-outline-primary mt-1">Iniciar sesión</a>
+                    <asp:LinkButton ID="lbtnLoginRegitro1" CssClass="float-right btn btn-outline-primary mt-1" OnClick="lbtnLoginRegitro1_Click" runat="server">Iniciar sesión</asp:LinkButton>
                     <h4 class="card-title mt-2">Registrate</h4>
                 </header>
                 <article class="card-body">
@@ -39,6 +39,11 @@
                             <label>Correo electrónico</label>
                             <input type="email" class="form-control" placeholder="">
                             <small class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" class="form-control" placeholder="">
+                            <small class="form-text text-muted">Nunca compartiremos su teléfono con nadie más.</small>
                         </div>
                         <!-- form-group end.// -->
                         <div class="form-group">
@@ -81,21 +86,22 @@
                             <input class="form-control" type="text">
                         </div>
                         <div class="form-group">
-                            <label>Introduzca Contraseña</label>
+                            <label>Contraseña</label>
                             <input class="form-control" type="password">
                         </div>
                         <!-- form-group end.// -->
                         <div class="form-group">
+                            
                             <button type="submit" class="btn btn-primary btn-block">Registro  </button>
                         </div>
                         <!-- form-group// -->
-                        <small class="text-muted">Al hacer clic en el botón "Registrarse", usted confirma que acepta nuestros
+                        <small class="text-muted">Al hacer clic en el botón "Registro", usted confirma que acepta nuestros
                             <br>
                             Términos de uso y política de privacidad.</small>
                     </form>
                 </article>
                 <!-- card-body end .// -->
-                <div class="border-top card-body text-center">¿Ya tienes una cuenta? <a href="">Iniciar sesión</a></div>
+                <div class="border-top card-body text-center">¿Ya tienes una cuenta? <asp:LinkButton ID="lbtnLoginRegistro2" OnClick="lbtnLoginRegitro1_Click" runat="server">Iniciar sesión</asp:LinkButton></div>
             </div>
             <!-- card.// -->
 

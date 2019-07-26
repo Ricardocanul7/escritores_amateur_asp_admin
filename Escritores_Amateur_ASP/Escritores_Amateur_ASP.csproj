@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="GUI\wfAgregarHistoria.aspx" />
     <Content Include="GUI\wfHistoria.aspx" />
     <Content Include="GUI\wfLogin.aspx" />
     <Content Include="GUI\wfRegistro.aspx" />
@@ -1715,6 +1716,13 @@
     <Compile Include="DAO\Usuario.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfAgregarHistoria.aspx.cs">
+      <DependentUpon>wfAgregarHistoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfAgregarHistoria.aspx.designer.cs">
+      <DependentUpon>wfAgregarHistoria.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\wfHistoria.aspx.cs">
       <DependentUpon>wfHistoria.aspx</DependentUpon>

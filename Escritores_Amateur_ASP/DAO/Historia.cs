@@ -49,5 +49,18 @@ namespace Escritores_Amateur_ASP.DAO
             bd.execQuery(sql).Fill(dt);
             return dt;
         }
+        
+        public DataTable recuperaHistoria()
+        {
+            BO.Historia data = new BO.Historia();
+            bd = new BaseDB();
+
+            sql = " SELECT * VISTA_HISTORIA";
+
+            DataTable dt = new DataTable();
+            bd.execQuery(sql).Fill(dt);
+            return dt;
+
+        }
     }
 }

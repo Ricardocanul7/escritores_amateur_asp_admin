@@ -12,22 +12,21 @@
 
     <div class="card border-light">
       <div class="alert alert-info card-header text-center">
-        <h2> Titulo historia
-           <h4><small class="text-muted">AUTOR</small></h4> 
+        <h2><asp:Label ID="lblTitulo" runat="server">  </asp:Label>
+           <h4><small class="text-muted"><asp:Label ID="lblAutor" runat="server"> </asp:Label></small></h4> 
         </h2>
           <figure class="figure">
-            <img src="..." class="figure-img img-fluid rounded" alt="...">
-            <figcaption class="figure-caption text-right">PORTADA DE LA HISTORIA</figcaption>
+            <asp:Image ID="imgPortada" runat="server" CssClass="figure-img img-fluid rounded"/>
           </figure>
       </div>
       <div class="alert alert-secondary">
         <div class="card-body">
             <h5 class="card-title text-center"><u>Sinopsis</u> </h5>
-            <p class="text-center"><em>Contenido Sinopsis.</em></p>
+            <p class="text-center"><em><asp:Label ID="lblSinopsis" runat="server"> </asp:Label></em></p>
         </div>
         <div class="card-body">
             <h5 class="card-title text-center"><u>Prólogo</u> </h5>
-            <p class="text-center"><em>Contenido Prologo.</em></p>
+            <p class="text-center"><em><asp:Label ID="lblPrologo" runat="server"></asp:Label> </em></p>
         </div>
         <div class="card-body">
             <h5 class="card-title text-center"> <u>Nombre Capitulo</u></h5>

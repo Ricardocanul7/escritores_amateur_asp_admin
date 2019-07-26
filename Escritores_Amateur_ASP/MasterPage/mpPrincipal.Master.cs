@@ -10,14 +10,16 @@ namespace Escritores_Amateur_ASP.MasterPage
 {
     public partial class mpPrincipal : System.Web.UI.MasterPage
     {
+        private bool access = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             validarLogin();
+            setDropDown_text();
         }
 
         public void validarLogin()
         {
-            bool access = false;
+            //bool access = false;
 
             DAO.Usuario usuarioDAO = new DAO.Usuario();
             BO.Usuario usuarioBO = new BO.Usuario();
@@ -63,6 +65,14 @@ namespace Escritores_Amateur_ASP.MasterPage
             }
         }
 
+        public void setDropDown_text()
+        {
+            if(access == true)
+            {
+                nombre_user.Text = Session["username"].ToString();
+            }
+        }
+
         protected void lbtnSignUp_Click(object sender, EventArgs e)
         {
             Response.Redirect("../GUI/wfRegistro.aspx");
@@ -76,6 +86,14 @@ namespace Escritores_Amateur_ASP.MasterPage
         protected void lbtnLogin_Click(object sender, EventArgs e)
         {
             Response.Redirect("../GUI/wfLogin.aspx");
+        }
+
+        protected void lbtnLogout_Click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            Session["password"] = null;
+
+            Response.Redirect("../GUI/wpLandingPage.aspx");
         }
     }
 }

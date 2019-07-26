@@ -49,8 +49,6 @@ namespace Escritores_Amateur_ASP.DAO
                 cadenaWhere = "WHERE " + cadenaWhere.Remove(cadenaWhere.Length - 3, 3);
             }
 
-
-
             sql = " SELECT * FROM usuario " + cadenaWhere;
 
             DataTable dt = new DataTable();

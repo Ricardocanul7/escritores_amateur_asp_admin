@@ -44,12 +44,13 @@
                         <li class="nav-item" id="userDropDown" runat="server">
                             <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown button
+                                <asp:Label ID="nombre_user" runat="server"></asp:Label>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <asp:LinkButton ID="lbtnPerfil" CssClass="dropdown-item" runat="server">Perfil</asp:LinkButton>
+                                <asp:LinkButton ID="lbtnLogout" CssClass="dropdown-item" runat="server" OnClick="lbtnLogout_Click">Cerrar sesión</asp:LinkButton>
+                                <%--<a class="dropdown-item" href="#">Perfil</a>
+                                <a class="dropdown-item" href="#">Cerrar sesión</a>--%>
                             </div>
                         </div>
                         </li>

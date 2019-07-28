@@ -33,15 +33,20 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
+                <div class="collapse navbar-collapse">
+                    <!-- OPCIONES ANTES DE INICIAR SESION -->
+                    <ul class="navbar-nav ml-auto" id="NavbarloginOption" runat="server">
                         <li class="nav-item">
                             <asp:LinkButton ID="lbtnSignUp" runat="server" CssClass="nav-link" OnClick="lbtnSignUp_Click">Registrarse</asp:LinkButton>
                         </li>
                         <li class="nav-item">
                             <asp:LinkButton ID="lbtnLogin" runat="server" CssClass="nav-link" OnClick="lbtnLogin_Click">Iniciar Sesión</asp:LinkButton>
                         </li>
-                        <li class="nav-item" id="userDropDown" runat="server">
+                    </ul>
+
+                    <!-- OPCIONES DESPUES DE INICIAR SESION -->
+                    <ul class="navbar-nav ml-auto" runat="server" id="NavbarUserOption">
+                        <li class="nav-item">
                             <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <asp:Label ID="nombre_user" runat="server"></asp:Label>
@@ -49,8 +54,6 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <asp:LinkButton ID="lbtnPerfil" CssClass="dropdown-item" runat="server">Perfil</asp:LinkButton>
                                 <asp:LinkButton ID="lbtnLogout" CssClass="dropdown-item" runat="server" OnClick="lbtnLogout_Click">Cerrar sesión</asp:LinkButton>
-                                <%--<a class="dropdown-item" href="#">Perfil</a>
-                                <a class="dropdown-item" href="#">Cerrar sesión</a>--%>
                             </div>
                         </div>
                         </li>

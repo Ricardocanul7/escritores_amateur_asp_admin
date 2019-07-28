@@ -53,15 +53,13 @@ namespace Escritores_Amateur_ASP.MasterPage
 
             if (access == true)
             {
-                lbtnLogin.Visible = false;
-                lbtnSignUp.Visible = false;
-                userDropDown.Visible = true;
+                NavbarloginOption.Visible = false;
+                NavbarUserOption.Visible = true;
             }
             else
             {
-                lbtnLogin.Visible = true;
-                lbtnSignUp.Visible = true;
-                userDropDown.Visible = false;
+                NavbarloginOption.Visible = true;
+                NavbarUserOption.Visible = false;
             }
         }
 

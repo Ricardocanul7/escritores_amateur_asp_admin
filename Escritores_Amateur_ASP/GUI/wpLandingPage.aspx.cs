@@ -25,10 +25,13 @@ namespace Escritores_Amateur_ASP.GUI
             return dt;
         }
 
-        protected void listViewHistoriasRecientes_ItemCommand(object sender, ListViewCommandEventArgs e)
+        protected void dlistHistoriasRecientes_ItemCommand(object source, DataListCommandEventArgs e)
         {
+            int index = Convert.ToInt32(e.CommandArgument);
+            int id_historias = (int)dlistHistoriasRecientes.DataKeys[index];
 
+            Session["id_historia"] = id_historias;
+            Response.Redirect("../GUI/wfHistoria.aspx");
         }
-
     }
 }

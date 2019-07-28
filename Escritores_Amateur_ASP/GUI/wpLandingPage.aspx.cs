@@ -33,5 +33,10 @@ namespace Escritores_Amateur_ASP.GUI
             Session["id_historia"] = id_historias;
             Response.Redirect("../GUI/wfHistoria.aspx");
         }
+
+        protected void click_historia_Command(object sender, CommandEventArgs e)
+        {
+
+        }
     }
 }

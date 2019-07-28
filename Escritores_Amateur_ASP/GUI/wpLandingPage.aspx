@@ -19,7 +19,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContenido" runat="server">
     <style type="text/css">
-.corta
+        .corta
         {
             width: 250px;
             /*white-space: normal;
@@ -55,11 +55,20 @@
           margin-top: 0.2em;
           background: white;
         }
+        .custom-card, .custom-card:hover {
+          color: inherit;
+          text-decoration: none;
+        }
+        .card:hover{
+          padding: 5px !important;
+          background: #ADD8E6 !important;
+        }
 </style>
     <div class="row" style="margin-top: 80px; margin-bottom: 80px;">
         <asp:DataList ID="dlistHistoriasRecientes" runat="server" Width="100%" DataKeyNames="id_historia" RepeatDirection="Horizontal" RepeatColumns="3">
             <ItemTemplate>
-                <div class="col-sm-4">
+                <asp:LinkButton runat="server" ID="click_historia" OnCommand="click_historia_Command" CssClass="custom-card">
+                    <div class="col-sm-4">
                     <div class="card" style="width: 18rem;">
                         <img src="<%#Eval("portada_url") %>" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -69,6 +78,7 @@
                         </div>
                     </div>
                 </div>
+                </asp:LinkButton>
             </ItemTemplate>
         </asp:DataList>
     </div>

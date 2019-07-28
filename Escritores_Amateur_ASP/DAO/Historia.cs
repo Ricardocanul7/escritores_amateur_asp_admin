@@ -55,7 +55,7 @@ namespace Escritores_Amateur_ASP.DAO
             BO.Historia data = new BO.Historia();
             bd = new BaseDB();
 
-            sql = " SELECT * VISTA_HISTORIA";
+            sql = " SELECT * FROM VISTA_HISTORIA";
 
             DataTable dt = new DataTable();
             bd.execQuery(sql).Fill(dt);

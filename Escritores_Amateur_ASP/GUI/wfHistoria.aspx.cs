@@ -13,21 +13,25 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //cargarInfo();
+            if(Request.QueryString["id"] != null)
+            {
+                int id_historia = Convert.ToInt32(Request.QueryString["id"].ToString());
+                cargarInfo(id_historia);
+            }
         }
 
-        public void cargarInfo()
+        public void cargarInfo(int id_historia)
         {
             
             DataTable dt = recuperarHistorias();
-            DataRow[] dr = dt.Select("id_historia=3");
+            DataRow[] dr = dt.Select("id_historia=" + id_historia);
 
 
             lblTitulo.Text = dr[0]["titulo"].ToString();
-            lblAutor.Text = "Alan";
-            lblSinopsis.Text = "Erase una vez";
-            lblPrologo.Text = "Por enfermo pasó que...";
-            imgPortada.ImageUrl = "https://a.wattpad.com/cover/114145992-352-k32105.jpg";
+            lblAutor.Text = dr[0]["autor"].ToString();
+            lblSinopsis.Text = dr[0]["sinopsis"].ToString();
+            lblPrologo.Text = dr[0]["prologo"].ToString();
+            imgPortada.ImageUrl = dr[0]["portada_url"].ToString();
         }
 
         public DataTable recuperarHistorias()

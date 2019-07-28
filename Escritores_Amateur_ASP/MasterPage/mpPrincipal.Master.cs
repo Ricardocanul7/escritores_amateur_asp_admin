@@ -55,11 +55,13 @@ namespace Escritores_Amateur_ASP.MasterPage
             {
                 NavbarloginOption.Visible = false;
                 NavbarUserOption.Visible = true;
+                Session["access"] = "Logged";
             }
             else
             {
                 NavbarloginOption.Visible = true;
                 NavbarUserOption.Visible = false;
+                Session["access"] = null;
             }
         }
 
@@ -92,6 +94,11 @@ namespace Escritores_Amateur_ASP.MasterPage
             Session["password"] = null;
 
             Response.Redirect("../GUI/wpLandingPage.aspx");
+        }
+
+        protected void lbtnEscribir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../GUI/wfAgregarHistoria.aspx");
         }
     }
 }

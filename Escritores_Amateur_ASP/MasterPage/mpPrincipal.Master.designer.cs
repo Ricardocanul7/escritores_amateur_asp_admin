@@ -67,6 +67,15 @@ namespace Escritores_Amateur_ASP.MasterPage {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl NavbarUserOption;
         
         /// <summary>
+        /// lbtnEscribir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnEscribir;
+        
+        /// <summary>
         /// nombre_user control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace Escritores_Amateur_ASP.MasterPage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtnPerfil;
+        
+        /// <summary>
+        /// lbtnMisHistorias control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnMisHistorias;
         
         /// <summary>
         /// lbtnLogout control.

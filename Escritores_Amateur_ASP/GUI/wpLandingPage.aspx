@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/mpPrincipal.Master" AutoEventWireup="true" CodeBehind="wpLandingPage.aspx.cs" Inherits="Escritores_Amateur_ASP.GUI.wpLandingPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphTitulo" runat="server">
-    <header class="masthead text-center text-white">
+    <header class="masthead text-center text-white" id="circulos_principal" runat="server">
         <div class="masthead-content">
             <div class="container">
                 <h1 class="masthead-heading mb-0">Crea tus propias historias</h1>

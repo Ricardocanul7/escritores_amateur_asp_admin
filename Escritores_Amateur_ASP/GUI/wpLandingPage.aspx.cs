@@ -15,6 +15,11 @@ namespace Escritores_Amateur_ASP.GUI
         {
             dlistHistoriasRecientes.DataSource = LastStories();
             dlistHistoriasRecientes.DataBind();
+
+            if (Session["access"] != null)
+                circulos_principal.Visible = true;
+            else
+                circulos_principal.Visible = false;
         }
 
         public DataTable LastStories()

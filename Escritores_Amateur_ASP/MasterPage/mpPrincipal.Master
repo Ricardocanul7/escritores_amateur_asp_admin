@@ -47,12 +47,16 @@
                     <!-- OPCIONES DESPUES DE INICIAR SESION -->
                     <ul class="navbar-nav ml-auto" runat="server" id="NavbarUserOption">
                         <li class="nav-item">
+                            <asp:LinkButton ID="lbtnEscribir" runat="server" OnClick="lbtnEscribir_Click" CssClass="nav-link">Escribir</asp:LinkButton>
+                        </li>
+                        <li class="nav-item">
                             <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <asp:Label ID="nombre_user" runat="server"></asp:Label>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <asp:LinkButton ID="lbtnPerfil" CssClass="dropdown-item" runat="server">Perfil</asp:LinkButton>
+                                <asp:LinkButton ID="lbtnMisHistorias" CssClass="dropdown-item" runat="server">Mis Historias</asp:LinkButton>
                                 <asp:LinkButton ID="lbtnLogout" CssClass="dropdown-item" runat="server" OnClick="lbtnLogout_Click">Cerrar sesión</asp:LinkButton>
                             </div>
                         </div>

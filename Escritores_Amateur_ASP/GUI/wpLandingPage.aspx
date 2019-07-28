@@ -18,17 +18,46 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContenido" runat="server">
-<style type="text/css">
+    <style type="text/css">
 .corta
         {
             width: 250px;
-            white-space: nowrap;
+            /*white-space: normal;
+            word-wrap: break-word;
             text-overflow: ellipsis;
             overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;*/
+        }
+        /* mixin for multiline */
+        .corta {
+          overflow: hidden;
+          position: relative;
+          line-height: 1.2em;
+          max-height: 6em;
+          text-align: justify;
+          margin-right: -1em;
+          padding-right: 1em;
+        }
+        .corta:before {
+          content: '...';
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+        .corta:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          width: 1em;
+          height: 1em;
+          margin-top: 0.2em;
+          background: white;
         }
 </style>
-    <div class="row" style="margin-top:80px; margin-bottom:80px;">
-        <asp:DataList ID="dlistHistoriasRecientes" runat="server" Width="100%" DataKeyNames="id_historia" RepeatDirection="Horizontal"  RepeatColumns="3" OnItemCommand="dlistHistoriasRecientes_ItemCommand">
+    <div class="row" style="margin-top: 80px; margin-bottom: 80px;">
+        <asp:DataList ID="dlistHistoriasRecientes" runat="server" Width="100%" DataKeyNames="id_historia" RepeatDirection="Horizontal" RepeatColumns="3">
             <ItemTemplate>
                 <div class="col-sm-4">
                     <div class="card" style="width: 18rem;">
@@ -36,6 +65,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><%#Eval("titulo") %></h5>
                             <p class="card-text corta"><%#Eval("contenido") %></p>
+
                         </div>
                     </div>
                 </div>

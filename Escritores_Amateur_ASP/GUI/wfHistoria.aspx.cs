@@ -13,7 +13,7 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarInfo();
+            //cargarInfo();
         }
 
         public void cargarInfo()

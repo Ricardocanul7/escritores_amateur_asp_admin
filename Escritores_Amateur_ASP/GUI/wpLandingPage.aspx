@@ -65,19 +65,18 @@
         }
 </style>
     <div class="row" style="margin-top: 80px; margin-bottom: 80px;">
-        <asp:DataList ID="dlistHistoriasRecientes" runat="server" Width="100%" DataKeyNames="id_historia" RepeatDirection="Horizontal" RepeatColumns="3">
+        <asp:DataList ID="dlistHistoriasRecientes" runat="server" Width="100%" DataKeyNames="id_historia" RepeatDirection="Horizontal" RepeatColumns="3" OnItemCommand="dlistHistoriasRecientes_ItemCommand">
             <ItemTemplate>
-                <asp:LinkButton runat="server" ID="click_historia" OnCommand="click_historia_Command" CssClass="custom-card">
+                <asp:LinkButton ID="click_historia" runat="server" CommandName="ver_historia" CommandArgument='<%# Eval("id_historia") %>' CssClass="custom-card">
                     <div class="col-sm-4">
                     <div class="card" style="width: 18rem;">
                         <img src="<%#Eval("portada_url") %>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><%#Eval("titulo") %></h5>
                             <p class="card-text corta"><%#Eval("contenido") %></p>
-
                         </div>
                     </div>
-                </div>
+                    </div>
                 </asp:LinkButton>
             </ItemTemplate>
         </asp:DataList>

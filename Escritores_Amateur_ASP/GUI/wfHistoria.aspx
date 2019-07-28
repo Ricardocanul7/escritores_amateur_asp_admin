@@ -47,12 +47,12 @@
                 <asp:DataList ID="dlistCapitulos" runat="server" DataKeyNames="id_capitulo" Width="100%">
                     <ItemTemplate>
                         <header class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapse33" aria-expanded="true" class="">
+                            <a href="#" data-toggle="collapse" data-target="#collapse22" aria-expanded="true" class="">
                                 <i class="icon-action fa fa-chevron-down"></i>
                                 <h6 class="title"><%#Eval("titulo") %></h6>
                             </a>
                         </header>
-                        <div class="filter-content collapse show" id="collapse33" style="">
+                        <div class="collapse show" id="collapse22" style="">
                             <div class="card-body">
                                 <p>
                                     <%#Eval("contenido") %>

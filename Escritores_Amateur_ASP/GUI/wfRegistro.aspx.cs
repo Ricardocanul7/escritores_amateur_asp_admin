@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,6 +10,8 @@ namespace Escritores_Amateur_ASP.GUI
 {
     public partial class wfRegistro : System.Web.UI.Page
     {
+        DAO.Localizacion localizacion = new DAO.Localizacion();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             llenarListBoxes();
@@ -16,7 +19,63 @@ namespace Escritores_Amateur_ASP.GUI
 
         public void llenarListBoxes()
         {
-            // PENDIENTE
+            llenar_pais();
+        }
+
+        public void llenar_pais()
+        {
+            input_pais.Items.Clear();
+            DataRow[] dr_paises = localizacion.GetPaises().Select();
+
+            foreach (var row in dr_paises)
+            {
+                ListItem listItem = new ListItem();
+                listItem.Text = row["nombre"].ToString();
+                listItem.Value = row["id_pais"].ToString();
+                input_pais.Items.Add(listItem);
+            }
+        }
+
+        public void llenar_estado(string id_pais)
+        {
+            if(input_pais.SelectedIndex < 0)
+            {
+                input_estado.Enabled = false;
+            }
+            input_estado.Items.Clear();
+            DataRow[] dr_estados;
+
+            if(id_pais == null)
+                dr_estados = localizacion.GetEstados().Select();
+            else
+                dr_estados = localizacion.GetEstados().Select("id_pais=" + id_pais);
+
+            foreach (var row in dr_estados)
+            {
+                ListItem listItem = new ListItem();
+                listItem.Text = row["nombre"].ToString();
+                listItem.Value = row["id_estado"].ToString();
+                input_estado.Items.Add(listItem);
+            }
+        }
+
+        public void llenar_ciudad(string id_estado)
+        {
+            input_ciudad.Items.Clear();
+            DataRow[] dr_ciudades;
+            if (id_estado == null)
+                dr_ciudades = localizacion.GetCiudades().Select();
+            else
+                dr_ciudades = localizacion.GetCiudades().Select("id_estado=" + id_estado);
+
+
+            foreach (var row in dr_ciudades)
+            {
+                ListItem listItem = new ListItem();
+                listItem.Text = row["nombre"].ToString();
+                listItem.Value = row["id_ciudad"].ToString();
+                input_ciudad.Items.Add(listItem);
+            }
         }
 
         protected void lbtnLoginRegitro1_Click(object sender, EventArgs e)
@@ -51,6 +110,12 @@ namespace Escritores_Amateur_ASP.GUI
                 alerta_fallo.Visible = true;
             }
             
+        }
+
+        protected void input_pais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id_pais = input_pais.SelectedIndex.ToString();
+            llenar_estado(id_pais);
         }
     }
 }

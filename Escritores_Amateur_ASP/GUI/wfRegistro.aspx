@@ -67,33 +67,18 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>País</label>
-                                <asp:ListBox ID="input_pais" runat="server" CssClass="form-control">
-                                    <asp:ListItem Text="Mexico"></asp:ListItem>
-                                    <asp:ListItem Text="USA"></asp:ListItem>
-                                    <asp:ListItem Text="UK"></asp:ListItem>
-                                    <asp:ListItem Text="Australia"></asp:ListItem>
-                                    <asp:ListItem Text="Polonia"></asp:ListItem>
+                                <asp:ListBox ID="input_pais" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="input_pais_SelectedIndexChanged">
                                 </asp:ListBox>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Estado</label>
                                 <asp:ListBox ID="input_estado" runat="server" CssClass="form-control">
-                                    <asp:ListItem Text="Yucatan"></asp:ListItem>
-                                    <asp:ListItem Text="Campeche"></asp:ListItem>
-                                    <asp:ListItem Text="Gdynia"></asp:ListItem>
-                                    <asp:ListItem Text="Gdansk"></asp:ListItem>
-                                    <asp:ListItem Text="Quintana Roo"></asp:ListItem>
                                 </asp:ListBox>
                             </div>
                             <!-- form-group end.// -->
                             <div class="form-group col-md-6">
                                 <label>Municipio</label>
                                 <asp:ListBox ID="input_ciudad" runat="server" CssClass="form-control">
-                                    <asp:ListItem Text="Motul"></asp:ListItem>
-                                    <asp:ListItem Text="Izamal"></asp:ListItem>
-                                    <asp:ListItem Text="Valladolid"></asp:ListItem>
-                                    <asp:ListItem Text="Tekax"></asp:ListItem>
-                                    <asp:ListItem Text="Tizimin"></asp:ListItem>
                                 </asp:ListBox>
                                 <%--<select id="inputState" class="form-control">
                                     <option selected="">Elegir...</option>

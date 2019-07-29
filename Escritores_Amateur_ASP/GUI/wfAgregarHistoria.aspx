@@ -27,8 +27,7 @@
                             <asp:TextBox ID="txtPrologo" CssClass="text-body" textmode="MultiLine" row="3" Columns="125" wrap="true" runat="server"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            
-                            <button type="submit" class="btn btn-primary btn-block">Añadir</button>
+                            <asp:Button ID="btn_add_story" runat="server" class="btn btn-primary btn-block" OnClick="btn_add_story_Click">Añadir</asp:Button>
                         </div>
                     </form>
                 </article>

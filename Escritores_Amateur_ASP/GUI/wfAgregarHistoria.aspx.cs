@@ -13,5 +13,18 @@ namespace Escritores_Amateur_ASP.GUI
         {
 
         }
+
+        protected void btn_add_story_Click(object sender, EventArgs e)
+        {
+            string titulo = txtTitulo.Text;
+            string sinopsis = txtSinopsis.Text;
+            string prologo = txtPrologo.Text;
+
+            BO.Usuario usuarioBO = new BO.Usuario();
+            BO.Sinopsis sinopsisBO = new BO.Sinopsis();
+            BO.Prologo prologoBO = new BO.Prologo();
+
+
+        }
     }
 }

@@ -1710,6 +1710,7 @@
     <Compile Include="DAO\Categoria.cs" />
     <Compile Include="DAO\Genero.cs" />
     <Compile Include="DAO\Historia.cs" />
+    <Compile Include="DAO\Localizacion.cs" />
     <Compile Include="DAO\Mensaje.cs" />
     <Compile Include="DAO\Prologo.cs" />
     <Compile Include="DAO\Sinopsis.cs" />

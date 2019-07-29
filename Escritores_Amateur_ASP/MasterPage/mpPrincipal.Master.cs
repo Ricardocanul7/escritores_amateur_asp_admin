@@ -20,6 +20,7 @@ namespace Escritores_Amateur_ASP.MasterPage
         public void validarLogin()
         {
             //bool access = false;
+            Session["access"] = false;
 
             DAO.Usuario usuarioDAO = new DAO.Usuario();
             BO.Usuario usuarioBO = new BO.Usuario();

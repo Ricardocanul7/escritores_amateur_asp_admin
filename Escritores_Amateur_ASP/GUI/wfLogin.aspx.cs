@@ -48,10 +48,12 @@ namespace Escritores_Amateur_ASP.GUI
 
             if (access == true)
             {
+                Session["access"] = true;
                 Response.Redirect("../GUI/wpLandingPage.aspx");
             }
             else
             {
+                Session["access"] = null;
                 alerta_error_login.Visible = true;
             }
         }

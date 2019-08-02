@@ -70,8 +70,9 @@ namespace Escritores_Amateur_ASP.DAO
                 //Cmd = new SqlCommand(query, Cnn);
                 Cmd.Connection = Cnn;
                 Cmd.CommandText = query;
-                Dr = Cmd.ExecuteReader();
+                //Dr = Cmd.ExecuteReader();
                 int i = cmd.ExecuteNonQuery();
+                cerrarConexion();
                 if (i == 0)
                     return 0;
                 else

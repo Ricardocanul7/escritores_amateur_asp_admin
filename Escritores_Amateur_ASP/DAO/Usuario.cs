@@ -91,20 +91,24 @@ namespace Escritores_Amateur_ASP.DAO
             //bd.Cmd.Parameters["@contrasenia"].Value = data.Contrasenia;
             //bd.Cmd.Parameters["@tipo_usuario"].Value = data.Tipo_usuario;
 
+            DAO.Localizacion loc = new Localizacion();
+            DataTable dt_ciudad = loc.GetCiudades();
+
+            DataRow[] dr_ciudad = dt_ciudad.Select("nombre=" + data.Municipio);
+            int id_ciudad = Convert.ToInt32(dr_ciudad[0]["id_titulo"]);
+
             bd.Cmd.Parameters.AddWithValue("@nombre", data.Nombre);
             bd.Cmd.Parameters.AddWithValue("@apellido_pat", data.Apellido_pat);
             bd.Cmd.Parameters.AddWithValue("@apellido_mat", data.Apellido_mat);
             bd.Cmd.Parameters.AddWithValue("@correo", data.Correo);
             bd.Cmd.Parameters.AddWithValue("@avatar", data.Avatar);
-            bd.Cmd.Parameters.AddWithValue("@municipio", data.Municipio);
+            bd.Cmd.Parameters.AddWithValue("@municipio", id_ciudad);
             bd.Cmd.Parameters.AddWithValue("@telefono", data.Telefono);
             bd.Cmd.Parameters.AddWithValue("@sitio_web", data.Sitio_web);
             bd.Cmd.Parameters.AddWithValue("@biografia", data.Biografia);
             bd.Cmd.Parameters.AddWithValue("@username", data.Username);
             bd.Cmd.Parameters.AddWithValue("@contrasenia", data.Contrasenia);
-            bd.Cmd.Parameters.AddWithValue("@tipo_usuario", data.Contrasenia);
-
-
+            bd.Cmd.Parameters.AddWithValue("@tipo_usuario", 1);
 
             int i = bd.execNonQuery(sql);
             if (i == 0)

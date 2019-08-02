@@ -62,15 +62,15 @@ namespace Escritores_Amateur_ASP.DAO
         }
 
         public int execNonQuery(string query)
-        {
+        {   
             Da = new SqlDataAdapter();
-            if(Cnn.State == System.Data.ConnectionState.Open)
+            if(Cnn.State != System.Data.ConnectionState.Open)
             {
                 abrirConexion();
-                Cmd = new SqlCommand(query, Cnn);
-                Dr = Cmd.ExecuteReader();
+                //Cmd = new SqlCommand(query, Cnn);
                 Cmd.Connection = Cnn;
                 Cmd.CommandText = query;
+                Dr = Cmd.ExecuteReader();
                 int i = cmd.ExecuteNonQuery();
                 if (i == 0)
                     return 0;

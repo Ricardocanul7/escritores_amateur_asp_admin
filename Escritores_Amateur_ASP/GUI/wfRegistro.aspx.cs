@@ -14,7 +14,10 @@ namespace Escritores_Amateur_ASP.GUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            llenarListBoxes();
+            if (!IsPostBack)
+            {
+                llenarListBoxes();
+            }
         }
 
         public void llenarListBoxes()
@@ -114,8 +117,14 @@ namespace Escritores_Amateur_ASP.GUI
 
         protected void input_pais_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string id_pais = input_pais.SelectedIndex.ToString();
+            string id_pais = input_pais.SelectedValue;
             llenar_estado(id_pais);
+        }
+
+        protected void input_estado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string id_estado = input_estado.SelectedValue;
+            llenar_ciudad(id_estado);
         }
     }
 }

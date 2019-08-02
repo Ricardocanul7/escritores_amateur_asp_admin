@@ -53,7 +53,7 @@
                             <small class="form-text text-muted">Nunca compartiremos su teléfono con nadie más.</small>
                         </div>
                         <!-- form-group end.// -->
-                        <div class="form-group">
+                        <%--<div class="form-group">
                             <label class="form-check form-check-inline">
                                 <input id="input_radio_masculino" runat="server" class="form-check-input" type="radio" name="gender" value="option1">
                                 <span class="form-check-label">Masculino </span>
@@ -62,7 +62,7 @@
                                 <input id="input_radio_femenino" runat="server" class="form-check-input" type="radio" name="gender" value="option2">
                                 <span class="form-check-label">Femenino</span>
                             </label>
-                        </div>
+                        </div>--%>
                         <!-- form-group end.// -->
                         <div class="form-row">
                             <div class="form-group col-md-6">
@@ -72,7 +72,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Estado</label>
-                                <asp:ListBox ID="input_estado" runat="server" CssClass="form-control">
+                                <asp:ListBox ID="input_estado" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="input_estado_SelectedIndexChanged">
                                 </asp:ListBox>
                             </div>
                             <!-- form-group end.// -->
@@ -80,14 +80,6 @@
                                 <label>Municipio</label>
                                 <asp:ListBox ID="input_ciudad" runat="server" CssClass="form-control">
                                 </asp:ListBox>
-                                <%--<select id="inputState" class="form-control">
-                                    <option selected="">Elegir...</option>
-                                    <option>Motul</option>
-                                    <option>Izamal</option>
-                                    <option>Valladolid</option>
-                                    <option>Tekax</option>
-                                    <option>Tizimin</option>
-                                </select>--%>
                             </div>
                             <!-- form-group end.// -->
                         </div>

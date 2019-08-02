@@ -94,24 +94,6 @@ namespace Escritores_Amateur_ASP.GUI {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl input_telefono;
         
         /// <summary>
-        /// input_radio_masculino control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton input_radio_masculino;
-        
-        /// <summary>
-        /// input_radio_femenino control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton input_radio_femenino;
-        
-        /// <summary>
         /// input_pais control.
         /// </summary>
         /// <remarks>

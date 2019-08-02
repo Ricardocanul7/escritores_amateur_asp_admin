@@ -71,6 +71,7 @@
     <Content Include="GUI\wfAgregarHistoria.aspx" />
     <Content Include="GUI\wfHistoria.aspx" />
     <Content Include="GUI\wfLogin.aspx" />
+    <Content Include="GUI\wfMisHistorias.aspx" />
     <Content Include="GUI\wfRegistro.aspx" />
     <Content Include="GUI\wfTablaCapitulo.aspx" />
     <Content Include="GUI\wfTablaCategoria.aspx" />
@@ -1738,6 +1739,13 @@
     </Compile>
     <Compile Include="GUI\wfLogin.aspx.designer.cs">
       <DependentUpon>wfLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfMisHistorias.aspx.cs">
+      <DependentUpon>wfMisHistorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfMisHistorias.aspx.designer.cs">
+      <DependentUpon>wfMisHistorias.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\wfRegistro.aspx.cs">
       <DependentUpon>wfRegistro.aspx</DependentUpon>

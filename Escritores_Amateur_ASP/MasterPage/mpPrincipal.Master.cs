@@ -101,5 +101,10 @@ namespace Escritores_Amateur_ASP.MasterPage
         {
             Response.Redirect("../GUI/wfAgregarHistoria.aspx");
         }
+
+        protected void lbtnMisHistorias_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../GUI/wfMisHistorias.aspx");
+        }
     }
 }

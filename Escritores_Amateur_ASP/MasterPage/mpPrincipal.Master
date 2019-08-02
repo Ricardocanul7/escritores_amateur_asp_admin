@@ -56,7 +56,7 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <asp:LinkButton ID="lbtnPerfil" CssClass="dropdown-item" runat="server">Perfil</asp:LinkButton>
-                                <asp:LinkButton ID="lbtnMisHistorias" CssClass="dropdown-item" runat="server">Mis Historias</asp:LinkButton>
+                                <asp:LinkButton ID="lbtnMisHistorias" CssClass="dropdown-item" runat="server" OnClick="lbtnMisHistorias_Click">Mis Historias</asp:LinkButton>
                                 <asp:LinkButton ID="lbtnLogout" CssClass="dropdown-item" runat="server" OnClick="lbtnLogout_Click">Cerrar sesión</asp:LinkButton>
                             </div>
                         </div>

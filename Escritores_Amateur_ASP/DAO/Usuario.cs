@@ -63,20 +63,21 @@ namespace Escritores_Amateur_ASP.DAO
             bd = new BaseDB();
             bd.Cmd.CommandType = CommandType.StoredProcedure;
 
-            sql = "EXEC SP_REGISTRO_USUARIO @nombre, @apellido_pat, @apellido_mat, @correo, @avatar, @municipio, @telefono, @sitio_web, @biografia, @username, @contrasenia, @tipo_usuario";
+            sql = "SP_REGISTRO_USUARIO";
+            //sql = "EXEC SP_REGISTRO_USUARIO @nombre, @apellido_pat, @apellido_mat, @correo, @avatar, @municipio, @telefono, @sitio_web, @biografia, @username, @contrasenia, @tipo_usuario;";
 
             //bd.Cmd.Parameters.Add("@nombre", SqlDbType.VarChar);
             //bd.Cmd.Parameters.Add("@apellido_pat", SqlDbType.VarChar);
             //bd.Cmd.Parameters.Add("@apellido_mat", SqlDbType.VarChar);
             //bd.Cmd.Parameters.Add("@correo", SqlDbType.VarChar);
             //bd.Cmd.Parameters.Add("@avatar", SqlDbType.VarChar);
-            //bd.Cmd.Parameters.Add("@municipio", SqlDbType.VarChar);
-            //bd.Cmd.Parameters.Add("@telefono", SqlDbType.VarChar);
+            //bd.Cmd.Parameters.Add("@municipio", SqlDbType.Int);
+            //bd.Cmd.Parameters.Add("@telefono", SqlDbType.Char);
             //bd.Cmd.Parameters.Add("@sitio_web", SqlDbType.VarChar);
-            //bd.Cmd.Parameters.Add("@biografia", SqlDbType.VarChar);
+            //bd.Cmd.Parameters.Add("@biografia", SqlDbType.Text);
             //bd.Cmd.Parameters.Add("@username", SqlDbType.VarChar);
             //bd.Cmd.Parameters.Add("@contrasenia", SqlDbType.VarChar);
-            //bd.Cmd.Parameters.Add("@tipo_usuario", SqlDbType.VarChar);
+            //bd.Cmd.Parameters.Add("@tipo_usuario", SqlDbType.Int);
 
             //bd.Cmd.Parameters["@nombre"].Value = data.Nombre;
             //bd.Cmd.Parameters["@apellido_pat"].Value = data.Apellido_pat;
@@ -91,31 +92,29 @@ namespace Escritores_Amateur_ASP.DAO
             //bd.Cmd.Parameters["@contrasenia"].Value = data.Contrasenia;
             //bd.Cmd.Parameters["@tipo_usuario"].Value = data.Tipo_usuario;
 
-            DAO.Localizacion loc = new Localizacion();
-            DataTable dt_ciudad = loc.GetCiudades();
-
-            DataRow[] dr_ciudad = dt_ciudad.Select("nombre=" + data.Municipio);
-            int id_ciudad = Convert.ToInt32(dr_ciudad[0]["id_titulo"]);
-
             bd.Cmd.Parameters.AddWithValue("@nombre", data.Nombre);
             bd.Cmd.Parameters.AddWithValue("@apellido_pat", data.Apellido_pat);
-            bd.Cmd.Parameters.AddWithValue("@apellido_mat", data.Apellido_mat);
+
+            if(data.Apellido_mat == string.Empty)
+                bd.Cmd.Parameters.AddWithValue("@apellido_mat", DBNull.Value);
+            else
+                bd.Cmd.Parameters.AddWithValue("@apellido_mat", data.Apellido_mat);
+
             bd.Cmd.Parameters.AddWithValue("@correo", data.Correo);
-            bd.Cmd.Parameters.AddWithValue("@avatar", data.Avatar);
-            bd.Cmd.Parameters.AddWithValue("@municipio", id_ciudad);
+            bd.Cmd.Parameters.AddWithValue("@avatar", DBNull.Value);
+            bd.Cmd.Parameters.AddWithValue("@municipio", data.Municipio);
             bd.Cmd.Parameters.AddWithValue("@telefono", data.Telefono);
-            bd.Cmd.Parameters.AddWithValue("@sitio_web", data.Sitio_web);
-            bd.Cmd.Parameters.AddWithValue("@biografia", data.Biografia);
+            bd.Cmd.Parameters.AddWithValue("@sitio_web", DBNull.Value);
+            bd.Cmd.Parameters.AddWithValue("@biografia", DBNull.Value);
             bd.Cmd.Parameters.AddWithValue("@username", data.Username);
             bd.Cmd.Parameters.AddWithValue("@contrasenia", data.Contrasenia);
-            bd.Cmd.Parameters.AddWithValue("@tipo_usuario", 1);
+            bd.Cmd.Parameters.AddWithValue("@tipo_usuario", data.Tipo_usuario);
 
             int i = bd.execNonQuery(sql);
             if (i == 0)
-            {
                 return 0;
-            }
-            return 1;
+            else
+                return 1;
         }
     }
 }

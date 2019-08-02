@@ -25,31 +25,31 @@
                         <div class="form-row">
                             <div class="col form-group">
                                 <label>Nombre(s)</label>
-                                <input id="input_nombre" runat="server" type="text" class="form-control" placeholder="">
+                                <asp:TextBox ID="input_nombre" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                         </div>
                         <!-- form-row end.// -->
                         <div class="form-row">
                             <div class="col form-group">
                                 <label>Apellido Paterno</label>
-                                <input id="input_apellido_pat" runat="server" type="text" class="form-control" placeholder="">
+                                <asp:TextBox ID="input_apellido_pat" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                             <!-- form-group end.// -->
                             <div class="col form-group">
                                 <label>Apellido Materno</label>
-                                <input id="input_apellido_mat" runat="server" type="text" class="form-control" placeholder="">
+                                <asp:TextBox ID="input_apellido_mat" runat="server" CssClass="form-control"></asp:TextBox>
                             </div>
                             <!-- form-group end.// -->
                         </div>
                         <!-- form-row end.// -->
                         <div class="form-group">
                             <label>Correo electrónico</label>
-                            <input id="input_correo" runat="server" type="email" class="form-control" placeholder="">
+                            <asp:TextBox ID="input_correo" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
                             <small class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
                         </div>
                         <div class="form-group">
                             <label>Teléfono</label>
-                            <input id="input_telefono" runat="server" type="tel" class="form-control" placeholder="">
+                            <asp:TextBox ID="input_telefono" runat="server" CssClass="form-control" TextMode="Phone"></asp:TextBox>
                             <small class="form-text text-muted">Nunca compartiremos su teléfono con nadie más.</small>
                         </div>
                         <!-- form-group end.// -->
@@ -67,30 +67,27 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>País</label>
-                                <asp:ListBox ID="input_pais" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="input_pais_SelectedIndexChanged">
-                                </asp:ListBox>
+                                <asp:ListBox ID="input_pais" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="input_pais_SelectedIndexChanged"></asp:ListBox>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Estado</label>
-                                <asp:ListBox ID="input_estado" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="input_estado_SelectedIndexChanged">
-                                </asp:ListBox>
+                                <asp:ListBox ID="input_estado" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="input_estado_SelectedIndexChanged"></asp:ListBox>
                             </div>
                             <!-- form-group end.// -->
                             <div class="form-group col-md-6">
                                 <label>Municipio</label>
-                                <asp:ListBox ID="input_ciudad" runat="server" CssClass="form-control">
-                                </asp:ListBox>
+                                <asp:ListBox ID="input_ciudad" runat="server" CssClass="form-control"></asp:ListBox>
                             </div>
                             <!-- form-group end.// -->
                         </div>
                         <!-- form-row.// -->
                         <div class="form-group">
                             <label>Nombre de usuario</label>
-                            <input id="input_username" runat="server" class="form-control" type="text">
+                            <asp:TextBox ID="input_username" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="form-group">
                             <label>Contraseña</label>
-                            <input id="input_password" runat="server" class="form-control" type="password">
+                            <asp:TextBox ID="input_password" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
                         </div>
                         <!-- form-group end.// -->
                         <div class="form-group">

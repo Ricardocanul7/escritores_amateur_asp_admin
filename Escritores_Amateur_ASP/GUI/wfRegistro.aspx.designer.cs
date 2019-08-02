@@ -55,7 +55,7 @@ namespace Escritores_Amateur_ASP.GUI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText input_nombre;
+        protected global::System.Web.UI.WebControls.TextBox input_nombre;
         
         /// <summary>
         /// input_apellido_pat control.
@@ -64,7 +64,7 @@ namespace Escritores_Amateur_ASP.GUI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText input_apellido_pat;
+        protected global::System.Web.UI.WebControls.TextBox input_apellido_pat;
         
         /// <summary>
         /// input_apellido_mat control.
@@ -73,7 +73,7 @@ namespace Escritores_Amateur_ASP.GUI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText input_apellido_mat;
+        protected global::System.Web.UI.WebControls.TextBox input_apellido_mat;
         
         /// <summary>
         /// input_correo control.
@@ -82,7 +82,7 @@ namespace Escritores_Amateur_ASP.GUI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl input_correo;
+        protected global::System.Web.UI.WebControls.TextBox input_correo;
         
         /// <summary>
         /// input_telefono control.
@@ -91,7 +91,7 @@ namespace Escritores_Amateur_ASP.GUI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl input_telefono;
+        protected global::System.Web.UI.WebControls.TextBox input_telefono;
         
         /// <summary>
         /// input_pais control.
@@ -127,7 +127,7 @@ namespace Escritores_Amateur_ASP.GUI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText input_username;
+        protected global::System.Web.UI.WebControls.TextBox input_username;
         
         /// <summary>
         /// input_password control.
@@ -136,7 +136,7 @@ namespace Escritores_Amateur_ASP.GUI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword input_password;
+        protected global::System.Web.UI.WebControls.TextBox input_password;
         
         /// <summary>
         /// lbtnRegistro control.

@@ -90,15 +90,15 @@ namespace Escritores_Amateur_ASP.GUI
         {
             BO.Usuario usuarioBO = new BO.Usuario();
 
-            usuarioBO.Nombre = input_nombre.Value;
-            usuarioBO.Apellido_pat = input_apellido_pat.Value;
-            usuarioBO.Apellido_mat = input_apellido_mat.Value;
-            usuarioBO.Correo = input_correo.Value;
-            usuarioBO.Telefono = input_telefono.Value;
+            usuarioBO.Nombre = input_nombre.Text;
+            usuarioBO.Apellido_pat = input_apellido_pat.Text;
+            usuarioBO.Apellido_mat = input_apellido_mat.Text;
+            usuarioBO.Correo = input_correo.Text;
+            usuarioBO.Telefono = input_telefono.Text;
             //SEXO NO TIENE ATRIBUTOS
-            usuarioBO.Municipio = input_ciudad.SelectedValue;
-            usuarioBO.Username = input_username.Value;
-            usuarioBO.Contrasenia = input_username.Value;
+            usuarioBO.Municipio = input_ciudad.Text;
+            usuarioBO.Username = input_username.Text;
+            usuarioBO.Contrasenia = input_username.Text;
             usuarioBO.Tipo_usuario = 1; //Escritor
 
             DAO.Usuario usuarioDAO = new DAO.Usuario();
@@ -107,9 +107,11 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 form_registro.Visible = false;
                 alerta_exito.Visible = true;
+                alerta_fallo.Visible = false;
             }
             else
             {
+                alerta_exito.Visible = false;
                 alerta_fallo.Visible = true;
             }
             

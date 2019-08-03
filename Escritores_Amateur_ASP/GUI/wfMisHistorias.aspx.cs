@@ -36,5 +36,15 @@ namespace Escritores_Amateur_ASP.GUI
             DAO.Historia historia = new Historia();
             return historia.recuperaHistoria();
         }
+
+        protected void btnAgregarHistoria_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../GUI/wfAgregarHistoria.aspx");
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../GUI/wfAgregarCapitulo.aspx");
+        }
     }
 }

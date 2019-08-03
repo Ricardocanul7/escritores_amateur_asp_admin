@@ -7,22 +7,39 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="row" style="margin-top: 110px; margin-bottom: 80px;">
         <div class="col" style="width: 100%">
-            <asp:DataList ID="dlistMisHistorias" runat="server" DataKeyNames="id_historia" Width="100%">
-                    <ItemTemplate>
-                        <div class="card">
-                            <h5 class="card-header">Todas las historias</h5>
-                            <div class="card-body">
-                                <asp:Image ID="imgPortada" CssClass="rounded float-left" runat="server" />
-                                <h5 class="card-title">
-                                    <asp:Label ID="lblTitulo" runat="server" Text="Pajaro Loco"></asp:Label>
-                                </h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.
-                                    <asp:Button ID="Button1" runat="server" Text="Button" CssClass="float-right btn btn-outline-primary mt-1" />
+
+            <div class="card">
+                <h5 class="card-header">Todas las historias
+                    <asp:Button ID="btnAgregarHistoria" runat="server" Text="+ Agregar Historia" OnClick="btnAgregarHistoria_Click" CssClass="float-right btn btn-outline-primary mt-1" />
+                </h5>
+                <div class="card-body">
+                    
+                    <div class="card mb-3" style="max-width: 1080px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-3">
+                                <asp:Image ID="imgPortada" Class="card-img" runat="server" />
+                            </div>
+                            <div class="col-md-9">
+                              <div class="card-body">
+                                <h5 class="card-title"> <asp:Label ID="titulo" runat="server" Text="Pajaro Loco"></asp:Label> </h5>
+                                <p class="card-text"> DATOS EXTRAS </p>
+                                <p class="card-text"><small class="text-muted"> <asp:Label ID="lblStatus" runat="server" Text="Emisión"></asp:Label> </small>
+                                    <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" CssClass="float-right btn btn-outline-primary mt-1" />
                                 </p>
+                              </div>
                             </div>
                         </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--<asp:DataList ID="dlistMisHistorias" runat="server" DataKeyNames="id_historia" Width="100%">
+                    <ItemTemplate>
+                        
                     </ItemTemplate>
-            </asp:DataList>
+            </asp:DataList> -->
+
         </div>
     </div>
 </asp:Content>

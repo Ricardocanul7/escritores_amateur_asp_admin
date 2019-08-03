@@ -11,24 +11,18 @@ namespace Escritores_Amateur_ASP.GUI
 {
     public partial class wfMisHistorias : System.Web.UI.Page
     {
+        string id_autor_temp = "13";
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["id"] != null)
-            {
-                int id_historia = Convert.ToInt32(Request.QueryString["id"].ToString());
-                cargarInfo(id_historia);
-            }
+            cargarInfo();
         }
-        public void cargarInfo(int id_historia)
+        public void cargarInfo()
         {
-            // -- CARGA INFO DE AUTOR Y TITULO PROLOGO SINOPSIS
-            DataTable dt = recuperarHistorias();
-            DataRow[] dr = dt.Select("id_historia=" + id_historia);
+            DAO.Historia historiaDAO = new DAO.Historia();
+            DataTable dt_misHistorias = historiaDAO.GetStoriesByAuthor(id_autor_temp);
 
-            //--FALTO
-
-            //lblTitulo.Text = dr[0]["titulo"].ToString();
-            //imgPortada.ImageUrl = dr[0]["portada_url"].ToString();
+            dlistMisHistorias.DataSource = dt_misHistorias;
+            dlistMisHistorias.DataBind();
         }
 
         public DataTable recuperarHistorias()

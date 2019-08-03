@@ -13,30 +13,30 @@ namespace Escritores_Amateur_ASP.GUI {
     public partial class wfNuevoCapitulo {
         
         /// <summary>
-        /// Control lblCAPITULO.
+        /// Control txtTitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCAPITULO;
+        protected global::System.Web.UI.WebControls.TextBox txtTitulo;
         
         /// <summary>
-        /// Control input_nombre.
+        /// Control txtContenido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox input_nombre;
+        protected global::System.Web.UI.WebControls.TextBox txtContenido;
         
         /// <summary>
-        /// Control input_contenido.
+        /// Control btn_add_capitulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox input_contenido;
+        protected global::System.Web.UI.WebControls.Button btn_add_capitulo;
     }
 }

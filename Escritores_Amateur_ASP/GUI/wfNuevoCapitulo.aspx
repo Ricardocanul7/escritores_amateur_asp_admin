@@ -3,27 +3,31 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContenido" runat="server">
-    <div class="row" style="margin-top: 110px; margin-bottom: 80px;">
-        <div class="col" style="width: 100%">
-
-           <article class="card-body">
+    <div class="row" style="margin-top: 110px; margin-bottom:80px;">
+       <div class="col-1"></div>
+          <div class="col" style="width:100%">
+            <div class="card">
+                <header class="card-header alert alert-info card-header text-center">
+                    <h4 class="card-title mt-2">Nuevo Capítulo</h4>
+                </header>
+                <article class="card-body">
                     <form>
-                        <div class="alert alert-info card-header">
-                            <h2>
-                                <asp:Label ID="lblCAPITULO" runat="server">  Nuevo capítulo </asp:Label>
-                            </h2>
-                        </div>
                         <div class="form-row">
                             <div class="col form-group">
-                                <label>Nombre del capítulo</label>
-                                <asp:TextBox ID="input_nombre" runat="server" CssClass="form-control"></asp:TextBox>
-                                <label>Contenido</label>
-                                <asp:TextBox ID="input_contenido" runat="server" CssClass="form-control"></asp:TextBox>
+                                <label>TITULO</label>
+                                <asp:TextBox ID="txtTitulo" CssClass="text-body" textmode="MultiLine" row="3" Columns="125" wrap="true" runat="server"></asp:TextBox>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label>CONTENIDO</label>
+                            <asp:TextBox ID="txtContenido" CssClass="text-body" textmode="MultiLine" row="3" Columns="125" wrap="true" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="form-group">
+                            <asp:Button ID="btn_add_capitulo" runat="server" class="btn btn-primary btn-block"  Text="Añadir Capítulo"></asp:Button>
                         </div>
                     </form>
                 </article>
-
-        </div>
+            </div>
+        <div class="col-3"></div>
     </div>
 </asp:Content>

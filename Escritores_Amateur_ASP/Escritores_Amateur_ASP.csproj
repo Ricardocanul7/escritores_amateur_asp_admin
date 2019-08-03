@@ -68,10 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="GUI\wfAgregarCapitulo.aspx" />
     <Content Include="GUI\wfAgregarHistoria.aspx" />
     <Content Include="GUI\wfHistoria.aspx" />
     <Content Include="GUI\wfLogin.aspx" />
     <Content Include="GUI\wfMisHistorias.aspx" />
+    <Content Include="GUI\wfNuevoCapitulo.aspx" />
     <Content Include="GUI\wfRegistro.aspx" />
     <Content Include="GUI\wfTablaCapitulo.aspx" />
     <Content Include="GUI\wfTablaCategoria.aspx" />
@@ -1719,6 +1721,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="GUI\wfAgregarCapitulo.aspx.cs">
+      <DependentUpon>wfAgregarCapitulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfAgregarCapitulo.aspx.designer.cs">
+      <DependentUpon>wfAgregarCapitulo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GUI\wfAgregarHistoria.aspx.cs">
       <DependentUpon>wfAgregarHistoria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1746,6 +1755,13 @@
     </Compile>
     <Compile Include="GUI\wfMisHistorias.aspx.designer.cs">
       <DependentUpon>wfMisHistorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfNuevoCapitulo.aspx.cs">
+      <DependentUpon>wfNuevoCapitulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfNuevoCapitulo.aspx.designer.cs">
+      <DependentUpon>wfNuevoCapitulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\wfRegistro.aspx.cs">
       <DependentUpon>wfRegistro.aspx</DependentUpon>

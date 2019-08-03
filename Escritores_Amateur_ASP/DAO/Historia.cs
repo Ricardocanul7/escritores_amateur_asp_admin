@@ -62,5 +62,19 @@ namespace Escritores_Amateur_ASP.DAO
             return dt;
 
         }
+
+        public DataTable GetStoriesByAuthor(string id_autor)
+        {
+            bd = new BaseDB();
+
+            sql = "DEVOLVER_HISTORIA";
+            bd.Cmd.CommandType = CommandType.StoredProcedure;
+
+            bd.Cmd.Parameters.AddWithValue("@id_autor", id_autor);
+
+            DataTable dt = new DataTable();
+            bd.execQuery(sql).Fill(dt);
+            return dt;
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -96,23 +97,44 @@ namespace Escritores_Amateur_ASP.GUI
             usuarioBO.Correo = input_correo.Text;
             usuarioBO.Telefono = input_telefono.Text;
             //SEXO NO TIENE ATRIBUTOS
-            usuarioBO.Municipio = input_ciudad.Text;
+            usuarioBO.Municipio = input_ciudad.SelectedValue;
             usuarioBO.Username = input_username.Text;
-            usuarioBO.Contrasenia = input_username.Text;
+            usuarioBO.Contrasenia = input_password.Text;
             usuarioBO.Tipo_usuario = 1; //Escritor
 
             DAO.Usuario usuarioDAO = new DAO.Usuario();
 
-            if(usuarioDAO.creaUsuario(usuarioBO) == 0)
+            try{
+                if (usuarioDAO.creaUsuario(usuarioBO) != 0)
+                {
+                    form_registro.Visible = false;
+                    alerta_exito.Visible = true;
+                    alerta_fallo.Visible = false;
+
+                    Session["username"] = usuarioBO.Username;
+                    Session["password"] = usuarioBO.Contrasenia;
+                    Session["access"] = true;
+
+                    Response.Redirect("../GUI/wpLandingPage.aspx");
+                }
+                else
+                {
+                    Session["username"] = null;
+                    Session["password"] = null;
+                    Session["access"] = null;
+
+                    alerta_exito.Visible = false;
+                    alerta_fallo.Visible = true;
+                }
+            }catch(SqlException sqlex)
             {
-                form_registro.Visible = false;
-                alerta_exito.Visible = true;
-                alerta_fallo.Visible = false;
-            }
-            else
-            {
+                Session["username"] = null;
+                Session["password"] = null;
+                Session["access"] = null;
+
                 alerta_exito.Visible = false;
                 alerta_fallo.Visible = true;
+                error_label.Text = sqlex.Message;
             }
             
         }

@@ -21,6 +21,11 @@ namespace Escritores_Amateur_ASP.BO
         private string contrasenia;
         private int tipo_usuario;
 
+        public Usuario()
+        {
+
+        }
+
         public int Id_usuario { get => id_usuario; set => id_usuario = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido_pat { get => apellido_pat; set => apellido_pat = value; }

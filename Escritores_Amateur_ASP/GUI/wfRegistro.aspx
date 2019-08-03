@@ -14,7 +14,7 @@
 
             <div class="card" id="form_registro" runat="server">
                 <div class="alert alert-danger" role="alert" runat="server" id="alerta_fallo" visible="false">
-                    Error al registrar usuario nuevo!
+                    <asp:Label ID="error_label" runat="server" Text="Error al registrar usuario nuevo!"></asp:Label>
                 </div>
                 <header class="card-header">
                     <asp:LinkButton ID="lbtnLoginRegitro1" CssClass="float-right btn btn-outline-primary mt-1" OnClick="lbtnLoginRegitro1_Click" runat="server">Iniciar sesión</asp:LinkButton>
@@ -91,8 +91,7 @@
                         </div>
                         <!-- form-group end.// -->
                         <div class="form-group">
-                            <asp:LinkButton ID="lbtnRegistro" runat="server" OnClick="lbtnRegistro_Click"></asp:LinkButton>
-                            <button type="submit" class="btn btn-primary btn-block">Registro  </button>
+                            <asp:LinkButton ID="lbtnRegistro" runat="server" Text="Registro" OnClick="lbtnRegistro_Click" CssClass="btn btn-primary btn-block"></asp:LinkButton>
                         </div>
                         <!-- form-group// -->
                         <small class="text-muted">Al hacer clic en el botón "Registro", usted confirma que acepta nuestros

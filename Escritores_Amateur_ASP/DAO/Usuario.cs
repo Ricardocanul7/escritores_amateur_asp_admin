@@ -56,7 +56,6 @@ namespace Escritores_Amateur_ASP.DAO
             return dt;
         }
 
-        // NO FUNCIONA AUN
         public int creaUsuario(object obj)
         {
             BO.Usuario data = (BO.Usuario)obj;

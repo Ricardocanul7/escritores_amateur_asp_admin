@@ -27,7 +27,7 @@
                                             <p class="card-text"><%#Eval("sinopsis") %></p>
                                             <p class="card-text">
                                                 <small class="text-muted">
-                                                    <%#Eval("estatus") %>
+                                                    Estado: <%#Eval("estatus") %>
                                                 </small>
                                                 <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" CssClass="float-right btn btn-outline-primary mt-1" />
                                             </p>

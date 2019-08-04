@@ -12,7 +12,7 @@
                 </h5>
                 <div class="card-body">
 
-                    <asp:DataList ID="dlistMisHistorias" runat="server" DataKeyNames="id_historia">
+                    <asp:DataList ID="dlistMisHistorias" runat="server" DataKeyNames="id_historia" OnItemCommand="dlistMisHistorias_ItemCommand">
                         <ItemTemplate>
                             <div class="card mb-3" style="max-width: 1080px;">
                                 <div class="row no-gutters">
@@ -29,7 +29,7 @@
                                                 <small class="text-muted">
                                                     Estado: <%#Eval("estatus") %>
                                                 </small>
-                                                <asp:Button ID="btnEditar" runat="server" Text="Editar" OnClick="btnEditar_Click" CssClass="float-right btn btn-outline-primary mt-1" />
+                                                <asp:Button ID="btnEditar" runat="server" Text="Editar" CommandName="editar_historia" CommandArgument='<%#Eval("id_historia") %>' CssClass="float-right btn btn-outline-primary mt-1" />
                                             </p>
                                         </div>
                                     </div>

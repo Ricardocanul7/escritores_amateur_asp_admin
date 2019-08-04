@@ -46,9 +46,14 @@ namespace Escritores_Amateur_ASP.GUI
             Response.Redirect("../GUI/wfAgregarHistoria.aspx");
         }
 
-        protected void btnEditar_Click(object sender, EventArgs e)
+        protected void dlistMisHistorias_ItemCommand(object source, DataListCommandEventArgs e)
         {
-            Response.Redirect("../GUI/wfAgregarCapitulo.aspx");
+            if(e.CommandName == "editar_historia")
+            {
+                string id_historia = e.CommandArgument.ToString();
+                // AUN FALTA COMPLETAR QUE REDIRECCIONE A UNA PAGINA PARA
+                // EDITAR EL CONTENIDO DE LA HISTORIA
+            }
         }
     }
 }

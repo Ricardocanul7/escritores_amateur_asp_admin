@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="row">
-        <asp:GridView ID="gvUsuarios" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_usuario">
+        <asp:GridView ID="gvUsuarios" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_usuario" OnRowCommand="gvUsuarios_RowCommand">
             <Columns>
                 <asp:BoundField DataField="nombre" HeaderText="Nombre" />
                 <asp:BoundField DataField="apellido_pat" HeaderText="Apellido Paterno" />
@@ -28,6 +28,7 @@
                 <asp:BoundField DataField="username" HeaderText="Username" />
                 <asp:BoundField DataField="contrasenia" HeaderText="Contraseña" />
                 <asp:BoundField DataField="tipo_usuario" HeaderText="Tipo de usuario" />
+                <asp:ButtonField ButtonType="Button" Text="Editar" CommandName="Editar" />
             </Columns>
             <EmptyDataTemplate>
                 No hay datos disponibles para mostrar

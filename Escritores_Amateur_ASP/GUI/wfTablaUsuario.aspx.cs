@@ -29,5 +29,19 @@ namespace Escritores_Amateur_ASP.GUI
             gvUsuarios.DataSource = dt;
             gvUsuarios.DataBind();
         }
+
+        protected void gvUsuarios_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+                int indice = Convert.ToInt32(e.CommandArgument);
+                int id = (int)gvUsuarios.DataKeys[indice].Value;
+                BO.Usuario obj = new BO.Usuario();
+                obj.Id_usuario = id;
+                Session["frmUsurioOperación"] = "Editar";
+                Session["frmUsuarioBO"] = obj;
+                Response.Redirect("wfFlorEditar.aspx");
+            }
+        }
     }
 }

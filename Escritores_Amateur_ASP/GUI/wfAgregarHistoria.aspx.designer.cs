@@ -40,6 +40,15 @@ namespace Escritores_Amateur_ASP.GUI {
         protected global::System.Web.UI.WebControls.TextBox txtPrologo;
         
         /// <summary>
+        /// lboxCategoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lboxCategoria;
+        
+        /// <summary>
         /// btn_add_story control.
         /// </summary>
         /// <remarks>

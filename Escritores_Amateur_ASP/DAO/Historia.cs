@@ -76,5 +76,26 @@ namespace Escritores_Amateur_ASP.DAO
             bd.execQuery(sql).Fill(dt);
             return dt;
         }
+
+        public int AgregarHistoriaSP(int id_autor, string titulo, string portada_url, string sinopsis, string prologo, int id_categoria)
+        {
+            bd = new BaseDB();
+
+            sql = "SP_INSERTAR_HISTORIA";
+            bd.Cmd.CommandType = CommandType.StoredProcedure;
+
+            bd.Cmd.Parameters.AddWithValue("@id_autor", id_autor);
+            bd.Cmd.Parameters.AddWithValue("@titulo", titulo);
+            bd.Cmd.Parameters.AddWithValue("@portada_url", portada_url);
+            bd.Cmd.Parameters.AddWithValue("@sinopsis", sinopsis);
+            bd.Cmd.Parameters.AddWithValue("@prologo", prologo);
+            bd.Cmd.Parameters.AddWithValue("@id_categoria", id_categoria);
+
+            int i = bd.execNonQuery(sql);
+            if (i == 0)
+                return 0;
+            else
+                return 1;
+        }
     }
 }

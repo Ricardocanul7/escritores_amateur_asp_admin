@@ -7,6 +7,10 @@
         <div class="card-header">
             <ul class="nav nav-pills card-header-pills">
                 <div class="btn-group pull-right espacio">
+                    <asp:LinkButton ID="lbtnRegresar" runat="server" class="btn btn-primary" OnClick="lbtnRegresar_Click">
+                        Regresar </asp:LinkButton>
+                </div>
+                <div class="btn-group pull-right espacio">
                     <asp:LinkButton ID="lbtnAgregar" runat="server" class="btn btn-primary" OnClick="lbtnAgregar_Click">
                         Agregar </asp:LinkButton>
                 </div>

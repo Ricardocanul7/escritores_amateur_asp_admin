@@ -284,5 +284,10 @@ namespace Escritores_Amateur_ASP.GUI
         {
             modificar();
         }
+
+        protected void lbtnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("wfTablaUsuario.aspx");
+        }
     }
 }

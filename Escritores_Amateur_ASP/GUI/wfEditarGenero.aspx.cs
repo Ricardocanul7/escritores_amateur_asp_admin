@@ -112,9 +112,9 @@ namespace Escritores_Amateur_ASP.GUI
         }
         public void eliminar()
         {
-            BO.Usuario obj = (BO.Usuario)Session["frmGeneroBO"];
-            Servicios.UsuarioCtrl objCtrl = new Servicios.UsuarioCtrl();
-            obj.Id_usuario = Convert.ToInt32(txtId.Text.Trim());
+            BO.Genero obj = (BO.Genero)Session["frmGeneroBO"];
+            Servicios.GeneroCtrl objCtrl = new Servicios.GeneroCtrl();
+            obj.Id_genero = Convert.ToInt32(txtId.Text.Trim());
             string mensaje = objCtrl.eliminaObj(obj);
             if (mensaje == "La operación se realizó de manera correcta")
             {
@@ -133,6 +133,26 @@ namespace Escritores_Amateur_ASP.GUI
             mensaje = mensaje.Replace("\n", "\\n");
             mensaje = mensaje.Replace("'", "\"");
             ClientScript.RegisterClientScriptBlock(typeof(Page), "Error", "<script> alert('" + mensaje + "');</script>");
+        }
+
+        protected void lbtnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("wfTablaGenero.aspx");
+        }
+
+        protected void lbtnAgregar_Click(object sender, EventArgs e)
+        {
+            agregar();
+        }
+
+        protected void lbtnEliminar_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
+
+        protected void lbtnModificar_Click(object sender, EventArgs e)
+        {
+            modificar();
         }
     }
 }

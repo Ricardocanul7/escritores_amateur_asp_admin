@@ -26,7 +26,7 @@ namespace Escritores_Amateur_ASP.DAO
 
         private void establecerConexion()
         {
-            stringConexion = "Data source = RICK-LAPTOP\\SQLEXPRESS; initial catalog = db_escritores_amateur; integrated security=true;";
+            stringConexion = "Data source = Alan\\SQLEXPRESS; initial catalog = db_escritores_amateur; integrated security=true;";
             Cnn = new SqlConnection(stringConexion);
         }
 

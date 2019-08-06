@@ -70,6 +70,9 @@
     <Content Include="Global.asax" />
     <Content Include="GUI\wfAgregarCapitulo.aspx" />
     <Content Include="GUI\wfAgregarHistoria.aspx" />
+    <Content Include="GUI\wfEditarCategorias.aspx" />
+    <Content Include="GUI\wfEditarGenero.aspx" />
+    <Content Include="GUI\wfEditarSinopsis.aspx" />
     <Content Include="GUI\wfEditarUsuario.aspx" />
     <Content Include="GUI\wfHistoria.aspx" />
     <Content Include="GUI\wfLogin.aspx" />
@@ -1735,6 +1738,27 @@
     </Compile>
     <Compile Include="GUI\wfAgregarHistoria.aspx.designer.cs">
       <DependentUpon>wfAgregarHistoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfEditarCategorias.aspx.cs">
+      <DependentUpon>wfEditarCategorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfEditarCategorias.aspx.designer.cs">
+      <DependentUpon>wfEditarCategorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfEditarGenero.aspx.cs">
+      <DependentUpon>wfEditarGenero.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfEditarGenero.aspx.designer.cs">
+      <DependentUpon>wfEditarGenero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfEditarSinopsis.aspx.cs">
+      <DependentUpon>wfEditarSinopsis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfEditarSinopsis.aspx.designer.cs">
+      <DependentUpon>wfEditarSinopsis.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\wfEditarUsuario.aspx.cs">
       <DependentUpon>wfEditarUsuario.aspx</DependentUpon>

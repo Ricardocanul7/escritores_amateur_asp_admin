@@ -29,5 +29,25 @@ namespace Escritores_Amateur_ASP.GUI
         {
             DoOpen();
         }
+
+        protected void lbtnAgregar_Click(object sender, EventArgs e)
+        {
+            Session["frmPrologoOperacion"] = "Nuevo";
+            Response.Redirect("wfEditarPrologo.aspx");
+        }
+
+        protected void gvPrologo_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+                int indice = Convert.ToInt32(e.CommandArgument);
+                int id = (int)gvPrologo.DataKeys[indice].Value;
+                BO.Prologo obj = new BO.Prologo();
+                obj.Id_prologo = id;
+                Session["frmPrologoOperacion"] = "Editar";
+                Session["frmPrologoBO"] = obj;
+                Response.Redirect("wfEditarPrologo.aspx");
+            }
+        }
     }
 }

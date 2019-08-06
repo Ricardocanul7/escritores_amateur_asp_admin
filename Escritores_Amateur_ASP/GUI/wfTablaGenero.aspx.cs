@@ -32,8 +32,8 @@ namespace Escritores_Amateur_ASP.GUI
 
         protected void lbtnAgregar_Click(object sender, EventArgs e)
         {
-            Session["frmCategoriaOperacion"] = "Nuevo";
-            Response.Redirect("wfEditarCategorias.aspx");
+            Session["frmGeneroOperacion"] = "Nuevo";
+            Response.Redirect("wfEditarGenero.aspx");
         }
 
         protected void gvGenero_RowCommand(object sender, GridViewCommandEventArgs e)

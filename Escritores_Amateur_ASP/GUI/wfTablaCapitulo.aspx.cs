@@ -29,5 +29,26 @@ namespace Escritores_Amateur_ASP.GUI
         {
             DoOpen();
         }
+
+        protected void gvCapitulo_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+            if (e.CommandName == "Editar")
+            {
+                int indice = Convert.ToInt32(e.CommandArgument);
+                int id = (int)gvCapitulo.DataKeys[indice].Value;
+                BO.Capitulo obj = new BO.Capitulo();
+                obj.Id_capitulo = id;
+                Session["frmCapituloOperacion"] = "Editar";
+                Session["frmCapituloBO"] = obj;
+                Response.Redirect("wfEditarCapitulo.aspx");
+            }
+        }
+
+        protected void lbtnAgregar_Click(object sender, EventArgs e)
+        {
+            Session["frmCapituloOperacion"] = "Nuevo";
+            Response.Redirect("wfEditarCapitulo.aspx");
+        }
     }
 }

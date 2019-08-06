@@ -6,18 +6,22 @@
         <div class="card-header">
             <ul class="nav nav-pills card-header-pills">
                 <div class="btn-group pull-right espacio">
-                    <asp:LinkButton ID="lbtnAgregar" runat="server" class="btn btn-primary">
+                    <asp:LinkButton ID="lbtnRegresar" runat="server" class="btn btn-primary" OnClick="lbtnRegresar_Click">
+                        Regresar </asp:LinkButton>
+                </div>
+                <div class="btn-group pull-right espacio">
+                    <asp:LinkButton ID="lbtnAgregar" runat="server" class="btn btn-primary" OnClick="lbtnAgregar_Click">
                         Agregar </asp:LinkButton>
                 </div>
                 &nbsp
                 <div class="btn-group pull-right espacio">
-                    <asp:LinkButton ID="lbtnEliminar" runat="server" class="btn btn-primary">
+                    <asp:LinkButton ID="lbtnEliminar" runat="server" class="btn btn-primary" OnClick="lbtnEliminar_Click">
                         Eliminar </asp:LinkButton>
                 </div>
 
                 &nbsp 
                 <div class="btn-group pull-right espacio">
-                    <asp:LinkButton ID="lbtnModificar" runat="server" class="btn btn-primary">
+                    <asp:LinkButton ID="lbtnModificar" runat="server" class="btn btn-primary" OnClick="lbtnModificar_Click">
                         Modificar</asp:LinkButton>
                 </div>
             </ul>
@@ -33,7 +37,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <!--Contenido-->
                     <div class="form-group">
                         <asp:Label ID="lblNombre" runat="server" Text="Contenido:"></asp:Label>

@@ -21,7 +21,7 @@ namespace Escritores_Amateur_ASP.Servicios
             dt = objDAO.devuelveDatos(obj);
             return dt;
         }
-        public string creaCategoriaa(object obj)
+        public string creaCategoria(object obj)
         {
             int i = objDAO.creaCategoria(obj);
             if (i == 1)

@@ -30,6 +30,17 @@ namespace Escritores_Amateur_ASP.DAO
                 bd.Cmd.Parameters["@id_capitulo"].Value = data.Id_capitulo;
                 edo = true;
             }
+            if(data.Id_historia > 0)
+            {
+                cadenaWhere += " id_historia=@id_historia and";
+                bd.Cmd.Parameters.Add("@id_historia", SqlDbType.Int);
+                bd.Cmd.Parameters["@id_historia"].Value = data.Id_historia;
+                edo = true;
+            }
+            if (edo == true)
+            {
+                cadenaWhere = "WHERE " + cadenaWhere.Remove(cadenaWhere.Length - 3, 3);
+            }
 
             sql = " SELECT * FROM capitulo " + cadenaWhere;
 

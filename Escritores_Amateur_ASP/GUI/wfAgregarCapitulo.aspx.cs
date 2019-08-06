@@ -13,11 +13,23 @@ namespace Escritores_Amateur_ASP.GUI
         int id_historia;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["id_historia"] != null && Session["agregarCapitulo"].ToString() == "true")
+            if(Session["id_historia"] != null)
             {
                 id_historia = Convert.ToInt32(Session["id_historia"]);
                 lblHeaderTitulo_Libro.Text = ObtenerInfoHistoria()["titulo"].ToString();
+                CargarInfo();
             }
+        }
+
+        public void CargarInfo()
+        {
+            DAO.Capitulo capituloDAO = new DAO.Capitulo();
+            BO.Capitulo capituloBO = new BO.Capitulo();
+
+            capituloBO.Id_historia = id_historia;
+
+            dlistCapitulos.DataSource = capituloDAO.devuelveDatos(capituloBO);
+            dlistCapitulos.DataBind();
         }
 
         public DataRow ObtenerInfoHistoria()

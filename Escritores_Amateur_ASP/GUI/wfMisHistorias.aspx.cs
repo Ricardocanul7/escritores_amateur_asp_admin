@@ -56,6 +56,8 @@ namespace Escritores_Amateur_ASP.GUI
                 int id_historia = Convert.ToInt32(e.CommandArgument);
                 // AUN FALTA COMPLETAR QUE REDIRECCIONE A UNA PAGINA PARA
                 // EDITAR EL CONTENIDO DE LA HISTORIA
+                Session["id_historia"] = id_historia;
+                Response.Redirect("../GUI/wfAgregarCapitulo.aspx");
             }
             if (e.CommandName == "eliminar_historia")
             {

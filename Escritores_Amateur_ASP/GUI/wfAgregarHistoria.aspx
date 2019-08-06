@@ -28,7 +28,7 @@
                         </div>
                         <div class="form-group">
                             <label>Categoria</label>
-                            <asp:ListBox ID="lboxCategoria" runat="server" CssClass="form-control"></asp:ListBox>
+                            <asp:ListBox ID="lboxCategoria" AutoPostBack="true" runat="server" CssClass="form-control"></asp:ListBox>
                         </div>
                         <div class="form-group">
                             <asp:Button ID="btn_add_story" runat="server" class="btn btn-primary btn-block" OnClick="btn_add_story_Click" Text="Añadir"></asp:Button>

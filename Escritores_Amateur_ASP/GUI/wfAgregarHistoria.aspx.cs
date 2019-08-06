@@ -12,7 +12,10 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            precargarInfo();
+            if (!IsPostBack)
+            {
+                precargarInfo();
+            }
         }
 
         protected void btn_add_story_Click(object sender, EventArgs e)
@@ -22,20 +25,51 @@ namespace Escritores_Amateur_ASP.GUI
             BO.Sinopsis sinopsisBO = new BO.Sinopsis();
             BO.Prologo prologoBO = new BO.Prologo();
 
-            DataRow[] dr_user = usuarioDAO.devuelveDatos(usuarioBO).Select("username=" + Session["username"].ToString());
+            string username = Session["username"].ToString();
+            DataTable dt_users = usuarioDAO.devuelveDatos(usuarioBO);
+            DataRow[] dr_user = dt_users.Select(string.Format("username = '{0}'", username));
 
             int id_autor = Convert.ToInt32(dr_user[0]["id_usuario"]);
             string titulo = txtTitulo.Text;
             string sinopsis = txtSinopsis.Text;
             string prologo = txtPrologo.Text;
+            int id_categoria = Convert.ToInt32(lboxCategoria.SelectedValue);
             // Portada por default mientras se arregla como subir imagenes y obtener su url
             string portada_url = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjl7JjU0ezjAhWkrFkKHcsHA2cQjRx6BAgBEAU&url=https%3A%2F%2Fpixabay.com%2Fes%2Fvectors%2Flibro-portada-en-blanco-cerrado-306178%2F&psig=AOvVaw3lqaZvA2xFo1z31oQP1eG1&ust=1565125666554652";
 
             
 
             DAO.Historia historiaDAO = new DAO.Historia();
+            int rowsAffected = historiaDAO.AgregarHistoriaSP(id_autor, titulo, portada_url, sinopsis, prologo, id_categoria);
 
-            //int rowsAffected = historiaDAO.AgregarHistoriaSP()
+            if(rowsAffected == 0)
+            {
+                Mensaje("Ha ocurrido un error!");
+            }
+            else
+            {
+                Session["agregarCapitulo"] = "true";
+                Session["id_historia"] = GetLastID_story_added();
+                Response.Redirect("../GUI/wfAgregarCapitulo.aspx");
+            }
+        }
+
+        public int GetLastID_story_added()
+        {
+            DAO.Historia historiaDAO = new DAO.Historia();
+            BO.Historia historiaBO = new BO.Historia();
+
+            DataTable dt_stories = historiaDAO.GetTopRows_Descendent();
+            return Convert.ToInt32(dt_stories.Rows[0]["id_historia"]);
+        }
+
+        private void Mensaje(string ex)
+        {
+            string mensaje = ex;
+            mensaje = mensaje.Replace(Environment.NewLine, "\\n");
+            mensaje = mensaje.Replace("\n", "\\n");
+            mensaje = mensaje.Replace("'", "\"");
+            ClientScript.RegisterClientScriptBlock(typeof(Page), "Error", "<script> alert('" + mensaje + "');</script>");
         }
 
         public void precargarInfo()

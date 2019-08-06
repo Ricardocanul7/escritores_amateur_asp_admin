@@ -17,6 +17,17 @@ namespace Escritores_Amateur_ASP.DAO
 
         }
 
+        public DataTable GetTipoUsuario()
+        {
+            bd = new BaseDB();
+
+            sql = " SELECT * FROM tipo_usuario";
+
+            DataTable dt = new DataTable();
+            bd.execQuery(sql).Fill(dt);
+            return dt;
+        }
+
         public DataTable devuelveDatos(object obj)
         {
             string cadenaWhere = "";
@@ -124,7 +135,7 @@ namespace Escritores_Amateur_ASP.DAO
             bd.Cmd.Parameters.Add("@id_usuario", SqlDbType.Int);
             bd.Cmd.Parameters["@id_usuario"].Value = data.Id_usuario;
 
-            sql = "DELETE FROM Flor WHERE id_usuario=@id_usuario";
+            sql = "DELETE FROM usuarios WHERE id_usuario=@id_usuario";
             int i = bd.execNonQuery(sql);
             if (i == 0)
             {
@@ -162,7 +173,7 @@ namespace Escritores_Amateur_ASP.DAO
             bd.Cmd.Parameters.Add("@biografia", SqlDbType.VarChar);
             bd.Cmd.Parameters.Add("@username", SqlDbType.VarChar);
             bd.Cmd.Parameters.Add("@contrasenia", SqlDbType.VarChar);
-            bd.Cmd.Parameters.Add("@tipo_usuario", SqlDbType.VarChar);
+            bd.Cmd.Parameters.Add("@tipo_usuario", SqlDbType.Int);
 
             bd.Cmd.Parameters["@id_usuario"].Value = data.Id_usuario;
             bd.Cmd.Parameters["@nombre"].Value = data.Nombre;

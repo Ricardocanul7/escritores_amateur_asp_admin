@@ -98,6 +98,22 @@ namespace Escritores_Amateur_ASP.DAO
                 return 1;
         }
 
+        public int EliminarHistoriaSP(int id_historia)
+        {
+            bd = new BaseDB();
+
+            sql = "SP_ELIMINAR_HISTORIA";
+            bd.Cmd.CommandType = CommandType.StoredProcedure;
+
+            bd.Cmd.Parameters.AddWithValue("@id_historia", id_historia);
+
+            int i = bd.execNonQuery(sql);
+            if (i == 0)
+                return 0;
+            else
+                return 1;
+        }
+
         public DataTable GetTopRows_Descendent()
         {
             bd = new BaseDB();

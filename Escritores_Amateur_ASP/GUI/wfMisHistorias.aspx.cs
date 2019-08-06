@@ -14,7 +14,10 @@ namespace Escritores_Amateur_ASP.GUI
         string id_autor;
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargarInfo();
+            if (!IsPostBack)
+            {
+                cargarInfo();
+            }
         }
         public void cargarInfo()
         {
@@ -60,7 +63,10 @@ namespace Escritores_Amateur_ASP.GUI
 
                 DAO.Historia historiaDAO = new DAO.Historia();
 
+
+
                 historiaDAO.EliminarHistoriaSP(id_historia);
+
             }
         }
     }

@@ -9,8 +9,6 @@
         <div class="btn-group" style="margin-right: unset;">
             <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
             <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
-            <asp:LinkButton ID="LinkButton1" CssClass="btn btn-primary col-sm-5" runat="server"><i class="fa fa-eraser" aria-hidden="true"></i>Eliminar</asp:LinkButton>
-            <asp:LinkButton ID="LinkButton2" CssClass="btn btn-primary col-sm-6" runat="server"><i class="fa fa-upload" aria-hidden="true"></i>Actualizar</asp:LinkButton>
         </div>
     </div>
 
@@ -19,6 +17,7 @@
             <Columns>
                 <asp:BoundField DataField="cabecera" HeaderText="Cabecera" />
                 <asp:BoundField DataField="contenido" HeaderText="Contenido" />
+                <asp:ButtonField ButtonType="Button" Text="Editar" CommandName="Editar" />
             </Columns>
             <EmptyDataTemplate>
                 No hay datos disponibles para mostrar

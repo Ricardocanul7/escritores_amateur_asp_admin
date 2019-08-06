@@ -102,7 +102,7 @@ namespace Escritores_Amateur_ASP.DAO
         {
             bd = new BaseDB();
 
-            sql = "SELECT TOP * FROM historia ORDER BY id_historia DESC;";
+            sql = "SELECT TOP(10) * FROM historia ORDER BY id_historia DESC;";
 
             DataTable dt = new DataTable();
             bd.execQuery(sql).Fill(dt);

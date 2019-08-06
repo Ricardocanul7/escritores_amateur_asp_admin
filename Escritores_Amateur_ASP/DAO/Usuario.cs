@@ -160,7 +160,7 @@ namespace Escritores_Amateur_ASP.DAO
                   "username=@username," +
                   "contrasenia=@contrasenia" +
                   "tipo_usuario=@tipo_usuario" +
-                  " WHERE IdFlor=@id_usuario";
+                  " WHERE id_usario=@id_usuario";
             bd.Cmd.Parameters.Add("@id_usuario", SqlDbType.Int);
             bd.Cmd.Parameters.Add("@nombre", SqlDbType.VarChar);
             bd.Cmd.Parameters.Add("@apellido_pat", SqlDbType.VarChar);

@@ -48,5 +48,66 @@ namespace Escritores_Amateur_ASP.DAO
             bd.execQuery(sql).Fill(dt);
             return dt;
         }
+        public int creaCapitulo(object obj)
+        {
+            BO.Capitulo data = (BO.Capitulo)obj;
+            bd = new BaseDB();
+            bd.Cmd.CommandType = CommandType.StoredProcedure;
+
+            sql = "";
+
+            bd.Cmd.Parameters.AddWithValue("@titulo", data.Titulo);
+            bd.Cmd.Parameters.AddWithValue("@contenido", data.Contenido);
+            bd.Cmd.Parameters.AddWithValue("@id_historia", data.Id_historia);
+
+            int i = bd.execNonQuery(sql);
+            if (i == 0)
+                return 0;
+            else
+                return 1;
+        }
+
+        public int eliminaDatos(object obj)
+        {
+            BO.Capitulo data = (BO.Capitulo)obj;
+            bd = new BaseDB();
+            bd.Cmd.Parameters.Add("@id_capitulo", SqlDbType.Int);
+            bd.Cmd.Parameters["@id_capitulo"].Value = data.Id_capitulo;
+
+            sql = "DELETE FROM capitulo WHERE id_capitulo=@id_capitulo";
+            int i = bd.execNonQuery(sql);
+            if (i == 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
+        public int actualizaCapitulo(object obj)
+        {
+            BO.Capitulo data = (BO.Capitulo)obj;
+            bd = new BaseDB();
+            sql = "UPDATE capitulo " +
+                  "SET titulo=@titulo," +
+                  "contenido=@contenido," +
+                  "id_historia=@id_historia," +
+                  " WHERE id_capitulo=@id_capitulo";
+            bd.Cmd.Parameters.Add("@id_capitulo", SqlDbType.Int);
+            bd.Cmd.Parameters.Add("@titulo", SqlDbType.VarChar);
+            bd.Cmd.Parameters.Add("@contenido", SqlDbType.VarChar);
+            bd.Cmd.Parameters.Add("@id_historia", SqlDbType.Int);
+
+            bd.Cmd.Parameters["@id_capitulo"].Value = data.Id_capitulo;
+            bd.Cmd.Parameters["@titulo"].Value = data.Titulo;
+            bd.Cmd.Parameters["@contenido"].Value = data.Contenido;
+            bd.Cmd.Parameters["@id_historia"].Value = data.Id_historia;
+
+
+            int i = bd.execNonQuery(sql);
+            if (i == 0)
+            {
+                return 0;
+            }
+            return 1;
+        }
     }
 }

@@ -58,13 +58,13 @@ namespace Escritores_Amateur_ASP.GUI
 
             if (mensaje.Trim().Length == 0)
             {
-                BO.Usuario obj = new BO.Usuario();
-                Servicios.UsuarioCtrl objCtrl = new Servicios.UsuarioCtrl();
-                obj.Nombre = txtNombre.Text.Trim();
-                string msn = objCtrl.creaUsuario(obj);
+                BO.Categoria obj = new BO.Categoria();
+                Servicios.CategoriaCtrl objCtrl = new Servicios.CategoriaCtrl();
+                obj.Nombre_cat = txtNombre.Text.Trim();
+                string msn = objCtrl.creaCategoria(obj);
                 if (msn == "La operación se realizó de manera correcta")
                 {
-                    Response.Redirect("wfTablaUsuario.aspx");
+                    Response.Redirect("wfTablaCategoria.aspx");
 
                 }
                 else
@@ -91,14 +91,14 @@ namespace Escritores_Amateur_ASP.GUI
 
             if (mensaje.Trim().Length == 0)
             {
-                BO.Usuario obj = new BO.Usuario();
-                Servicios.UsuarioCtrl objCtrl = new Servicios.UsuarioCtrl();
-                obj.Id_usuario = Convert.ToInt32(txtId.Text.Trim().ToUpper());
-                obj.Nombre = txtNombre.Text.Trim().ToUpper();
+                BO.Categoria obj = new BO.Categoria();
+                Servicios.CategoriaCtrl objCtrl = new Servicios.CategoriaCtrl();
+                obj.Id_categoria = Convert.ToInt32(txtId.Text.Trim().ToUpper());
+                obj.Nombre_cat = txtNombre.Text.Trim().ToUpper();
                 string msn = objCtrl.actualizaObj(obj);
                 if (msn == "La operación se realizó de manera correcta")
                 {
-                    Response.Redirect("wfTablaUsuario.aspx");
+                    Response.Redirect("wfTablaCategoria.aspx");
 
                 }
                 else
@@ -113,13 +113,13 @@ namespace Escritores_Amateur_ASP.GUI
         }
         public void eliminar()
         {
-            BO.Usuario obj = (BO.Usuario)Session["frmUsuarioBO"];
-            Servicios.UsuarioCtrl objCtrl = new Servicios.UsuarioCtrl();
-            obj.Id_usuario = Convert.ToInt32(txtId.Text.Trim());
+            BO.Categoria obj = (BO.Categoria)Session["frmCategoriaBO"];
+            Servicios.CategoriaCtrl objCtrl = new Servicios.CategoriaCtrl();
+            obj.Id_categoria = Convert.ToInt32(txtId.Text.Trim());
             string mensaje = objCtrl.eliminaObj(obj);
             if (mensaje == "La operación se realizó de manera correcta")
             {
-                Response.Redirect("wfTablaUsuario.aspx");
+                Response.Redirect("wfTablaCategoria.aspx");
 
             }
             else
@@ -134,6 +134,26 @@ namespace Escritores_Amateur_ASP.GUI
             mensaje = mensaje.Replace("\n", "\\n");
             mensaje = mensaje.Replace("'", "\"");
             ClientScript.RegisterClientScriptBlock(typeof(Page), "Error", "<script> alert('" + mensaje + "');</script>");
+        }
+
+        protected void lbtnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("wfTablaCategoria.aspx");
+        }
+
+        protected void lbtnAgregar_Click(object sender, EventArgs e)
+        {
+            agregar();
+        }
+
+        protected void lbtnEliminar_Click(object sender, EventArgs e)
+        {
+            eliminar();
+        }
+
+        protected void lbtnModificar_Click(object sender, EventArgs e)
+        {
+            modificar();
         }
     }
 }

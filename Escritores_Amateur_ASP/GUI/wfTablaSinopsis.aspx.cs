@@ -29,5 +29,26 @@ namespace Escritores_Amateur_ASP.GUI
             gvSinopsis.DataSource = dt;
             gvSinopsis.DataBind();
         }
+
+        protected void gvSinopsis_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+                int indice = Convert.ToInt32(e.CommandArgument);
+                int id = (int)gvSinopsis.DataKeys[indice].Value;
+                BO.Sinopsis obj = new BO.Sinopsis();
+                obj.Id_sinopsis = id;
+                Session["frmSinopsisOperacion"] = "Editar";
+                Session["frmSinopsisBO"] = obj;
+                Response.Redirect("wfEditarSinopsis.aspx");
+            }
+        }
+
+        protected void lbtnAgregar_Click(object sender, EventArgs e)
+        {
+            Session["frmSinopsisOperacion"] = "Nuevo";
+            Response.Redirect("wfEditarSinopsis.aspx");
+
+        }
     }
 }

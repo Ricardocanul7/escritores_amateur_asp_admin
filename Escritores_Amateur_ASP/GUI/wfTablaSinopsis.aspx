@@ -8,12 +8,12 @@
     <div class="row" style="margin-bottom: 20px;">
         <div class="btn-group" style="margin-right: unset;">
             <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
-            <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
+            <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnAgregar_Click"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
         </div>
     </div>
 
     <div class="row">
-        <asp:GridView ID="gvSinopsis" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_sinopsis">
+        <asp:GridView ID="gvSinopsis" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_sinopsis" OnRowCommand="gvSinopsis_RowCommand">
             <Columns>
                 <asp:BoundField DataField="cabecera" HeaderText="Cabecera" />
                 <asp:BoundField DataField="contenido" HeaderText="Contenido" />

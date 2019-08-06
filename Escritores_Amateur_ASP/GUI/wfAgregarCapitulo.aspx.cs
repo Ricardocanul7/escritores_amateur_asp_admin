@@ -13,11 +13,14 @@ namespace Escritores_Amateur_ASP.GUI
         int id_historia;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["id_historia"] != null)
+            if (!IsPostBack)
             {
-                id_historia = Convert.ToInt32(Session["id_historia"]);
-                lblHeaderTitulo_Libro.Text = ObtenerInfoHistoria()["titulo"].ToString();
-                CargarInfo();
+                if (Session["id_historia"] != null)
+                {
+                    id_historia = Convert.ToInt32(Session["id_historia"]);
+                    lblHeaderTitulo_Libro.Text = ObtenerInfoHistoria()["titulo"].ToString();
+                    CargarInfo();
+                }
             }
         }
 
@@ -44,6 +47,17 @@ namespace Escritores_Amateur_ASP.GUI
         protected void btnAgregarCap_Click(object sender, EventArgs e)
         {
             Response.Redirect("../GUI/wfNuevoCapitulo.aspx");
+        }
+
+        protected void dlistCapitulos_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if(e.CommandName == "editar_capitulo")
+            {
+                Session["id_capitulo"] = e.CommandArgument.ToString();
+                Session["id_historia"] = id_historia;
+                Session["operacion_historia"] = "editar";
+                Response.Redirect("../GUI/wfNuevoCapitulo.aspx");
+            }
         }
     }
 }

@@ -19,7 +19,7 @@
                         <h5 class="card-header">Capitulos
                             <asp:Button ID="btnAgregarCap" runat="server" Text="+ Agregar capitulo" OnClick="btnAgregarCap_Click" CssClass="float-right btn btn-outline-primary mt-1" />
                         </h5>
-                        <asp:DataList ID="dlistCapitulos" runat="server">
+                        <asp:DataList ID="dlistCapitulos" runat="server" OnItemCommand="dlistCapitulos_ItemCommand">
                             <ItemTemplate>
                                 <div class="card-body">
                                     <h5 class="card-title">
@@ -27,7 +27,7 @@
                                     </h5>
                                     <p class="card-text">
                                         <%#Eval("contenido") %>
-                                        <asp:Button ID="btnEditar" runat="server" Text="Editar" CssClass="float-right btn btn-outline-primary mt-1" />
+                                        <asp:Button ID="btnEditar" CommandName="editar_capitulo" CommandArgument='<%#Eval("id_capitulo") %>' runat="server" Text="Editar" CssClass="float-right btn btn-outline-primary mt-1" />
                                     </p>
                                 </div>
                             </ItemTemplate>

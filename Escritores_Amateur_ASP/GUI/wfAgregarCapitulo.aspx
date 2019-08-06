@@ -7,7 +7,9 @@
         <div class="col-12">
             <div class="row">
                 <div class="card text-white bg-primary mb-3 col-12">
-                    <div class="card-header"><asp:Label ID="lblHeaderTitulo_Libro" runat="server"></asp:Label></div>
+                    <div class="card-header">
+                        <asp:Label ID="lblHeaderTitulo_Libro" runat="server"></asp:Label>
+                    </div>
                 </div>
                 <!-- card.// -->
             </div>
@@ -15,18 +17,21 @@
                 <div class="col-12">
                     <div class="card">
                         <h5 class="card-header">Capitulos
-                    <asp:Button ID="btnAgregarCap" runat="server" Text="+ Agregar capitulo" OnClick="btnAgregarCap_Click" CssClass="float-right btn btn-outline-primary mt-1" />
+                            <asp:Button ID="btnAgregarCap" runat="server" Text="+ Agregar capitulo" OnClick="btnAgregarCap_Click" CssClass="float-right btn btn-outline-primary mt-1" />
                         </h5>
-                        <div class="card-body">
-                            <asp:Image ID="imgPortada" CssClass="rounded float-left" runat="server" />
-                            <h5 class="card-title">
-                                <asp:Label ID="lblTitulo" runat="server" Text="¿Por qué a mi?"></asp:Label>
-                            </h5>
-                            <p class="card-text">
-                                With supporting text below as a natural lead-in to additional content.
-                        <asp:Button ID="btnEditar" runat="server" Text="Editar" CssClass="float-right btn btn-outline-primary mt-1" />
-                            </p>
-                        </div>
+                        <asp:DataList ID="dlistCapitulos" runat="server">
+                            <ItemTemplate>
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%#Eval("titulo") %>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%#Eval("contenido") %>
+                                        <asp:Button ID="btnEditar" runat="server" Text="Editar" CssClass="float-right btn btn-outline-primary mt-1" />
+                                    </p>
+                                </div>
+                            </ItemTemplate>
+                        </asp:DataList>
                     </div>
                 </div>
             </div>

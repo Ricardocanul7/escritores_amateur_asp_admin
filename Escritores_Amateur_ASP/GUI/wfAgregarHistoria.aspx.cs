@@ -35,7 +35,7 @@ namespace Escritores_Amateur_ASP.GUI
             string prologo = txtPrologo.Text;
             int id_categoria = Convert.ToInt32(lboxCategoria.SelectedValue);
             // Portada por default mientras se arregla como subir imagenes y obtener su url
-            string portada_url = "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjl7JjU0ezjAhWkrFkKHcsHA2cQjRx6BAgBEAU&url=https%3A%2F%2Fpixabay.com%2Fes%2Fvectors%2Flibro-portada-en-blanco-cerrado-306178%2F&psig=AOvVaw3lqaZvA2xFo1z31oQP1eG1&ust=1565125666554652";
+            string portada_url = "https://cdn.pixabay.com/photo/2014/04/02/14/06/book-306178_960_720.png";
 
             
 

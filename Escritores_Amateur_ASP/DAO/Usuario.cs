@@ -135,7 +135,7 @@ namespace Escritores_Amateur_ASP.DAO
             bd.Cmd.Parameters.Add("@id_usuario", SqlDbType.Int);
             bd.Cmd.Parameters["@id_usuario"].Value = data.Id_usuario;
 
-            sql = "DELETE FROM usuarios WHERE id_usuario=@id_usuario";
+            sql = "DELETE FROM usuario WHERE id_usuario=@id_usuario";
             int i = bd.execNonQuery(sql);
             if (i == 0)
             {

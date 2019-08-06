@@ -47,7 +47,7 @@ namespace Escritores_Amateur_ASP.DAO
             bd = new BaseDB();
             bd.Cmd.CommandType = CommandType.StoredProcedure;
 
-            sql = "SP_REGISTRO_USUARIO";
+            sql = "INSERT INTO genero(nombre_genero) VALUES(@nombre_genero)";
             //sql = "EXEC SP_REGISTRO_USUARIO @nombre, @apellido_pat, @apellido_mat, @correo, @avatar, @municipio, @telefono, @sitio_web, @biografia, @username, @contrasenia, @tipo_usuario;";
 
             //bd.Cmd.Parameters.Add("@nombre", SqlDbType.VarChar);

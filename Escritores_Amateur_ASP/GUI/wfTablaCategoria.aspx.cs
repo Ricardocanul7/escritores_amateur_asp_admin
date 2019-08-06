@@ -29,5 +29,25 @@ namespace Escritores_Amateur_ASP.GUI
             gvCategorias.DataSource = dt;
             gvCategorias.DataBind();
         }
+
+        protected void gvCategorias_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+                int indice = Convert.ToInt32(e.CommandArgument);
+                int id = (int)gvCategorias.DataKeys[indice].Value;
+                BO.Categoria obj = new BO.Categoria();
+                obj.Id_categoria = id;
+                Session["frmCategoriaOperacion"] = "Editar";
+                Session["frmCategoriaBO"] = obj;
+                Response.Redirect("wfEditarCategorias.aspx");
+            }
+        }
+
+        protected void lbtnAgregar_Click(object sender, EventArgs e)
+        {
+            Session["frmCategoriaOperacion"] = "Nuevo";
+            Response.Redirect("wfEditarCategorias.aspx");
+        }
     }
 }

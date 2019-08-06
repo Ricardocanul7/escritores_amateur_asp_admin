@@ -21,9 +21,9 @@ namespace Escritores_Amateur_ASP.Servicios
             dt = objDAO.devuelveDatos(obj);
             return dt;
         }
-        public string creaUsuario(object obj)
+        public string creaHistoria(object obj)
         {
-            int i = objDAO.AgregarHistoriaSP(obj);
+            int i = objDAO.creaHistoria(obj);
             if (i == 1)
             {
                 return "La operación se realizó de manera correcta";
@@ -32,7 +32,7 @@ namespace Escritores_Amateur_ASP.Servicios
         }
         public string actualizaObj(object obj)
         {
-            int i = objDAO.actualizaUsu(obj);
+            int i = objDAO.actualizaHistoria(obj);
             if (i == 1)
             {
                 return "La operación se realizó de manera correcta";

@@ -97,5 +97,16 @@ namespace Escritores_Amateur_ASP.DAO
             else
                 return 1;
         }
+
+        public DataTable GetTopRows_Descendent()
+        {
+            bd = new BaseDB();
+
+            sql = "SELECT TOP * FROM historia ORDER BY id_historia DESC;";
+
+            DataTable dt = new DataTable();
+            bd.execQuery(sql).Fill(dt);
+            return dt;
+        }
     }
 }

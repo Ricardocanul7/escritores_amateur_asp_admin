@@ -98,20 +98,21 @@
                          <asp:TextBox ID="txtUsername" class="form-control" runat="server"></asp:TextBox>                    
                     </div>
                 </div> 
-                <div class="col-md-6" >
-                    <div class="form-group"> <!--tipo_usuario-->
-                         <asp:Label ID="lblTipoUser" runat="server" Text="Tipo de usuario:"></asp:Label>
-                         <asp:DropDownList ID="drpTipoUser" runat="server"></asp:DropDownList>
-                    </div>
-                </div>
-            </div>
-            <div class="row">       
                 <div class="col-md-6" > <!--Contraseña-->
                     <div class="form-group">
                          <asp:Label ID="lblPassword" runat="server" Text="Contraseña:"></asp:Label>
                          <asp:TextBox ID="txtPassword" class="form-control" runat="server"></asp:TextBox>                    
                     </div>
-                </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6" >
+                    <div class="form-group">
+                        <!--tipo_usuario-->
+                        <asp:Label ID="lblTipoUser" runat="server" Text="Tipo de usuario:"></asp:Label>
+                        <asp:ListBox ID="input_tipoUser" runat="server" CssClass="form-control" AutoPostBack="true"></asp:ListBox>
+                    </div>
+                </div>
             </div>
             <div class="row">       
                 <div class="col-md-12" > <!--Biografia-->

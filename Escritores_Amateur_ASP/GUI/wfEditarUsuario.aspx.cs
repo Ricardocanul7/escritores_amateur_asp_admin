@@ -5,14 +5,38 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Escritores_Amateur_ASP.GUI
 {
     public partial class wfEditarUsuario : System.Web.UI.Page
     {
+        DAO.Usuario usuario = new DAO.Usuario();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargaOperacion();
+            if (!IsPostBack)
+            {
+                cargaOperacion();
+                llenarListBoxes();
+            }
+        }
+        public void llenarListBoxes()
+        {
+            llenar_tipoUsuario();
+        }
+        public void llenar_tipoUsuario()
+        {
+            input_tipoUser.Items.Clear();
+            DataRow[] dr_tipoUser = usuario.GetTipoUsuario().Select();
+
+            foreach (var row in dr_tipoUser)
+            {
+                ListItem listItem = new ListItem();
+                listItem.Text = row["nombre_tipo"].ToString();
+                listItem.Value = row["id_tipo_usuario"].ToString();
+                input_tipoUser.Items.Add(listItem);
+            }
         }
         public void limpiar()
         {
@@ -26,7 +50,6 @@ namespace Escritores_Amateur_ASP.GUI
             txtMunicipio.Text = "";
             txtSitioWeb.Text = "";
             txtUsername.Text = "";
-            drpTipoUser.Text = "";
             txtPassword.Text = "";
             txtBiografia.Text = "";
         }
@@ -64,7 +87,7 @@ namespace Escritores_Amateur_ASP.GUI
                 txtMunicipio.Text = dt.Rows[0]["telefono"].ToString();
                 txtSitioWeb.Text = dt.Rows[0]["sitio_web"].ToString();
                 txtUsername.Text = dt.Rows[0]["username"].ToString();
-                drpTipoUser.Text = dt.Rows[0]["tipo_usuario"].ToString();
+                input_tipoUser.Text = dt.Rows[0]["tipo_usuario"].ToString();
                 txtPassword.Text = dt.Rows[0]["contrasenia"].ToString();
                 txtBiografia.Text = dt.Rows[0]["biografia"].ToString();
             }
@@ -72,10 +95,6 @@ namespace Escritores_Amateur_ASP.GUI
         public void agregar()
         {
             string mensaje = "";
-            if (txtId.Text.Trim().Length == 0)
-            {
-                mensaje = mensaje + "Introduce la Clave \n";
-            }
             if (txtNombre.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce el nombre\n";
@@ -87,10 +106,6 @@ namespace Escritores_Amateur_ASP.GUI
             if (txtApellidoPat.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce el apellido paterno \n";
-            }
-            if (txtAvatar.Text.Trim().Length == 0)
-            {
-                mensaje = mensaje + "Introduce el avatar \n";
             }
             if (txtCorreo.Text.Trim().Length == 0)
             {
@@ -112,7 +127,7 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 mensaje = mensaje + "Introduce el Username \n";
             }
-            if (drpTipoUser.Text.Trim().Length == 0)
+            if (input_tipoUser.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce el tipo de usuario \n";
             }
@@ -130,8 +145,7 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 BO.Usuario obj = new BO.Usuario();
                 Servicios.UsuarioCtrl objCtrl = new Servicios.UsuarioCtrl();
-                obj.Id_usuario = Convert.ToInt32(txtId.Text.Trim().ToUpper());
-                obj.Nombre = txtNombre.Text.Trim().ToUpper();
+                obj.Nombre = txtNombre.Text.Trim();
                 obj.Avatar = txtAvatar.Text.Trim().ToUpper();
                 obj.Apellido_pat = txtApellidoPat.Text.Trim().ToUpper();
                 obj.Apellido_mat = txtApellidoMat.Text.Trim().ToUpper();
@@ -140,7 +154,7 @@ namespace Escritores_Amateur_ASP.GUI
                 obj.Municipio = txtMunicipio.Text.Trim().ToUpper();
                 obj.Sitio_web = txtSitioWeb.Text.Trim().ToUpper();
                 obj.Username = txtUsername.Text.Trim().ToUpper();
-                obj.Tipo_usuario = Convert.ToInt32(drpTipoUser.Text.Trim().ToUpper());
+                obj.Tipo_usuario = Convert.ToInt32(input_tipoUser.Text.Trim().ToUpper());
                 obj.Contrasenia = txtPassword.Text.Trim().ToUpper();
                 obj.Biografia = txtBiografia.Text.Trim().ToUpper();
                 string msn = objCtrl.creaUsuario(obj);
@@ -170,49 +184,29 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 mensaje = mensaje + "Introduce el nombre\n";
             }
-            if (txtApellidoMat.Text.Trim().Length == 0)
-            {
-                mensaje = mensaje + "Introduce el apellido materno \n";
-            }
             if (txtApellidoPat.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce el apellido paterno \n";
-            }
-            if (txtAvatar.Text.Trim().Length == 0)
-            {
-                mensaje = mensaje + "Introduce el avatar \n";
             }
             if (txtCorreo.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce el Correo \n";
             }
-            if (txtTelefono.Text.Trim().Length == 0)
-            {
-                mensaje = mensaje + "Introduce el telefono \n";
-            }
             if (txtMunicipio.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce el municipio \n";
-            }
-            if (txtSitioWeb.Text.Trim().Length == 0)
-            {
-                mensaje = mensaje + "Introduce el sitio web \n";
             }
             if (txtUsername.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce el Username \n";
             }
-            if (drpTipoUser.Text.Trim().Length == 0)
+            if (input_tipoUser.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce el tipo de usuario \n";
             }
             if (txtPassword.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce la contraseña \n";
-            }
-            if (txtBiografia.Text.Trim().Length == 0)
-            {
-                mensaje = mensaje + "Introduce la biografia \n";
             }
 
 
@@ -230,7 +224,7 @@ namespace Escritores_Amateur_ASP.GUI
                 obj.Municipio= txtMunicipio.Text.Trim().ToUpper();
                 obj.Sitio_web = txtSitioWeb.Text.Trim().ToUpper();
                 obj.Username = txtUsername.Text.Trim().ToUpper();
-                obj.Tipo_usuario = Convert.ToInt32(drpTipoUser.Text.Trim().ToUpper());
+                obj.Tipo_usuario = Convert.ToInt32(input_tipoUser.Text.Trim().ToUpper());
                 obj.Contrasenia = txtPassword.Text.Trim().ToUpper();
                 obj.Biografia = txtBiografia.Text.Trim().ToUpper();
                 string msn = objCtrl.actualizaObj(obj);

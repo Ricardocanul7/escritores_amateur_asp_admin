@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-10">
                     <!--NOMBRE-->
                     <div class="form-group">
                         <asp:Label ID="lblNombre" runat="server" Text="Nombre:"></asp:Label>

@@ -57,16 +57,18 @@ namespace Escritores_Amateur_ASP.GUI
                 // AUN FALTA COMPLETAR QUE REDIRECCIONE A UNA PAGINA PARA
                 // EDITAR EL CONTENIDO DE LA HISTORIA
             }
-            if(e.CommandName == "eliminar_historia")
+            if (e.CommandName == "eliminar_historia")
             {
                 int id_historia = Convert.ToInt32(e.CommandArgument);
 
                 DAO.Historia historiaDAO = new DAO.Historia();
 
-
-
-                historiaDAO.EliminarHistoriaSP(id_historia);
-
+                string ok = Request.Form["confirm_value"];
+                if(ok == "SI")
+                {
+                    historiaDAO.EliminarHistoriaSP(id_historia);
+                    Response.Redirect(Request.RawUrl);
+                }
             }
         }
     }

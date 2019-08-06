@@ -17,7 +17,7 @@
                             <div class="card mb-3" style="max-width: 1080px;">
                                 <div class="row no-gutters">
                                     <div class="col-md-2">
-                                        <img ID="imgPortada" class="card-img" src="<%#Eval("portada_url") %>" class="rounded img-thumbnail" />
+                                        <img id="imgPortada" class="card-img" src="<%#Eval("portada_url") %>" class="rounded img-thumbnail" />
                                     </div>
                                     <div class="col-md-10">
                                         <div class="card-body">
@@ -26,11 +26,10 @@
                                             </h5>
                                             <p class="card-text"><%#Eval("sinopsis") %></p>
                                             <p class="card-text">
-                                                <small class="text-muted">
-                                                    Estado: <%#Eval("estatus") %>
+                                                <small class="text-muted">Estado: <%#Eval("estatus") %>
                                                 </small>
                                                 <asp:Button ID="btnEditar" runat="server" Text="Editar" CommandName="editar_historia" CommandArgument='<%#Eval("id_historia") %>' CssClass="float-right btn btn-outline-primary mt-1" />
-                                                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CommandName="eliminar_historia" CommandArgument='<%#Eval("id_historia") %>' CssClass="float-right btn btn-outline-primary mt-1" />
+                                                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClientClick="DeleteItem()" CommandName="eliminar_historia" CommandArgument='<%#Eval("id_historia") %>' CssClass="float-right btn btn-outline-primary mt-1" />
                                             </p>
                                         </div>
                                     </div>
@@ -41,6 +40,19 @@
                 </div>
             </div>
 
+            <script type="text/javascript">
+                function DeleteItem() {
+                    var confirm_value = document.createElement("INPUT");
+                    confirm_value.type = "hidden";
+                    confirm_value.name = "confirm_value";
+                    if (confirm("Estas seguro de eliminar esta historia...?")) {
+                        confirm_value.value = "SI";
+                    } else {
+                        confirm_value.value = "NO";
+                    }
+                    document.forms[0].appendChild(confirm_value);
+                }
+            </script>
         </div>
     </div>
 </asp:Content>

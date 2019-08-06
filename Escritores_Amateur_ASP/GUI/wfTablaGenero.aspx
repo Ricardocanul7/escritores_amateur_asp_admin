@@ -10,10 +10,10 @@
         <div class="col-12">
             <div class="btn-group btn-group-toggle" style="margin-bottom: 20px;">
                 <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
-                <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
+                <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnAgregar_Click"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
             </div>
         </div>
-        <asp:GridView ID="gvGenero" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_genero">
+        <asp:GridView ID="gvGenero" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_genero" OnRowCommand="gvGenero_RowCommand">
             <Columns>
                 <asp:BoundField DataField="id_genero" HeaderText="Indice" />
                 <asp:BoundField DataField="nombre_genero" HeaderText="Nombre" />

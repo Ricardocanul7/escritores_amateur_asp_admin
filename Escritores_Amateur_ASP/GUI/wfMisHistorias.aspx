@@ -30,6 +30,7 @@
                                                     Estado: <%#Eval("estatus") %>
                                                 </small>
                                                 <asp:Button ID="btnEditar" runat="server" Text="Editar" CommandName="editar_historia" CommandArgument='<%#Eval("id_historia") %>' CssClass="float-right btn btn-outline-primary mt-1" />
+                                                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CommandName="eliminar_historia" CommandArgument='<%#Eval("id_historia") %>' CssClass="float-right btn btn-outline-primary mt-1" />
                                             </p>
                                         </div>
                                     </div>

@@ -50,9 +50,17 @@ namespace Escritores_Amateur_ASP.GUI
         {
             if(e.CommandName == "editar_historia")
             {
-                string id_historia = e.CommandArgument.ToString();
+                int id_historia = Convert.ToInt32(e.CommandArgument);
                 // AUN FALTA COMPLETAR QUE REDIRECCIONE A UNA PAGINA PARA
                 // EDITAR EL CONTENIDO DE LA HISTORIA
+            }
+            if(e.CommandName == "eliminar_historia")
+            {
+                int id_historia = Convert.ToInt32(e.CommandArgument);
+
+                DAO.Historia historiaDAO = new DAO.Historia();
+
+                historiaDAO.EliminarHistoriaSP(id_historia);
             }
         }
     }

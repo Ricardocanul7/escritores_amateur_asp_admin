@@ -70,6 +70,7 @@
     <Content Include="Global.asax" />
     <Content Include="GUI\wfAgregarCapitulo.aspx" />
     <Content Include="GUI\wfAgregarHistoria.aspx" />
+    <Content Include="GUI\wfEditarCapitulo.aspx" />
     <Content Include="GUI\wfEditarCategorias.aspx" />
     <Content Include="GUI\wfEditarGenero.aspx" />
     <Content Include="GUI\wfEditarHistoria.aspx" />
@@ -1739,6 +1740,13 @@
     </Compile>
     <Compile Include="GUI\wfAgregarHistoria.aspx.designer.cs">
       <DependentUpon>wfAgregarHistoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfEditarCapitulo.aspx.cs">
+      <DependentUpon>wfEditarCapitulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfEditarCapitulo.aspx.designer.cs">
+      <DependentUpon>wfEditarCapitulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\wfEditarCategorias.aspx.cs">
       <DependentUpon>wfEditarCategorias.aspx</DependentUpon>

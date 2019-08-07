@@ -12,6 +12,7 @@ namespace Escritores_Amateur_ASP.GUI
     public partial class wfEditarUsuario : System.Web.UI.Page
     {
         DAO.Usuario usuario = new DAO.Usuario();
+        DAO.Localizacion localizacion = new DAO.Localizacion();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,6 +25,7 @@ namespace Escritores_Amateur_ASP.GUI
         public void llenarListBoxes()
         {
             llenar_tipoUsuario();
+            llenar_municipio();
         }
         public void llenar_tipoUsuario()
         {
@@ -38,6 +40,20 @@ namespace Escritores_Amateur_ASP.GUI
                 input_tipoUser.Items.Add(listItem);
             }
         }
+        public void llenar_municipio()
+        {
+            input_municipio.Items.Clear();
+            DataRow[] dr_municipio = localizacion.GetCiudades().Select();
+
+            foreach (var row in dr_municipio)
+            {
+                ListItem listItem = new ListItem();
+                listItem.Text = row["nombre"].ToString();
+                listItem.Value = row["id_ciudad"].ToString();
+                input_municipio.Items.Add(listItem);
+            }
+        }
+
         public void limpiar()
         {
             txtId.Text = "";
@@ -47,7 +63,7 @@ namespace Escritores_Amateur_ASP.GUI
             txtAvatar.Text = "";
             txtCorreo.Text = "";
             txtTelefono.Text = "";
-            txtMunicipio.Text = "";
+            input_municipio.Text = "";
             txtSitioWeb.Text = "";
             txtUsername.Text = "";
             txtPassword.Text = "";
@@ -83,8 +99,8 @@ namespace Escritores_Amateur_ASP.GUI
                 txtApellidoPat.Text = dt.Rows[0]["apellido_pat"].ToString();
                 txtAvatar.Text = dt.Rows[0]["avatar"].ToString();
                 txtCorreo.Text = dt.Rows[0]["correo"].ToString();
-                txtTelefono.Text = dt.Rows[0]["municipio"].ToString();
-                txtMunicipio.Text = dt.Rows[0]["telefono"].ToString();
+                txtTelefono.Text = dt.Rows[0]["telefono"].ToString();
+                input_municipio.Text = dt.Rows[0]["municipio"].ToString();
                 txtSitioWeb.Text = dt.Rows[0]["sitio_web"].ToString();
                 txtUsername.Text = dt.Rows[0]["username"].ToString();
                 input_tipoUser.Text = dt.Rows[0]["tipo_usuario"].ToString();
@@ -115,7 +131,7 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 mensaje = mensaje + "Introduce el telefono \n";
             }
-            if (txtMunicipio.Text.Trim().Length == 0)
+            if (input_municipio.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce el municipio \n";
             }
@@ -151,7 +167,7 @@ namespace Escritores_Amateur_ASP.GUI
                 obj.Apellido_mat = txtApellidoMat.Text.Trim().ToUpper();
                 obj.Correo = txtCorreo.Text.Trim().ToUpper();
                 obj.Telefono = txtTelefono.Text.Trim().ToUpper();
-                obj.Municipio = txtMunicipio.Text.Trim().ToUpper();
+                obj.Municipio = input_municipio.Text.Trim().ToUpper();
                 obj.Sitio_web = txtSitioWeb.Text.Trim().ToUpper();
                 obj.Username = txtUsername.Text.Trim().ToUpper();
                 obj.Tipo_usuario = Convert.ToInt32(input_tipoUser.Text.Trim().ToUpper());
@@ -192,7 +208,7 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 mensaje = mensaje + "Introduce el Correo \n";
             }
-            if (txtMunicipio.Text.Trim().Length == 0)
+            if (input_municipio.Text.Trim().Length == 0)
             {
                 mensaje = mensaje + "Introduce el municipio \n";
             }
@@ -221,7 +237,7 @@ namespace Escritores_Amateur_ASP.GUI
                 obj.Apellido_mat = txtApellidoMat.Text.Trim().ToUpper();
                 obj.Correo = txtCorreo.Text.Trim().ToUpper();
                 obj.Telefono = txtTelefono.Text.Trim().ToUpper();
-                obj.Municipio= txtMunicipio.Text.Trim().ToUpper();
+                obj.Municipio= input_municipio.Text.Trim().ToUpper();
                 obj.Sitio_web = txtSitioWeb.Text.Trim().ToUpper();
                 obj.Username = txtUsername.Text.Trim().ToUpper();
                 obj.Tipo_usuario = Convert.ToInt32(input_tipoUser.Text.Trim().ToUpper());

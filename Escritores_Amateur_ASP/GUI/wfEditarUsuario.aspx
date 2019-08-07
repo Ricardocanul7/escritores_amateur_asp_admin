@@ -83,7 +83,7 @@
                  <div class="col-md-6" >
                     <div class="form-group"> <!--municipio-->
                          <asp:Label ID="lblMunicipio" runat="server" Text="Municipio:"></asp:Label>
-                         <asp:TextBox ID="txtMunicipio" class="form-control" runat="server"></asp:TextBox>                    
+                        <asp:ListBox ID="input_municipio" runat="server" CssClass="form-control" AutoPostBack="true"></asp:ListBox>
                     </div>
                 </div>  
             </div>

@@ -12,7 +12,7 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DoOpen();
         }
 
         protected void lbtnBuscar_Click(object sender, EventArgs e)
@@ -24,6 +24,11 @@ namespace Escritores_Amateur_ASP.GUI
         {
             BO.Categoria oCategoria = new BO.Categoria();
             Servicios.CategoriaCtrl oCategoriaCtrl = new Servicios.CategoriaCtrl();
+            //el .length sirve para que cuente cuantos caracteres hay.
+            if (txtNombre.Text.Trim().Length != 0)
+            {
+                oCategoria.Nombre_cat = txtNombre.Text.Trim();
+            }
             DataTable dt = oCategoriaCtrl.devuelveObj(oCategoria);
 
             gvCategorias.DataSource = dt;

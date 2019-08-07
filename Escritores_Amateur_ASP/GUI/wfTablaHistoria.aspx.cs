@@ -12,24 +12,26 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DoOpen();
         }
-
+        protected void lbtnBuscar_Click(object sender, EventArgs e)
+        {
+            DoOpen();
+        }
         public void DoOpen()
         {
             BO.Historia oHistoria = new BO.Historia();
             Servicios.HistoriaCtrl oHistoriaCtrl = new Servicios.HistoriaCtrl();
+            //el .length sirve para que cuente cuantos caracteres hay.
+            if (txtTitulo.Text.Trim().Length != 0)
+            {
+                oHistoria.Titulo = txtTitulo.Text.Trim();
+            }
             DataTable dt = oHistoriaCtrl.devuelveObj(oHistoria);
 
             gvHistoria.DataSource = dt;
             gvHistoria.DataBind();
         }
-
-        protected void lbtnBuscar_Click(object sender, EventArgs e)
-        {
-            DoOpen();
-        }
-
         protected void gvHistoria_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Editar")

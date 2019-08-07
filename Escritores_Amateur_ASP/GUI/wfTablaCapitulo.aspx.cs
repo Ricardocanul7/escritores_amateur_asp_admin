@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Escritores_Amateur_ASP.BO;
+using Escritores_Amateur_ASP.Servicios;
 using System.Data;
 
 namespace Escritores_Amateur_ASP.GUI
@@ -12,22 +14,25 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DoOpen();
         }
-
+        protected void lbtnBuscar_Click(object sender, EventArgs e)
+        {
+            DoOpen();
+        }
         public void DoOpen()
         {
             BO.Capitulo oCapitulo = new BO.Capitulo();
             Servicios.CapituloCtrl oCapituloCtrl = new Servicios.CapituloCtrl();
+            //el .length sirve para que cuente cuantos caracteres hay.
+            if (txtTitulo.Text.Trim().Length != 0)
+            {
+                oCapitulo.Titulo = txtTitulo.Text.Trim();
+            }
             DataTable dt = oCapituloCtrl.devuelveObj(oCapitulo);
 
             gvCapitulo.DataSource = dt;
             gvCapitulo.DataBind();
-        }
-
-        protected void lbtnBuscar_Click(object sender, EventArgs e)
-        {
-            DoOpen();
         }
 
         protected void gvCapitulo_RowCommand(object sender, GridViewCommandEventArgs e)

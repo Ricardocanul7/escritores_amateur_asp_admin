@@ -13,6 +13,15 @@ namespace Escritores_Amateur_ASP.GUI {
     public partial class wfTablaCategoria {
         
         /// <summary>
+        /// Control lbtnAgregar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnAgregar;
+        
+        /// <summary>
         /// Control lbtnBuscar.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,13 @@ namespace Escritores_Amateur_ASP.GUI {
         protected global::System.Web.UI.WebControls.LinkButton lbtnBuscar;
         
         /// <summary>
-        /// Control lbtnAgregar.
+        /// Control txtNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnAgregar;
+        protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
         /// Control gvCategorias.

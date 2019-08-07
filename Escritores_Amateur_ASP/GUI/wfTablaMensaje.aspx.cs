@@ -12,13 +12,26 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DoOpen();
         }
 
         public void DoOpen()
         {
             BO.Mensaje oMensaje = new BO.Mensaje();
             Servicios.MensajeCtrl oMensajeCtrl = new Servicios.MensajeCtrl();
+            //el .length sirve para que cuente cuantos caracteres hay.
+            if (txtFecha.Text.Trim().Length != 0)
+            {
+                oMensaje.Fecha = Convert.ToDateTime(txtFecha.Text.Trim());
+            }
+            if (txtCreador.Text.Trim().Length != 0)
+            {
+                oMensaje.Id_usuario = Convert.ToInt32(txtCreador.Text.Trim());
+            }
+            if (txtConversacion.Text.Trim().Length != 0)
+            {
+                oMensaje.Id_conversacion = Convert.ToInt32(txtConversacion.Text.Trim());
+            }
             DataTable dt = oMensajeCtrl.devuelveObj(oMensaje);
 
             gvMensaje.DataSource = dt;

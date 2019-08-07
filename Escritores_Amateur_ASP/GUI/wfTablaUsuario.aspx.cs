@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Escritores_Amateur_ASP.Servicios;
 
 namespace Escritores_Amateur_ASP.GUI
 {
@@ -13,7 +12,7 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DoOpen();
         }
 
         protected void lbtnBuscar_Click(object sender, EventArgs e)
@@ -25,18 +24,19 @@ namespace Escritores_Amateur_ASP.GUI
         {
             BO.Usuario oUsuario = new BO.Usuario();
             Servicios.UsuarioCtrl oUsuarioCtrl = new Servicios.UsuarioCtrl();
-            /*if (txt .Text.Trim().Length != 0)
+            //el .length sirve para que cuente cuantos caracteres hay.
+            if (txtNombre.Text.Trim().Length != 0)
             {
-                oFlor.NombreComun = txtNombreComun.Text.Trim();
+                oUsuario.Nombre = txtNombre.Text.Trim();
             }
-            if (txtNombreCientifico.Text.Trim().Length != 0)
+            if (txtCorreo.Text.Trim().Length != 0)
             {
-                oFlor.NombreCientifico = txtNombreCientifico.Text.Trim();
+                oUsuario.Correo = txtCorreo.Text.Trim();
             }
-            if (txtFamilia.Text.Trim().Length != 0)
+            if (txtTelefono.Text.Trim().Length != 0)
             {
-                oFlor.Familia = txtFamilia.Text.Trim();
-            }*/
+                oUsuario.Telefono = txtTelefono.Text.Trim();
+            }
             DataTable dt = oUsuarioCtrl.devuelveObj(oUsuario);
 
             gvUsuarios.DataSource = dt;

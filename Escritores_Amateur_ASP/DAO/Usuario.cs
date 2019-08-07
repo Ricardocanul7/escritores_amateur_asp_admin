@@ -153,14 +153,14 @@ namespace Escritores_Amateur_ASP.DAO
                   "apellido_mat=@apellido_mat," +
                   "correo=@correo," +
                   "avatar=@avatar," +
-                  "municipio=@municipio" +
+                  "municipio=@municipio, " +
                   "telefono=@telefono," +
                   "sitio_web=@sitio_web," +
                   "biografia=@biografia," +
                   "username=@username," +
-                  "contrasenia=@contrasenia" +
+                  "contrasenia=@contrasenia," +
                   "tipo_usuario=@tipo_usuario" +
-                  " WHERE id_usario=@id_usuario";
+                  " WHERE id_usuario=@id_usuario";
             bd.Cmd.Parameters.Add("@id_usuario", SqlDbType.Int);
             bd.Cmd.Parameters.Add("@nombre", SqlDbType.VarChar);
             bd.Cmd.Parameters.Add("@apellido_pat", SqlDbType.VarChar);

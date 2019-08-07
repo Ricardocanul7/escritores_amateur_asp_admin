@@ -65,10 +65,6 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 mensaje += "Introduce el texto\n";
             }
-            if (txtFecha.Text == string.Empty)
-            {
-                mensaje += "Introduce la fecha\n";
-            }
             if (txtEstado.Text == string.Empty)
             {
                 mensaje += "Introduce el estado\n";

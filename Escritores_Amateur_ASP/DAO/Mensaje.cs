@@ -45,9 +45,8 @@ namespace Escritores_Amateur_ASP.DAO
         {
             BO.Mensaje data = (BO.Mensaje)obj;
             bd = new BaseDB();
-            bd.Cmd.CommandType = CommandType.StoredProcedure;
 
-            sql = "insertar_mensaje";
+            sql = "INSERT INTO mensaje VALUES(@texto, GETDATE(), @estado, @id_user_creador, @id_conversacion)";
 
             bd.Cmd.Parameters.AddWithValue("@texto", data.Tecto);
             bd.Cmd.Parameters.AddWithValue("@fecha", data.Fecha);

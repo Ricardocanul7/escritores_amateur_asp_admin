@@ -27,6 +27,7 @@
                                     </h5>
                                     <p class="card-text">
                                         <%#Eval("contenido") %>
+                                        <asp:Button ID="btnEliminar" CommandName="eliminar_capitulo" CommandArgument='<%#Eval("id_capitulo") %>' runat="server" Text="Eliminar" CssClass="float-right btn btn-outline-primary mt-1" />
                                         <asp:Button ID="btnEditar" CommandName="editar_capitulo" CommandArgument='<%#Eval("id_capitulo") %>' runat="server" Text="Editar" CssClass="float-right btn btn-outline-primary mt-1" />
                                     </p>
                                 </div>

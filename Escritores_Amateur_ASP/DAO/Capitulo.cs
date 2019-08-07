@@ -70,6 +70,7 @@ namespace Escritores_Amateur_ASP.DAO
         {
             BO.Capitulo data = (BO.Capitulo)obj;
             bd = new BaseDB();
+
             bd.Cmd.Parameters.Add("@id_capitulo", SqlDbType.Int);
             bd.Cmd.Parameters["@id_capitulo"].Value = data.Id_capitulo;
 

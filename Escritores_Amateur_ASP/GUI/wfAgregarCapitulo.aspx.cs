@@ -60,6 +60,17 @@ namespace Escritores_Amateur_ASP.GUI
                 Session["operacion_historia"] = "editar";
                 Response.Redirect("../GUI/wfNuevoCapitulo.aspx", false);
             }
+            if(e.CommandName == "eliminar_capitulo")
+            {
+                DAO.Capitulo capituloDAO = new DAO.Capitulo();
+                BO.Capitulo capituloBO = new BO.Capitulo();
+
+                capituloBO.Id_capitulo = Convert.ToInt32(e.CommandArgument);
+
+                if (capituloDAO.eliminaDatos(capituloBO) != 0)
+                    Response.Redirect(Request.RawUrl, false);
+
+            }
         }
     }
 }

@@ -12,22 +12,26 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DoOpen();
+        }
+        protected void lbtnBuscar_Click(object sender, EventArgs e)
+        {
+            DoOpen();
         }
 
         public void DoOpen()
         {
             BO.Genero oGenero = new BO.Genero();
             Servicios.GeneroCtrl oGeneroCtrl = new Servicios.GeneroCtrl();
+            //el .length sirve para que cuente cuantos caracteres hay.
+            if (txtNombre.Text.Trim().Length != 0)
+            {
+                oGenero.Nombre_genero = txtNombre.Text.Trim();
+            }
             DataTable dt = oGeneroCtrl.devuelveObj(oGenero);
 
             gvGenero.DataSource = dt;
             gvGenero.DataBind();
-        }
-
-        protected void lbtnBuscar_Click(object sender, EventArgs e)
-        {
-            DoOpen();
         }
 
         protected void lbtnAgregar_Click(object sender, EventArgs e)

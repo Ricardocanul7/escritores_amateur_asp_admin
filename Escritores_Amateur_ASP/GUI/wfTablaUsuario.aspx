@@ -6,11 +6,36 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContenido" runat="server">
     <div class="row" style="margin-bottom:20px;">
-        <div class="btn-group">
-            <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i><span>Buscar</span></asp:LinkButton>
-            <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnAgregar_Click"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
+        <div class="col-12">
+            <div class="btn-group btn-group-justified" style="margin-bottom: 20px;">
+                <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnAgregar_Click"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
+                <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
+            </div>
+            <div class="row">
+            <!--BUSCADA FILTRADA-->
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <span>Nombre</span>
+                    <asp:TextBox ID="txtNombre" class="form-control" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <span>Correo</span>
+                    <asp:TextBox ID="txtCorreo" class="form-control" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <span>Telefono</span>
+                    <asp:TextBox ID="txtTelefono" class="form-control" runat="server"></asp:TextBox>
+                </div>
+            </div>
+        </div>
+        <!--BUSCADA FILTRADA-->
         </div>
     </div>
+    
     <div class="row">
         <asp:GridView ID="gvUsuarios" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_usuario" OnRowCommand="gvUsuarios_RowCommand">
             <Columns>

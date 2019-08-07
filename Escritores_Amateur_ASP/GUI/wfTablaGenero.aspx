@@ -8,10 +8,18 @@
 
     <div class="row">
         <div class="col-12">
-            <div class="btn-group btn-group-toggle" style="margin-bottom: 20px;">
-                <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
+            <div class="btn-group btn-group-justified" style="margin-bottom: 20px;">
                 <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnAgregar_Click"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
+                <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
             </div>
+            <div class="row"> <!--BUSCADA FILTRADA-->
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        <span>Nombre</span>
+                        <asp:TextBox ID="txtNombre" class="form-control" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+            </div> <!--BUSCADA FILTRADA-->
         </div>
         <asp:GridView ID="gvGenero" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_genero" OnRowCommand="gvGenero_RowCommand">
             <Columns>

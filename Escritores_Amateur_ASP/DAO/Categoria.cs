@@ -78,7 +78,7 @@ namespace Escritores_Amateur_ASP.DAO
             BO.Categoria data = (BO.Categoria)obj;
             bd = new BaseDB();
             sql = "UPDATE categoria " +
-                  "SET nombre_cat=@nombre_cat," +
+                  "SET nombre_cat=@nombre_cat" +
                   " WHERE id_categoria=@id_categoria";
 
             bd.Cmd.Parameters.AddWithValue("@id_categoria", data.Id_categoria);

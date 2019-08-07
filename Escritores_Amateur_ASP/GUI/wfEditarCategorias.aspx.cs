@@ -13,7 +13,10 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargaOperacion();
+            if (!IsPostBack)
+            {
+                cargaOperacion();
+            }
         }
         public void limpiar()
         {
@@ -51,16 +54,16 @@ namespace Escritores_Amateur_ASP.GUI
         public void agregar()
         {
             string mensaje = "";
-            if (txtNombre.Text.Trim().Length == 0)
+            if (txtNombre.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el nombre\n";
+                mensaje += "Introduce el nombre\n";
             }
 
             if (mensaje.Trim().Length == 0)
             {
                 BO.Categoria obj = new BO.Categoria();
                 Servicios.CategoriaCtrl objCtrl = new Servicios.CategoriaCtrl();
-                obj.Nombre_cat = txtNombre.Text.Trim();
+                obj.Nombre_cat = txtNombre.Text;
                 string msn = objCtrl.creaCategoria(obj);
                 if (msn == "La operación se realizó de manera correcta")
                 {
@@ -80,11 +83,11 @@ namespace Escritores_Amateur_ASP.GUI
         public void modificar()
         {
             string mensaje = "";
-            if (txtId.Text.Trim().Length == 0)
+            if (txtId.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce la Clave \n";
             }
-            if (txtNombre.Text.Trim().Length == 0)
+            if (txtNombre.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce el nombre\n";
             }
@@ -93,8 +96,8 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 BO.Categoria obj = new BO.Categoria();
                 Servicios.CategoriaCtrl objCtrl = new Servicios.CategoriaCtrl();
-                obj.Id_categoria = Convert.ToInt32(txtId.Text.Trim().ToUpper());
-                obj.Nombre_cat = txtNombre.Text.Trim().ToUpper();
+                obj.Id_categoria = Convert.ToInt32(txtId.Text);
+                obj.Nombre_cat = txtNombre.Text;
                 string msn = objCtrl.actualizaObj(obj);
                 if (msn == "La operación se realizó de manera correcta")
                 {

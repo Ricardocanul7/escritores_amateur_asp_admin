@@ -8,18 +8,17 @@
         <div class="col-12">
             <div class="btn-group btn-group-justified" style="margin-bottom: 20px;">
                 <asp:LinkButton ID="lbtnBuscar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnBuscar_Click"><i class="fa fa-search" aria-hidden="true"></i>Buscar</asp:LinkButton>
-                <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
-                 <asp:LinkButton ID="lbtnEliminar" CssClass="btn btn-primary col-sm-5" runat="server"><i class="fa fa-eraser" aria-hidden="true"></i>Eliminar</asp:LinkButton>
-                <asp:LinkButton ID="lbtnActualizar" CssClass="btn btn-primary col-sm-6" runat="server"><i class="fa fa-upload" aria-hidden="true"></i>Actualizar</asp:LinkButton>
+                <asp:LinkButton ID="lbtnAgregar" CssClass="btn btn-primary col-sm-5" runat="server" OnClick="lbtnAgregar_Click"><i class="fa fa-plus" aria-hidden="true"></i>Agregar</asp:LinkButton>
             </div>
         </div>
-        <asp:GridView ID="gvMensaje" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_mensaje">
+        <asp:GridView ID="gvMensaje" runat="server" CssClass="table table-bordered" AutoGenerateColumns="false" DataKeyNames="id_mensaje" OnRowCommand="gvMensaje_RowCommand">
             <Columns>
                 <asp:BoundField DataField="texto" HeaderText="Texto" />
                 <asp:BoundField DataField="fecha" HeaderText="Fecha" />
                 <asp:BoundField DataField="estado" HeaderText="Estado" />
                 <asp:BoundField DataField="id_user_creador" HeaderText="Creador Conversación" />
                 <asp:BoundField DataField="id_conversacion" HeaderText="Id Conversación" />
+                <asp:ButtonField ButtonType="Button" Text="Editar" CommandName="Editar" />
             </Columns>
             <EmptyDataTemplate>
                 No hay datos disponibles para mostrar

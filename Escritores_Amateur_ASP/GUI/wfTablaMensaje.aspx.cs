@@ -29,5 +29,25 @@ namespace Escritores_Amateur_ASP.GUI
         {
             DoOpen();
         }
+
+        protected void gvMensaje_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+                int indice = Convert.ToInt32(e.CommandArgument);
+                int id = (int)gvMensaje.DataKeys[indice].Value;
+                BO.Mensaje obj = new BO.Mensaje();
+                obj.Id_mensaje = id;
+                Session["frmMensajeOperacion"] = "Editar";
+                Session["frmMensajeBO"] = obj;
+                Response.Redirect("wfEditarMensaje.aspx");
+            }
+        }
+
+        protected void lbtnAgregar_Click(object sender, EventArgs e)
+        {
+            Session["frmMensajeOperacion"] = "Nuevo";
+            Response.Redirect("wfEditarMensaje.aspx");
+        }
     }
 }

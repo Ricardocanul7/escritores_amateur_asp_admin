@@ -66,10 +66,9 @@ namespace Escritores_Amateur_ASP.DAO
         {
             BO.Mensaje data = (BO.Mensaje)obj;
             bd = new BaseDB();
-            bd.Cmd.Parameters.Add("@id_mensaje", SqlDbType.Int);
-            bd.Cmd.Parameters["@id_mensaje"].Value = data.Id_mensaje;
 
             sql = "DELETE FROM historia WHERE id_mensaje=@id_mensaje";
+            bd.Cmd.Parameters.AddWithValue("@id_mensaje", data.Id_mensaje);
             int i = bd.execNonQuery(sql);
             if (i == 0)
             {
@@ -86,22 +85,15 @@ namespace Escritores_Amateur_ASP.DAO
                   "fecha=@fecha," +
                   "estado=@estado," +
                   "id_user_creador=@id_user_creador," +
-                  "id_conversacion=@id_conversacion," +
+                  "id_conversacion=@id_conversacion" +
 
                   " WHERE id_mensaje=@id_mensaje";
-            bd.Cmd.Parameters.Add("@id_mensaje", SqlDbType.Int);
-            bd.Cmd.Parameters.Add("@texto", SqlDbType.VarChar);
-            bd.Cmd.Parameters.Add("@fecha", SqlDbType.VarChar);
-            bd.Cmd.Parameters.Add("@estado", SqlDbType.Int);
-            bd.Cmd.Parameters.Add("@id_user_creador", SqlDbType.Int);
-            bd.Cmd.Parameters.Add("@id_conversacion", SqlDbType.Int);
-
-            bd.Cmd.Parameters["@id_mensaje"].Value = data.Id_mensaje;
-            bd.Cmd.Parameters["@texto"].Value = data.Tecto;
-            bd.Cmd.Parameters["@fecha"].Value = data.Fecha;
-            bd.Cmd.Parameters["@estado"].Value = data.Estado;
-            bd.Cmd.Parameters["@id_user_creador"].Value = data.Id_usuario;
-            bd.Cmd.Parameters["@id_conversacion"].Value = data.Id_conversacion;
+            bd.Cmd.Parameters.AddWithValue("@id_mensaje", data.Id_mensaje);
+            bd.Cmd.Parameters.AddWithValue("@texto", data.Tecto);
+            bd.Cmd.Parameters.AddWithValue("@fecha", data.Fecha);
+            bd.Cmd.Parameters.AddWithValue("@estado", data.Estado);
+            bd.Cmd.Parameters.AddWithValue("@id_user_creador", data.Id_usuario);
+            bd.Cmd.Parameters.AddWithValue("@id_conversacion", data.Id_conversacion);
 
 
             int i = bd.execNonQuery(sql);

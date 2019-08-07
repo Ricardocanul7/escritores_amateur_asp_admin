@@ -52,9 +52,8 @@ namespace Escritores_Amateur_ASP.DAO
         {
             BO.Capitulo data = (BO.Capitulo)obj;
             bd = new BaseDB();
-            bd.Cmd.CommandType = CommandType.StoredProcedure;
 
-            sql = "";
+            sql = "INSERT INTO capitulo VALUES(@titulo, @contenido, @id_historia)";
 
             bd.Cmd.Parameters.AddWithValue("@titulo", data.Titulo);
             bd.Cmd.Parameters.AddWithValue("@contenido", data.Contenido);

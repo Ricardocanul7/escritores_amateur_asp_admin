@@ -12,7 +12,10 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargaOperacion();
+            if (!IsPostBack)
+            {
+                cargaOperacion();
+            }
         }
         public void limpiar()
         {
@@ -58,25 +61,25 @@ namespace Escritores_Amateur_ASP.GUI
         public void agregar()
         {
             string mensaje = "";
-            if (txtTexto.Text.Trim().Length == 0)
+            if (txtTexto.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el texto\n";
+                mensaje += "Introduce el texto\n";
             }
-            if (txtFecha.Text.Trim().Length == 0)
+            if (txtFecha.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce la fecha\n";
+                mensaje += "Introduce la fecha\n";
             }
-            if (txtEstado.Text.Trim().Length == 0)
+            if (txtEstado.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el estado\n";
+                mensaje += "Introduce el estado\n";
             }
-            if (txtIDconversacion.Text.Trim().Length == 0)
+            if (txtIDconversacion.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el id de la conversación \n";
+                mensaje += "Introduce el id de la conversación \n";
             }
-            if (txtCreador.Text.Trim().Length == 0)
+            if (txtCreador.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el creador \n";
+                mensaje += "Introduce el creador \n";
             }
 
 
@@ -84,11 +87,11 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 BO.Mensaje obj = new BO.Mensaje();
                 Servicios.MensajeCtrl objCtrl = new Servicios.MensajeCtrl();
-                obj.Tecto = txtTexto.Text.Trim();
-                obj.Fecha = Convert.ToDateTime(txtFecha.Text.Trim().ToUpper());
-                obj.Estado = Convert.ToInt32(txtEstado.Text.Trim().ToUpper());
-                obj.Id_conversacion = Convert.ToInt32(txtIDconversacion.Text.Trim().ToUpper());
-                obj.Id_usuario = Convert.ToInt32(txtCreador.Text.Trim().ToUpper());
+                obj.Tecto = txtTexto.Text;
+                obj.Fecha = Convert.ToDateTime(txtFecha.Text);
+                obj.Estado = Convert.ToInt32(txtEstado.Text);
+                obj.Id_conversacion = Convert.ToInt32(txtIDconversacion.Text);
+                obj.Id_usuario = Convert.ToInt32(txtCreador.Text);
                 string msn = objCtrl.creaMensaje(obj);
                 if (msn == "La operación se realizó de manera correcta")
                 {
@@ -108,29 +111,25 @@ namespace Escritores_Amateur_ASP.GUI
         public void modificar()
         {
             string mensaje = "";
-            if (txtId.Text.Trim().Length == 0)
+            if (txtTexto.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce la Clave \n";
+                mensaje += "Introduce el texto\n";
             }
-            if (txtTexto.Text.Trim().Length == 0)
+            if (txtFecha.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el texto\n";
+                mensaje += "Introduce la fecha\n";
             }
-            if (txtFecha.Text.Trim().Length == 0)
+            if (txtEstado.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce la fecha\n";
+                mensaje += "Introduce el estado\n";
             }
-            if (txtEstado.Text.Trim().Length == 0)
+            if (txtIDconversacion.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el estado\n";
+                mensaje += "Introduce el id de la conversación \n";
             }
-            if (txtIDconversacion.Text.Trim().Length == 0)
+            if (txtCreador.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el id de la conversación \n";
-            }
-            if (txtCreador.Text.Trim().Length == 0)
-            {
-                mensaje = mensaje + "Introduce el creador \n";
+                mensaje += "Introduce el creador \n";
             }
 
 
@@ -138,12 +137,12 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 BO.Mensaje obj = new BO.Mensaje();
                 Servicios.MensajeCtrl objCtrl = new Servicios.MensajeCtrl();
-                obj.Id_mensaje = Convert.ToInt32(txtId.Text.Trim().ToUpper());
-                obj.Tecto = txtTexto.Text.Trim();
-                obj.Fecha = Convert.ToDateTime(txtFecha.Text.Trim().ToUpper());
-                obj.Estado = Convert.ToInt32(txtEstado.Text.Trim().ToUpper());
-                obj.Id_conversacion = Convert.ToInt32(txtIDconversacion.Text.Trim().ToUpper());
-                obj.Id_usuario = Convert.ToInt32(txtCreador.Text.Trim().ToUpper());
+                obj.Id_mensaje = Convert.ToInt32(txtId.Text);
+                obj.Tecto = txtTexto.Text;
+                obj.Fecha = Convert.ToDateTime(txtFecha.Text);
+                obj.Estado = Convert.ToInt32(txtEstado.Text);
+                obj.Id_conversacion = Convert.ToInt32(txtIDconversacion.Text);
+                obj.Id_usuario = Convert.ToInt32(txtCreador.Text);
                 string msn = objCtrl.actualizaObj(obj);
                 if (msn == "La operación se realizó de manera correcta")
                 {

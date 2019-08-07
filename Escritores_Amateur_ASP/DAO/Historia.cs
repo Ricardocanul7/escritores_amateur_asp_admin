@@ -154,10 +154,9 @@ namespace Escritores_Amateur_ASP.DAO
         {
             BO.Historia data = (BO.Historia)obj;
             bd = new BaseDB();
-            bd.Cmd.Parameters.Add("@id_historia", SqlDbType.Int);
-            bd.Cmd.Parameters["@id_historia"].Value = data.Id_historia;
 
             sql = "DELETE FROM historia WHERE id_historia=@id_historia";
+            bd.Cmd.Parameters.AddWithValue("@id_historia", data.Id_historia);
             int i = bd.execNonQuery(sql);
             if (i == 0)
             {
@@ -174,22 +173,16 @@ namespace Escritores_Amateur_ASP.DAO
                   "portada_url=@portada_url," +
                   "id_sinopsis=@id_sinopsis," +
                   "id_prologo=@id_prologo," +
-                  "id_categoria=@id_categoria," +
+                  "id_categoria=@id_categoria" +
                   
                   " WHERE id_historia=@id_historia";
-            bd.Cmd.Parameters.Add("@id_historia", SqlDbType.Int);
-            bd.Cmd.Parameters.Add("@titulo", SqlDbType.VarChar);
-            bd.Cmd.Parameters.Add("@portada_url", SqlDbType.VarChar);
-            bd.Cmd.Parameters.Add("@id_sinopsis", SqlDbType.Int);
-            bd.Cmd.Parameters.Add("@id_prologo", SqlDbType.Int);
-            bd.Cmd.Parameters.Add("@id_categoria", SqlDbType.Int);
-            
-            bd.Cmd.Parameters["@id_historia"].Value = data.Id_historia;
-            bd.Cmd.Parameters["@titulo"].Value = data.Titulo;
-            bd.Cmd.Parameters["@portada_url"].Value = data.Portada_url;
-            bd.Cmd.Parameters["@id_sinopsis"].Value = data.Id_sinopsis;
-            bd.Cmd.Parameters["@id_prologo"].Value = data.Id_prologo;
-            bd.Cmd.Parameters["@id_categoria"].Value = data.Id_categoria;
+
+            bd.Cmd.Parameters.AddWithValue("@id_historia", data.Id_historia);
+            bd.Cmd.Parameters.AddWithValue("@titulo", data.Titulo);
+            bd.Cmd.Parameters.AddWithValue("@portada_url", data.Portada_url);
+            bd.Cmd.Parameters.AddWithValue("@id_sinopsis", data.Id_sinopsis);
+            bd.Cmd.Parameters.AddWithValue("@id_prologo", data.Id_prologo);
+            bd.Cmd.Parameters.AddWithValue("@id_categoria", data.Id_categoria);
             
 
             int i = bd.execNonQuery(sql);

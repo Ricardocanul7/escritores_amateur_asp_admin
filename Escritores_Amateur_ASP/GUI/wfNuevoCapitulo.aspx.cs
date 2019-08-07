@@ -15,7 +15,6 @@ namespace Escritores_Amateur_ASP.GUI
         {
             if (!IsPostBack)
             {
-                SetID_Story();
                 CargarInfo();
             }
         }
@@ -28,19 +27,45 @@ namespace Escritores_Amateur_ASP.GUI
         // en caso de abrir este form para editar un capitulo hecho
         public void CargarInfo()
         {
-            if(Session["operacion_historia"].ToString() == "editar")
+            if(Session["operacion_historia"].ToString() != null)
             {
-                DAO.Capitulo capituloDAO = new DAO.Capitulo();
+                if (Session["operacion_historia"].ToString() == "editar")
+                {
+                    btn_add_capitulo.Text = "Modificar";
+                    DAO.Capitulo capituloDAO = new DAO.Capitulo();
+                    BO.Capitulo capituloBO = new BO.Capitulo();
+
+                    capituloBO.Id_capitulo = Convert.ToInt32(Session["id_capitulo"]);
+
+                    DataTable dt_capitulos = capituloDAO.devuelveDatos(capituloBO);
+
+                    txtTitulo.Text = dt_capitulos.Rows[0]["titulo"].ToString();
+                    txtContenido.Text = dt_capitulos.Rows[0]["contenido"].ToString();
+                }
+                if (Session["operacion_historia"].ToString() == "nuevo")
+                {
+
+                }
+            }
+        }
+
+        protected void btn_add_capitulo_Click(object sender, EventArgs e)
+        {
+            if (Session["operacion_historia"].ToString() == "editar")
+            {
                 BO.Capitulo capituloBO = new BO.Capitulo();
+                DAO.Capitulo capituloDAO = new DAO.Capitulo();
 
                 capituloBO.Id_capitulo = Convert.ToInt32(Session["id_capitulo"]);
+                //capituloBO.Id_historia = id_historia;
+                capituloBO.Titulo = txtTitulo.Text;
+                capituloBO.Contenido = txtContenido.Text;
 
-                DataTable dt_capitulos = capituloDAO.devuelveDatos(capituloBO);
-
-                txtTitulo.Text = dt_capitulos.Rows[0]["titulo"].ToString();
-                txtContenido.Text = dt_capitulos.Rows[0]["contenido"].ToString();
+                //Session["id_historia"] = id_historia;
+                if (capituloDAO.actualizaCapitulo(capituloBO) != 0)
+                    Response.Redirect("../GUI/wfAgregarCapitulo.aspx", false);
             }
-            if(Session["operacion_historia"].ToString() == "nuevo")
+            if (Session["operacion_historia"].ToString() == "nuevo")
             {
 
             }

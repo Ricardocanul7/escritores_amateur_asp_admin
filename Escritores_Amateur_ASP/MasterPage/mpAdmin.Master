@@ -139,6 +139,7 @@
                             <asp:LinkButton ID="lbtnTablaHistoria" class="collapse-item" runat="server" OnClick="lbtnTablaHistoria_Click" >Historia</asp:LinkButton>
                             <asp:LinkButton ID="lbtnTablaCapitulo" class="collapse-item" runat="server" OnClick="lbtnTablaCapitulo_Click" >Capitulo</asp:LinkButton>
                             <asp:LinkButton ID="lbtnTablaPrologo" class="collapse-item" runat="server" OnClick="lbtnTablaPrologo_Click" >Prologo</asp:LinkButton>
+                            <asp:LinkButton ID="lbtnTablaRevisiones" CssClass="collapse-item" runat="server" OnClick="lbtnTablaRevisiones_Click">Revisiones</asp:LinkButton>
                             <!--<a class="collapse-item" href="login.html">Usuarios</a> -->
                             <%--<a class="collapse-item" href="register.html">Historias</a>--%>
                         </div>

@@ -7,117 +7,99 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Escritores_Amateur_ASP.MasterPage {
+namespace Escritores_Amateur_ASP.GUI {
     
     
-    public partial class mpAdmin {
+    public partial class wfEditarRevision {
         
         /// <summary>
-        /// form1 control.
+        /// lbtnRegresar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnRegresar;
         
         /// <summary>
-        /// lbtTableUsuarios control.
+        /// lbtnAgregar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtTableUsuarios;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnAgregar;
         
         /// <summary>
-        /// lbtTablaCategorias control.
+        /// lbtnEliminar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtTablaCategorias;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnEliminar;
         
         /// <summary>
-        /// lbtnTablaGenero control.
+        /// lbtnModificar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnTablaGenero;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnModificar;
         
         /// <summary>
-        /// lbtnTablaSinopsis control.
+        /// lblId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnTablaSinopsis;
+        protected global::System.Web.UI.WebControls.Label lblId;
         
         /// <summary>
-        /// lbtnTablaMensaje control.
+        /// txtId_admin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnTablaMensaje;
+        protected global::System.Web.UI.WebControls.TextBox txtId_admin;
         
         /// <summary>
-        /// lbtnTablaHistoria control.
+        /// lblTitulo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnTablaHistoria;
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
-        /// lbtnTablaCapitulo control.
+        /// lboxId_Historia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnTablaCapitulo;
+        protected global::System.Web.UI.WebControls.ListBox lboxId_Historia;
         
         /// <summary>
-        /// lbtnTablaPrologo control.
+        /// lblContenido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnTablaPrologo;
+        protected global::System.Web.UI.WebControls.Label lblContenido;
         
         /// <summary>
-        /// lbtnTablaRevisiones control.
+        /// lboxEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnTablaRevisiones;
-        
-        /// <summary>
-        /// cphTitulo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder cphTitulo;
-        
-        /// <summary>
-        /// cphContenido control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder cphContenido;
+        protected global::System.Web.UI.WebControls.ListBox lboxEstado;
     }
 }

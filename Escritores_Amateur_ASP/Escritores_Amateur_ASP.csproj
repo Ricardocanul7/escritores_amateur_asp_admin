@@ -76,6 +76,7 @@
     <Content Include="GUI\wfEditarHistoria.aspx" />
     <Content Include="GUI\wfEditarMensaje.aspx" />
     <Content Include="GUI\wfEditarPrologo.aspx" />
+    <Content Include="GUI\wfEditarRevision.aspx" />
     <Content Include="GUI\wfEditarSinopsis.aspx" />
     <Content Include="GUI\wfEditarUsuario.aspx" />
     <Content Include="GUI\wfHistoria.aspx" />
@@ -1715,6 +1716,7 @@
     <Compile Include="BO\Historia.cs" />
     <Compile Include="BO\Mensaje.cs" />
     <Compile Include="BO\Prologo.cs" />
+    <Compile Include="BO\Revision.cs" />
     <Compile Include="BO\Sinopsis.cs" />
     <Compile Include="BO\Usuario.cs" />
     <Compile Include="DAO\BaseDB.cs" />
@@ -1725,6 +1727,7 @@
     <Compile Include="DAO\Localizacion.cs" />
     <Compile Include="DAO\Mensaje.cs" />
     <Compile Include="DAO\Prologo.cs" />
+    <Compile Include="DAO\Revision.cs" />
     <Compile Include="DAO\Sinopsis.cs" />
     <Compile Include="DAO\Usuario.cs" />
     <Compile Include="Global.asax.cs">
@@ -1785,6 +1788,13 @@
     </Compile>
     <Compile Include="GUI\wfEditarPrologo.aspx.designer.cs">
       <DependentUpon>wfEditarPrologo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfEditarRevision.aspx.cs">
+      <DependentUpon>wfEditarRevision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfEditarRevision.aspx.designer.cs">
+      <DependentUpon>wfEditarRevision.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\wfEditarSinopsis.aspx.cs">
       <DependentUpon>wfEditarSinopsis.aspx</DependentUpon>

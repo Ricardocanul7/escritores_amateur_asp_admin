@@ -74,6 +74,7 @@
     <Content Include="GUI\wfEditarCategorias.aspx" />
     <Content Include="GUI\wfEditarGenero.aspx" />
     <Content Include="GUI\wfEditarHistoria.aspx" />
+    <Content Include="GUI\wfEditarMensaje.aspx" />
     <Content Include="GUI\wfEditarPrologo.aspx" />
     <Content Include="GUI\wfEditarSinopsis.aspx" />
     <Content Include="GUI\wfEditarUsuario.aspx" />
@@ -1769,6 +1770,13 @@
     </Compile>
     <Compile Include="GUI\wfEditarHistoria.aspx.designer.cs">
       <DependentUpon>wfEditarHistoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\wfEditarMensaje.aspx.cs">
+      <DependentUpon>wfEditarMensaje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GUI\wfEditarMensaje.aspx.designer.cs">
+      <DependentUpon>wfEditarMensaje.aspx</DependentUpon>
     </Compile>
     <Compile Include="GUI\wfEditarPrologo.aspx.cs">
       <DependentUpon>wfEditarPrologo.aspx</DependentUpon>

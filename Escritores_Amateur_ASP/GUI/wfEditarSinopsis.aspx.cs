@@ -12,7 +12,10 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargaOperacion();
+            if (!IsPostBack)
+            {
+                cargaOperacion();
+            }
         }
         public void limpiar()
         {
@@ -50,16 +53,16 @@ namespace Escritores_Amateur_ASP.GUI
         public void agregar()
         {
             string mensaje = "";
-            if (txtNombre.Text.Trim().Length == 0)
+            if (txtNombre.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el contenido\n";
+                mensaje += "Introduce el contenido\n";
             }
 
             if (mensaje.Trim().Length == 0)
             {
                 BO.Sinopsis obj = new BO.Sinopsis();
                 Servicios.SinopsisCtrl objCtrl = new Servicios.SinopsisCtrl();
-                obj.Contenido = txtNombre.Text.Trim();
+                obj.Contenido = txtNombre.Text;
                 string msn = objCtrl.creaSinopsis(obj);
                 if (msn == "La operación se realizó de manera correcta")
                 {
@@ -79,11 +82,11 @@ namespace Escritores_Amateur_ASP.GUI
         public void modificar()
         {
             string mensaje = "";
-            if (txtId.Text.Trim().Length == 0)
+            if (txtId.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce la Clave \n";
             }
-            if (txtNombre.Text.Trim().Length == 0)
+            if (txtNombre.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce el contenido\n";
             }
@@ -92,8 +95,8 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 BO.Sinopsis obj = new BO.Sinopsis();
                 Servicios.SinopsisCtrl objCtrl = new Servicios.SinopsisCtrl();
-                obj.Id_sinopsis = Convert.ToInt32(txtId.Text.Trim().ToUpper());
-                obj.Contenido = txtNombre.Text.Trim().ToUpper();
+                obj.Id_sinopsis = Convert.ToInt32(txtId.Text);
+                obj.Contenido = txtNombre.Text;
                 string msn = objCtrl.actualizaObj(obj);
                 if (msn == "La operación se realizó de manera correcta")
                 {

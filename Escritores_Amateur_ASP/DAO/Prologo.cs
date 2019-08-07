@@ -45,9 +45,8 @@ namespace Escritores_Amateur_ASP.DAO
         {
             BO.Prologo data = (BO.Prologo)obj;
             bd = new BaseDB();
-            bd.Cmd.CommandType = CommandType.StoredProcedure;
 
-            sql = "INSERT INTO prologo(contenido) VALUES(@contenido)";
+            sql = "INSERT INTO prologo VALUES(@contenido)";
 
             bd.Cmd.Parameters.AddWithValue("@contenido", data.Contenido);
             int i = bd.execNonQuery(sql);
@@ -61,10 +60,9 @@ namespace Escritores_Amateur_ASP.DAO
         {
             BO.Prologo data = (BO.Prologo)obj;
             bd = new BaseDB();
-            bd.Cmd.Parameters.Add("@id_prologo", SqlDbType.Int);
-            bd.Cmd.Parameters["@id_prologo"].Value = data.Id_prologo;
 
             sql = "DELETE FROM prologo WHERE id_prologo=@id_prologo";
+            bd.Cmd.Parameters.AddWithValue("@id_prologo", data.Id_prologo);
             int i = bd.execNonQuery(sql);
             if (i == 0)
             {
@@ -77,14 +75,10 @@ namespace Escritores_Amateur_ASP.DAO
             BO.Prologo data = (BO.Prologo)obj;
             bd = new BaseDB();
             sql = "UPDATE prologo " +
-                  "SET contenido=@contenido," +
+                  "SET contenido=@contenido" +
                   " WHERE id_prologo=@id_prologo";
-            bd.Cmd.Parameters.Add("@id_prologo", SqlDbType.Int);
-            bd.Cmd.Parameters.Add("@contenido", SqlDbType.VarChar);
-
-            bd.Cmd.Parameters["@id_prologo"].Value = data.Id_prologo;
-            bd.Cmd.Parameters["@contenido"].Value = data.Contenido;
-
+            bd.Cmd.Parameters.AddWithValue("@id_prologo", data.Id_prologo);
+            bd.Cmd.Parameters.AddWithValue("@contenido", data.Contenido);
             int i = bd.execNonQuery(sql);
             if (i == 0)
             {

@@ -46,7 +46,7 @@ namespace Escritores_Amateur_ASP.DAO
             BO.Sinopsis data = (BO.Sinopsis)obj;
             bd = new BaseDB();
 
-            sql = "INSERT INTO sinopsis VALUES(@contenido)";
+            sql = "INSERT INTO sinopsis VALUES('SINOPSIS', @contenido)";
             
             bd.Cmd.Parameters.AddWithValue("@contenido", data.Contenido);
             int i = bd.execNonQuery(sql);

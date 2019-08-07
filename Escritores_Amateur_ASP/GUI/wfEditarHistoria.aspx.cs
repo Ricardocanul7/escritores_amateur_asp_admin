@@ -12,7 +12,10 @@ namespace Escritores_Amateur_ASP.GUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            cargaOperacion();
+            if (!IsPostBack)
+            {
+                cargaOperacion();
+            }
         }
         public void limpiar()
         {
@@ -58,25 +61,25 @@ namespace Escritores_Amateur_ASP.GUI
         public void agregar()
         {
             string mensaje = "";
-            if (txtTitulo.Text.Trim().Length == 0)
+            if (txtTitulo.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el Titulo\n";
+                mensaje += "Introduce el Titulo\n";
             }
-            if (txtCategoria.Text.Trim().Length == 0)
+            if (txtCategoria.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce la categoria\n";
+                mensaje += "Introduce la categoria\n";
             }
-            if (txtUrl.Text.Trim().Length == 0)
+            if (txtUrl.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce la URL \n";
+                mensaje += "Introduce la URL \n";
             }
-            if (txtSinopsis.Text.Trim().Length == 0)
+            if (txtSinopsis.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce la sinopsis \n";
+                mensaje += "Introduce la sinopsis \n";
             }
-            if (txtPrologo.Text.Trim().Length == 0)
+            if (txtPrologo.Text == string.Empty)
             {
-                mensaje = mensaje + "Introduce el prologo \n";
+                mensaje += "Introduce el prologo \n";
             }
 
 
@@ -85,10 +88,10 @@ namespace Escritores_Amateur_ASP.GUI
                 BO.Historia obj = new BO.Historia();
                 Servicios.HistoriaCtrl objCtrl = new Servicios.HistoriaCtrl();
                 obj.Titulo = txtTitulo.Text.Trim();
-                obj.Id_categoria = Convert.ToInt32(txtCategoria.Text.Trim().ToUpper());
-                obj.Portada_url = txtUrl.Text.Trim().ToUpper();
-                obj.Id_sinopsis = Convert.ToInt32(txtSinopsis.Text.Trim().ToUpper());
-                obj.Id_prologo = Convert.ToInt32(txtPrologo.Text.Trim().ToUpper());
+                obj.Id_categoria = Convert.ToInt32(txtCategoria.Text);
+                obj.Portada_url = txtUrl.Text;
+                obj.Id_sinopsis = Convert.ToInt32(txtSinopsis.Text);
+                obj.Id_prologo = Convert.ToInt32(txtPrologo.Text);
                 string msn = objCtrl.creaHistoria(obj);
                 if (msn == "La operación se realizó de manera correcta")
                 {
@@ -108,23 +111,23 @@ namespace Escritores_Amateur_ASP.GUI
         public void modificar()
         {
             string mensaje = "";
-            if (txtId.Text.Trim().Length == 0)
+            if (txtId.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce la Clave \n";
             }
-            if (txtTitulo.Text.Trim().Length == 0)
+            if (txtTitulo.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce el titulo \n";
             }
-            if (txtCategoria.Text.Trim().Length == 0)
+            if (txtCategoria.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce la categoria \n";
             }
-            if (txtSinopsis.Text.Trim().Length == 0)
+            if (txtSinopsis.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce la sinopsis \n";
             }
-            if (txtPrologo.Text.Trim().Length == 0)
+            if (txtPrologo.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce el prologo \n";
             }
@@ -134,12 +137,12 @@ namespace Escritores_Amateur_ASP.GUI
             {
                 BO.Historia obj = new BO.Historia();
                 Servicios.HistoriaCtrl objCtrl = new Servicios.HistoriaCtrl();
-                obj.Id_historia = Convert.ToInt32(txtId.Text.Trim().ToUpper());
-                obj.Titulo = txtTitulo.Text.Trim();
-                obj.Id_categoria = Convert.ToInt32(txtCategoria.Text.Trim().ToUpper());
-                obj.Portada_url = txtUrl.Text.Trim().ToUpper();
-                obj.Id_sinopsis = Convert.ToInt32(txtSinopsis.Text.Trim().ToUpper());
-                obj.Id_prologo = Convert.ToInt32(txtPrologo.Text.Trim().ToUpper());
+                obj.Id_historia = Convert.ToInt32(txtId.Text);
+                obj.Titulo = txtTitulo.Text;
+                obj.Id_categoria = Convert.ToInt32(txtCategoria.Text);
+                obj.Portada_url = txtUrl.Text;
+                obj.Id_sinopsis = Convert.ToInt32(txtSinopsis.Text);
+                obj.Id_prologo = Convert.ToInt32(txtPrologo.Text);
                 string msn = objCtrl.actualizaObj(obj);
                 if (msn == "La operación se realizó de manera correcta")
                 {

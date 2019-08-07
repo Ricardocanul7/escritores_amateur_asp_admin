@@ -89,9 +89,9 @@ namespace Escritores_Amateur_ASP.DAO
             bd = new BaseDB();
 
             sql = "UPDATE admin_revision " +
-                  "SET id_admin=@id_admin" +
+                  "SET id_admin=@id_admin," +
                   //" id_historia=@id_historia" +
-                  " fecha_aprovacion = GETDATE()" +
+                  " fecha_aprovacion = GETDATE()," +
                   " id_estatus = @id_estatus" +
                   " WHERE id_historia=@id_historia";
 

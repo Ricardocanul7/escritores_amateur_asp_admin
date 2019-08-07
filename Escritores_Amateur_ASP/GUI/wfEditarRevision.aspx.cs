@@ -15,11 +15,14 @@ namespace Escritores_Amateur_ASP.GUI
             if (!IsPostBack)
             {
                 cargaOperacion();
+                llenar_status();
             }
         }
 
         public void cargaOperacion()
         {
+            lblId.Visible = false;
+            txtId_admin.Visible = false;
             if ((String)Session["frmRevisionOperacion"] == "Editar")
             {
                 limpiar();
@@ -37,7 +40,7 @@ namespace Escritores_Amateur_ASP.GUI
         public void limpiar()
         {
             txtId_admin.Text = "";
-            lboxId_Historia.Items.Clear();
+            txtIdHistoria.Text = "";
             lboxEstado.Items.Clear();
         }
 
@@ -65,24 +68,20 @@ namespace Escritores_Amateur_ASP.GUI
             if (dt.Rows.Count != 0)
             {
                 txtId_admin.Text = dt.Rows[0]["id_admin"].ToString();
-                lboxId_Historia.SelectedValue = dt.Rows[0]["id_historia"].ToString();
+                txtIdHistoria.Text = dt.Rows[0]["id_historia"].ToString();
                 lboxEstado.SelectedValue = dt.Rows[0]["id_estatus"].ToString();
             }
         }
         public void agregar()
         {
             string mensaje = "";
-            if (txtId_admin.Text.Trim().Length == 0)
+            if (txtId_admin.Text==string.Empty)
             {
                 mensaje = mensaje + "Introduce el Titulo\n";
             }
-            if (lboxId_Historia.SelectedValue == "0")
+            if (txtIdHistoria.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce el contenido\n";
-            }
-            if (lboxEstado.SelectedValue == "0")
-            {
-                mensaje = mensaje + "Introduce la historia \n";
             }
 
 
@@ -91,12 +90,12 @@ namespace Escritores_Amateur_ASP.GUI
                 BO.Revision obj = new BO.Revision();
                 DAO.Revision objCtrl = new DAO.Revision();
                 obj.Id_admin = Convert.ToInt32(txtId_admin.Text);
-                obj.Id_historia = Convert.ToInt32( lboxId_Historia.SelectedValue);
+                obj.Id_historia = Convert.ToInt32(txtIdHistoria.Text);
                 obj.Id_estado = Convert.ToInt32(lboxEstado.SelectedValue);
                 int ok = objCtrl.creaRevision(obj);
                 if (ok != 0)
                 {
-                    Response.Redirect("wfTablaCapitulo.aspx");
+                    Response.Redirect("wfTablaRevisiones.aspx");
 
                 }
                 else
@@ -112,17 +111,13 @@ namespace Escritores_Amateur_ASP.GUI
         public void modificar()
         {
             string mensaje = "";
-            if (txtId_admin.Text.Trim().Length == 0)
+            if (txtId_admin.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce el Titulo\n";
             }
-            if (lboxId_Historia.SelectedValue == "0")
+            if (txtIdHistoria.Text == string.Empty)
             {
                 mensaje = mensaje + "Introduce el contenido\n";
-            }
-            if (lboxEstado.SelectedValue == "0")
-            {
-                mensaje = mensaje + "Introduce la historia \n";
             }
 
 
@@ -131,12 +126,12 @@ namespace Escritores_Amateur_ASP.GUI
                 BO.Revision obj = new BO.Revision();
                 DAO.Revision objCtrl = new DAO.Revision();
                 obj.Id_admin = Convert.ToInt32(txtId_admin.Text);
-                obj.Id_historia = Convert.ToInt32(lboxId_Historia.SelectedValue);
+                obj.Id_historia = Convert.ToInt32(txtIdHistoria.Text);
                 obj.Id_estado = Convert.ToInt32(lboxEstado.SelectedValue);
                 int ok = objCtrl.actualizaRevision(obj);
                 if (ok != 0)
                 {
-                    Response.Redirect("wfTablaCapitulo.aspx");
+                    Response.Redirect("wfTablaRevisiones.aspx");
 
                 }
                 else
@@ -154,12 +149,12 @@ namespace Escritores_Amateur_ASP.GUI
             BO.Revision obj = (BO.Revision)Session["frmRevisionBO"];
             DAO.Revision objCtrl = new DAO.Revision();
 
-            obj.Id_historia = Convert.ToInt32(lboxId_Historia.SelectedValue);
+            obj.Id_historia = Convert.ToInt32(txtIdHistoria.Text);
 
             int ok = objCtrl.eliminaDatos(obj);
             if (ok != 0)
             {
-                Response.Redirect("wfTablaCapitulo.aspx");
+                Response.Redirect("wfTablaRevisiones.aspx");
 
             }
             else
@@ -179,7 +174,7 @@ namespace Escritores_Amateur_ASP.GUI
 
         protected void lbtnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../GUI/wfTablaRevisiones.aspx");
+            Response.Redirect("wfTablaRevisiones.aspx");
         }
 
         protected void lbtnAgregar_Click(object sender, EventArgs e)

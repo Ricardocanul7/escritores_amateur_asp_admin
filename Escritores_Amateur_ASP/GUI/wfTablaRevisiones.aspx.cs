@@ -28,7 +28,7 @@ namespace Escritores_Amateur_ASP.GUI
         protected void lbtnAgregar_Click(object sender, EventArgs e)
         {
             Session["frmRevisionOperacion"] = "Nuevo";
-            Response.Redirect("../GUI/wfEditarRevision.aspx");
+            Response.Redirect("wfEditarRevision.aspx");
         }
 
         protected void gvRevisiones_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -40,7 +40,7 @@ namespace Escritores_Amateur_ASP.GUI
                 //BO.Categoria obj = new BO.Categoria();
                 //obj.Id_categoria = id;
                 BO.Revision obj = new BO.Revision();
-                obj.Id_historia = id;
+                obj.Id_historia = id;   
 
                 Session["frmRevisionOperacion"] = "Editar";
                 Session["frmRevisionBO"] = obj;

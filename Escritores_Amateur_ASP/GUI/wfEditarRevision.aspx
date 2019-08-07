@@ -43,7 +43,7 @@
                     <!--Historia-->
                     <div class="form-group">
                         <asp:Label ID="lblTitulo" runat="server" Text="Historia:"></asp:Label>
-                        <asp:ListBox ID="lboxId_Historia" AutoPostBack="true" class="form-control" runat="server"></asp:ListBox>
+                        <asp:TextBox ID="txtIdHistoria" class="form-control" runat="server"></asp:TextBox>
                     </div>
                 </div>
                 

@@ -23,7 +23,7 @@
                             <asp:TextBox ID="txtContenido" CssClass="form-control" textmode="MultiLine" row="3" Columns="125" wrap="true" runat="server"></asp:TextBox>
                         </div>
                         <div class="form-group">
-                            <asp:Button ID="btn_add_capitulo" runat="server" class="btn btn-primary btn-block"  Text="Añadir Capítulo"></asp:Button>
+                            <asp:Button ID="btn_add_capitulo" runat="server" class="btn btn-primary btn-block"  Text="Añadir Capítulo" OnClick="btn_add_capitulo_Click"></asp:Button>
                         </div>
                     </form>
                 </article>

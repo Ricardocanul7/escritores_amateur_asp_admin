@@ -46,7 +46,7 @@ namespace Escritores_Amateur_ASP.GUI
 
         protected void btnAgregarCap_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../GUI/wfNuevoCapitulo.aspx");
+            Response.Redirect("../GUI/wfNuevoCapitulo.aspx", false);
         }
 
         protected void dlistCapitulos_ItemCommand(object source, DataListCommandEventArgs e)
@@ -54,9 +54,9 @@ namespace Escritores_Amateur_ASP.GUI
             if(e.CommandName == "editar_capitulo")
             {
                 Session["id_capitulo"] = e.CommandArgument.ToString();
-                Session["id_historia"] = id_historia;
+                //Session["id_historia"] = id_historia;
                 Session["operacion_historia"] = "editar";
-                Response.Redirect("../GUI/wfNuevoCapitulo.aspx");
+                Response.Redirect("../GUI/wfNuevoCapitulo.aspx", false);
             }
         }
     }

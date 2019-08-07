@@ -88,18 +88,18 @@ namespace Escritores_Amateur_ASP.DAO
             bd = new BaseDB();
             sql = "UPDATE capitulo " +
                   "SET titulo=@titulo," +
-                  "contenido=@contenido," +
-                  "id_historia=@id_historia," +
+                  "contenido=@contenido" +
+                  //"id_historia=@id_historia" +
                   " WHERE id_capitulo=@id_capitulo";
             bd.Cmd.Parameters.Add("@id_capitulo", SqlDbType.Int);
             bd.Cmd.Parameters.Add("@titulo", SqlDbType.VarChar);
             bd.Cmd.Parameters.Add("@contenido", SqlDbType.VarChar);
-            bd.Cmd.Parameters.Add("@id_historia", SqlDbType.Int);
+            //bd.Cmd.Parameters.Add("@id_historia", SqlDbType.Int);
 
             bd.Cmd.Parameters["@id_capitulo"].Value = data.Id_capitulo;
             bd.Cmd.Parameters["@titulo"].Value = data.Titulo;
             bd.Cmd.Parameters["@contenido"].Value = data.Contenido;
-            bd.Cmd.Parameters["@id_historia"].Value = data.Id_historia;
+            //bd.Cmd.Parameters["@id_historia"].Value = data.Id_historia;
 
 
             int i = bd.execNonQuery(sql);

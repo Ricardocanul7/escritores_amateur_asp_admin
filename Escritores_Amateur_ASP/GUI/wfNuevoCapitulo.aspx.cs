@@ -10,18 +10,12 @@ namespace Escritores_Amateur_ASP.GUI
 {
     public partial class wfNuevoCapitulo : System.Web.UI.Page
     {
-        int id_historia;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 CargarInfo();
             }
-        }
-
-        public void SetID_Story()
-        {
-            id_historia = Convert.ToInt32(Session["id_historia"]);
         }
 
         // en caso de abrir este form para editar un capitulo hecho
@@ -44,7 +38,7 @@ namespace Escritores_Amateur_ASP.GUI
                 }
                 if (Session["operacion_historia"].ToString() == "nuevo")
                 {
-                    SetID_Story();
+                    // NO HACE NADA NO CARGA INFORMACION, SOLO CAPTURA
                 }
             }
         }
@@ -71,6 +65,13 @@ namespace Escritores_Amateur_ASP.GUI
                 {
                     DAO.Capitulo capituloDAO = new DAO.Capitulo();
                     BO.Capitulo capituloBO = new BO.Capitulo();
+
+                    capituloBO.Titulo = txtTitulo.Text;
+                    capituloBO.Contenido = txtContenido.Text;
+                    capituloBO.Id_historia = Convert.ToInt32(Session["id_historia"]);
+
+                    if (capituloDAO.creaCapitulo(capituloBO) != 0)
+                        Response.Redirect("../GUI/wfAgregarCapitulo.aspx", false);
                 }
             }
         }

@@ -46,6 +46,8 @@ namespace Escritores_Amateur_ASP.GUI
 
         protected void btnAgregarCap_Click(object sender, EventArgs e)
         {
+            Session["operacion_historia"] = "nuevo";
+            //Session["id_historia"] = id_historia;
             Response.Redirect("../GUI/wfNuevoCapitulo.aspx", false);
         }
 
